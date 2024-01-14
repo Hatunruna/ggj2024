@@ -6,6 +6,8 @@ project(${GAME}
   VERSION 0.1.0
 )
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 include(GNUInstallDirs)
 
 find_package(gf REQUIRED COMPONENTS graphics)
@@ -22,8 +24,11 @@ add_executable(${GAME}
   code/bits/GameData.cc
   code/bits/GameHub.cc
   code/bits/GameState.cc
+  code/bits/MapEntity.cc
+  code/bits/MapState.cc
   code/bits/StartScene.cc
   code/bits/TitleEntity.cc
+  code/bits/WorldScene.cc
 )
 
 target_include_directories(${GAME}

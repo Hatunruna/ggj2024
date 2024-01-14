@@ -1,6 +1,7 @@
 #include "StartScene.h"
 
 #include <gf/Color.h>
+#include <gf/Keyboard.h>
 
 #include "GameHub.h"
 
@@ -19,6 +20,7 @@ namespace xy {
 //     m_startAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::B);
 //     m_startAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::X);
 //     m_startAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Y);
+    m_startAction.addKeycodeKeyControl(gf::Keycode::Space);
     addAction(m_startAction);
 
 //     m_fullscreenAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Guide);
@@ -37,7 +39,7 @@ namespace xy {
     }
 
     if (m_startAction.isActive()) {
-//       m_game.replaceScene(m_game.introduction, m_game.blackout, gf::seconds(TransitionDelay));
+      m_game.replaceScene(m_game.world);
     }
   }
 

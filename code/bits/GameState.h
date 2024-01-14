@@ -5,10 +5,19 @@
 
 #include <gf/Path.h>
 
+#include "MapState.h"
+
 namespace xy {
 
   struct GameState {
     static constexpr uint16_t Version = 1;
+
+    GameState(gf::Random& random)
+    : map(random)
+    {
+    }
+
+    MapState map;
 
     void loadFromFile(const gf::Path& filename);
     void saveToFile(const gf::Path& filename);
