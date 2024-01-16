@@ -16,7 +16,7 @@ if (UNIX)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address")
 endif ()
 
-set(GAME_DATADIR "${CMAKE_INSTALL_PREFIX}/share/games/${GAME}" CACHE PATH "Game Data Dir")
+set(GAME_DATADIR "${CMAKE_INSTALL_PREFIX}/share/games/${GAME}" CACHE STRING "Game Data Dir")
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/code/config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h @ONLY)
 
 add_executable(${GAME}
@@ -58,17 +58,17 @@ if (WIN32)
       $<TARGET_FILE_DIR:${GAME}>/gf0.dll
       $<TARGET_FILE_DIR:${GAME}>/gfcore0.dll
       $<TARGET_FILE_DIR:${GAME}>/libpng16d.dll
-      $<TARGET_FILE_DIR:${GAME}>/pugixml_d.dll
+      $<TARGET_FILE_DIR:${GAME}>/pugixml.dll
       $<TARGET_FILE_DIR:${GAME}>/zlibd1.dll
-      $<TARGET_FILE_DIR:${GAME}>/FLAC.dll
-      $<TARGET_FILE_DIR:${GAME}>/ogg.dll
-      $<TARGET_FILE_DIR:${GAME}>/OpenAL32.dll
-      $<TARGET_FILE_DIR:${GAME}>/sfml-audio-d-2.dll
-      $<TARGET_FILE_DIR:${GAME}>/sfml-system-d-2.dll
-      $<TARGET_FILE_DIR:${GAME}>/vorbis.dll
-      $<TARGET_FILE_DIR:${GAME}>/vorbisenc.dll
-      $<TARGET_FILE_DIR:${GAME}>/vorbisfile.dll
-      $<TARGET_FILE_DIR:${GAME}>/prises.pdb
+      # $<TARGET_FILE_DIR:${GAME}>/FLAC.dll
+      # $<TARGET_FILE_DIR:${GAME}>/ogg.dll
+      # $<TARGET_FILE_DIR:${GAME}>/OpenAL32.dll
+      # $<TARGET_FILE_DIR:${GAME}>/sfml-audio-d-2.dll
+      # $<TARGET_FILE_DIR:${GAME}>/sfml-system-d-2.dll
+      # $<TARGET_FILE_DIR:${GAME}>/vorbis.dll
+      # $<TARGET_FILE_DIR:${GAME}>/vorbisenc.dll
+      # $<TARGET_FILE_DIR:${GAME}>/vorbisfile.dll
+      $<TARGET_FILE_DIR:${GAME}>/${GAME}.pdb
     DESTINATION .
     CONFIGURATIONS Debug
   )
@@ -85,14 +85,14 @@ if (WIN32)
       $<TARGET_FILE_DIR:${GAME}>/libpng16.dll
       $<TARGET_FILE_DIR:${GAME}>/pugixml.dll
       $<TARGET_FILE_DIR:${GAME}>/zlib1.dll
-      $<TARGET_FILE_DIR:${GAME}>/FLAC.dll
-      $<TARGET_FILE_DIR:${GAME}>/ogg.dll
-      $<TARGET_FILE_DIR:${GAME}>/OpenAL32.dll
-      $<TARGET_FILE_DIR:${GAME}>/sfml-audio-2.dll
-      $<TARGET_FILE_DIR:${GAME}>/sfml-system-2.dll
-      $<TARGET_FILE_DIR:${GAME}>/vorbis.dll
-      $<TARGET_FILE_DIR:${GAME}>/vorbisenc.dll
-      $<TARGET_FILE_DIR:${GAME}>/vorbisfile.dll
+      # $<TARGET_FILE_DIR:${GAME}>/FLAC.dll
+      # $<TARGET_FILE_DIR:${GAME}>/ogg.dll
+      # $<TARGET_FILE_DIR:${GAME}>/OpenAL32.dll
+      # $<TARGET_FILE_DIR:${GAME}>/sfml-audio-2.dll
+      # $<TARGET_FILE_DIR:${GAME}>/sfml-system-2.dll
+      # $<TARGET_FILE_DIR:${GAME}>/vorbis.dll
+      # $<TARGET_FILE_DIR:${GAME}>/vorbisenc.dll
+      # $<TARGET_FILE_DIR:${GAME}>/vorbisfile.dll
     DESTINATION .
     CONFIGURATIONS Release
   )
@@ -104,8 +104,8 @@ endif ()
 
 if (WIN32)
   install(
-    DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/data/${GAME}"
-    DESTINATION "./data"
+    DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/data/${GAME}/"
+    DESTINATION "./data/"
   )
 else ()
   install(
