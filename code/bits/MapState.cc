@@ -1,4 +1,5 @@
 #include "MapState.h"
+#include <gf/Array2D.h>
 
 namespace xy {
 
@@ -42,9 +43,9 @@ namespace xy {
 
   }
 
-  MapState::MapState(gf::Random& random)
-  : cells({ MapWidth, MapHeight })
+  void MapState::generate(gf::Random& random)
   {
+    cells = gf::Array2D<Cell, int>({ MapWidth, MapHeight });
     auto points = midpointDisplacement({ 0, MapHeight / 2 }, { MapWidth - 1, MapHeight / 2 }, random);
 
     for (auto point : points) {

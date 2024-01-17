@@ -8,8 +8,8 @@ namespace xy {
 
   WorldScene::WorldScene(GameHub& game)
   : gf::Scene(game.getRenderer().getSize())
-  , m_zoom(game.getRenderer(), getWorldView())
   , m_game(game)
+  , m_zoom(game.getRenderer(), getWorldView())
   , m_mapEntity(game.state.map)
   {
     setClearColor(gf::Color::White);

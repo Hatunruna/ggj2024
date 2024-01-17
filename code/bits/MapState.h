@@ -4,8 +4,6 @@
 #include <gf/Array2D.h>
 #include <gf/Random.h>
 
-#include "Signal.h"
-
 namespace xy {
 
   enum class Biome {
@@ -16,17 +14,25 @@ namespace xy {
 
   struct Cell {
     Biome biome = Biome::Void;
-    int initial_life = 0;
-    int current_life = 0;
+    int32_t initial_life = 0;
+    int32_t current_life = 0;
   };
 
-  struct MapState {
-    MapState(gf::Random& random);
+  template<typename Archive>
+  Archive& operator|(Archive& ar, Cell& cell) {
+    return ar | cell.biome | cell.initial_life | cell.current_life;
+  }
 
-    Signal<void(gf::Vector2i, Biome)> change_biome;
+  struct MapState {
+    void generate(gf::Random& random);
 
     gf::Array2D<Cell, int> cells;
   };
+
+  template<typename Archive>
+  Archive& operator|(Archive& ar, MapState& state) {
+    return ar | state.cells;
+  }
 
 }
 

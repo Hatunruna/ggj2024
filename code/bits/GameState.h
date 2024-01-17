@@ -5,6 +5,7 @@
 
 #include <gf/Path.h>
 
+#include "HeroState.h"
 #include "MapState.h"
 
 namespace xy {
@@ -13,10 +14,11 @@ namespace xy {
     static constexpr uint16_t Version = 1;
 
     GameState(gf::Random& random)
-    : map(random)
     {
+      map.generate(random);
     }
 
+    HeroState hero;
     MapState map;
 
     void loadFromFile(const gf::Path& filename);
@@ -25,7 +27,7 @@ namespace xy {
 
   template<typename Archive>
   Archive& operator|(Archive& ar, GameState& state) {
-    return ar;
+    return ar | state.hero | state.map;
   }
 
 }
