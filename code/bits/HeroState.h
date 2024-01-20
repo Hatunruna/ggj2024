@@ -1,19 +1,21 @@
-#ifndef XY_HERO_STATE_H
-#define XY_HERO_STATE_H
+#ifndef XY_GAME_HERO_STATE_H
+#define XY_GAME_HERO_STATE_H
 
 #include <gf/Vector.h>
+
+#include "Body.h"
 
 namespace xy {
 
   struct HeroState {
-    gf::Vector2f position;
+    Body body;
   };
 
   template<typename Archive>
   Archive& operator|(Archive& ar, HeroState& state) {
-    return ar | state.position;
+    return ar | state.body;
   }
 
 }
 
-#endif // XY_HERO_STATE_H
+#endif // XY_GAME_HERO_STATE_H

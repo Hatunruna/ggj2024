@@ -1,12 +1,12 @@
 #include "MapState.h"
+
 #include <gf/Array2D.h>
+
+#include "Constants.h"
 
 namespace xy {
 
   namespace {
-
-  constexpr int MapWidth = 250;
-  constexpr int MapHeight = 250;
 
     constexpr int InitialFactor = 50;
 
