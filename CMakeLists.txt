@@ -19,6 +19,11 @@ endif ()
 set(GAME_DATADIR "${CMAKE_INSTALL_PREFIX}/share/games/${GAME}" CACHE STRING "Game Data Dir")
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/code/config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h @ONLY)
 
+set(JSON_BuildTests OFF CACHE INTERNAL "")
+set(JSON_Install OFF CACHE INTERNAL "")
+
+add_subdirectory(vendor/json)
+
 add_executable(${GAME}
   code/main.cc
   code/bits/GameData.cc
@@ -29,6 +34,8 @@ add_executable(${GAME}
   code/bits/TheaterScene.cc
   code/bits/TheaterBackgroundEntity.cc
 )
+
+target_link_libraries(${GAME} PRIVATE nlohmann_json::nlohmann_json)
 
 target_include_directories(${GAME}
   PRIVATE
