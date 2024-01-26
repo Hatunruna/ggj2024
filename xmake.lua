@@ -18,7 +18,7 @@ if is_plat("windows") then
 end
 
 set_configdir("$(buildir)/config")
-set_configvar("GAME_DATADIR", "$(projectdir)/data/Game")
+set_configvar("GAME_DATADIR", "$(projectdir)/data/MidnightMovies")
 add_configfiles("code/config.h.in", {pattern = "@(.-)@"})
 
 target("MidnightMovies")
@@ -32,3 +32,10 @@ target("MidnightMoviesGenerator")
     set_kind("binary")
     add_files("code/generate.cc")
     add_packages("gamedevframework1")
+
+target("MidnightMoviesCheck")
+    set_kind("binary")
+    add_files("code/check.cc")
+    add_files("code/bits/FilmData.cc")
+    add_includedirs("$(buildir)/config")
+    add_packages("gamedevframework1", "nlohmann_json")
