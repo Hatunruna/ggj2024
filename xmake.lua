@@ -23,7 +23,12 @@ add_configfiles("code/config.h.in", {pattern = "@(.-)@"})
 
 target("MidnightMovies")
     set_kind("binary")
-    add_files("code/*.cc")
+    add_files("code/main.cc")
     add_files("code/bits/*.cc")
     add_includedirs("$(buildir)/config")
     add_packages("gamedevframework1", "nlohmann_json")
+
+target("MidnightMoviesGenerator")
+    set_kind("binary")
+    add_files("code/generate.cc")
+    add_packages("gamedevframework1")
