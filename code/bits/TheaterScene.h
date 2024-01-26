@@ -3,6 +3,8 @@
 
 #include <gf/Scene.h>
 
+#include "TheaterBackgroundEntity.h"
+
 namespace mm {
 
   struct GameHub;
@@ -13,6 +15,7 @@ namespace mm {
 
   private:
     GameHub& m_game;
+    TheaterBackgroundEntity m_background;
   };
 
 }
