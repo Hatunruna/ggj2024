@@ -3,7 +3,7 @@
 #include <gf/Coordinates.h>
 #include <gf/Shapes.h>
 
-namespace xy {
+namespace mm {
 
   void Projector::render(gf::RenderTarget& target, const gf::RenderStates& states) {
     gf::Coordinates coords(target);

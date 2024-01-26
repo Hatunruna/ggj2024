@@ -2,7 +2,7 @@
 
 #include "GameHub.h"
 
-namespace xy {
+namespace mm {
   TheaterScene::TheaterScene(GameHub& game)
   : gf::Scene(game.getRenderer().getSize())
   , m_game(game)

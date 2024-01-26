@@ -2,7 +2,7 @@
 
 #include "config.h"
 
-namespace xy {
+namespace mm {
 
   GameHub::GameHub()
   : GameManager("Game", { GAME_DATADIR })

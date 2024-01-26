@@ -1,9 +1,9 @@
-#ifndef XY_PROJECTOR_H
-#define XY_PROJECTOR_H
+#ifndef MM_PROJECTOR_H
+#define MM_PROJECTOR_H
 
 #include <gf/Entity.h>
 
-namespace xy {
+namespace mm {
 
   class Projector: public gf::Entity {
   public:
@@ -12,4 +12,4 @@ namespace xy {
 
 }
 
-#endif // XY_PROJECTOR_H
+#endif // MM_PROJECTOR_H

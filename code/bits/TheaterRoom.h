@@ -1,9 +1,9 @@
-#ifndef XY_THEATER_ROOM_H
-#define XY_THEATER_ROOM_H
+#ifndef MM_THEATER_ROOM_H
+#define MM_THEATER_ROOM_H
 
 #include <gf/Entity.h>
 
-namespace xy {
+namespace mm {
 
   class TheaterRoom: public gf::Entity {
   public:
@@ -12,4 +12,4 @@ namespace xy {
 
 }
 
-#endif // XY_THEATER_ROOM_H
+#endif // MM_THEATER_ROOM_H

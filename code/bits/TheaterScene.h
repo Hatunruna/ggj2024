@@ -1,5 +1,5 @@
-#ifndef XY_THEATER_SCENE_H
-#define XY_THEATER_SCENE_H
+#ifndef MM_THEATER_SCENE_H
+#define MM_THEATER_SCENE_H
 
 #include <gf/Scene.h>
 
@@ -7,7 +7,7 @@
 #include "Office.h"
 #include "TheaterRoom.h"
 
-namespace xy {
+namespace mm {
 
   struct GameHub;
 
@@ -25,4 +25,4 @@ namespace xy {
 }
 
 
-#endif // XY_THEATER_SCENE_H
+#endif // MM_THEATER_SCENE_H

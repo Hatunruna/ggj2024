@@ -1,9 +1,9 @@
-#ifndef XY_OFFICE_H
-#define XY_OFFICE_H
+#ifndef MM_OFFICE_H
+#define MM_OFFICE_H
 
 #include <gf/Entity.h>
 
-namespace xy {
+namespace mm {
 
   class Office: public gf::Entity {
   public:
@@ -12,4 +12,4 @@ namespace xy {
 
 }
 
-#endif // XY_OFFICE_H
+#endif // MM_OFFICE_H
