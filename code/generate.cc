@@ -47,6 +47,7 @@ namespace {
 
     std::cout << "  {\n";
     std::cout << "    \"title\": \"\",\n";
+    std::cout << "    \"year\": " << random.computeUniformInteger(1970, 2024) << ",\n";
     std::cout << "    \"duration\": " << random.computeUniformInteger(60, 200) << ",\n";
     std::cout << "    \"note\": " << random.computeUniformInteger(1, 5) << ",\n";
     std::cout << "    \"country\": \"" << Countries[random.computeUniformInteger(std::size_t(0), std::size(Countries) - 1)]  << "\",\n";

@@ -1,6 +1,7 @@
 [
   {
     "title": "Notes and Nudes",
+    "year": 2010,
     "duration": 118,
     "note": 3,
     "country": "Valinor",
@@ -11,6 +12,7 @@
   },
   {
     "title": "Yeehaw",
+    "year": 2018,
     "duration": 120,
     "note": 5,
     "country": "Canterlot",
@@ -21,6 +23,7 @@
   },
   {
     "title": "Edge Of The Galaxy",
+    "year": 2002,
     "duration": 78,
     "note": 2,
     "country": "Morrowind",
@@ -31,6 +34,7 @@
   },
   {
     "title": "Boy Of My Admiration",
+    "year": 2017,
     "duration": 82,
     "note": 3,
     "country": "Hyrule",
@@ -41,6 +45,7 @@
   },
   {
     "title": "Breath Of The World",
+    "year": 2021,
     "duration": 92,
     "note": 5,
     "country": "Hyrule",
@@ -51,6 +56,7 @@
   },
   {
     "title": "Bastards from the Wastelands",
+    "year": 1970,
     "duration": 73,
     "note": 5,
     "country": "Morrowind",
@@ -61,6 +67,7 @@
   },
   {
     "title": "Loves And Butterflies",
+    "year": 1992,
     "duration": 196,
     "note": 4,
     "country": "Canterlot",
@@ -71,6 +78,7 @@
   },
   {
     "title": "Exterminate The Savages",
+    "year": 2003,
     "duration": 122,
     "note": 1,
     "country": "Gallifrey",
@@ -81,6 +89,7 @@
   },
   {
     "title": "Screams In My Dreams",
+    "year": 2012,
     "duration": 116,
     "note": 4,
     "country": "Temeria",
@@ -91,6 +100,7 @@
   },
   {
     "title": "The Cyberwarriors",
+    "year": 2001,
     "duration": 77,
     "note": 5,
     "country": "Gallifrey",
@@ -101,6 +111,7 @@
   },
   {
     "title": "Snakes And Warriors",
+    "year": 1979,
     "duration": 97,
     "note": 1,
     "country": "Hyrule",
@@ -111,6 +122,7 @@
   },
   {
     "title": "Enemy In The Beginning Of Time",
+    "year": 2008,
     "duration": 142,
     "note": 1,
     "country": "Temeria",
@@ -121,6 +133,7 @@
   },
   {
     "title": "Hunter Of The Night",
+    "year": 1982,
     "duration": 99,
     "note": 4,
     "country": "Innistrad",
@@ -131,6 +144,7 @@
   },
   {
     "title": "Cats Without Restrictions",
+    "year": 1999,
     "duration": 200,
     "note": 1,
     "country": "Innistrad",
@@ -141,6 +155,7 @@
   },
   {
     "title": "Boy Of Doom",
+    "year": 1993,
     "duration": 107,
     "note": 4,
     "country": "Gallifrey",
@@ -150,7 +165,8 @@
     "themes": [ "", "" ]
   },
   {
-    "title": "Girls With Sins 2",
+    "title": "Girls With Sins",
+    "year": 2002,
     "duration": 66,
     "note": 5,
     "country": "Valinor",
@@ -161,6 +177,7 @@
   },
   {
     "title": "Creating Tomorrow",
+    "year": 2016,
     "duration": 95,
     "note": 4,
     "country": "Temeria",
@@ -171,6 +188,7 @@
   },
   {
     "title": "Crying In The City",
+    "year": 1995,
     "duration": 172,
     "note": 2,
     "country": "Wonderland",
@@ -181,6 +199,7 @@
   },
   {
     "title": "Cruelty Of The Graveyard",
+    "year": 1985,
     "duration": 134,
     "note": 4,
     "country": "Hyrule",
@@ -191,6 +210,7 @@
   },
   {
     "title": "Mutant Behind Me",
+    "year": 2015,
     "duration": 166,
     "note": 2,
     "country": "Canterlot",
@@ -201,6 +221,7 @@
   },
   {
     "title": "Excitement Of Her Laugh",
+    "year": 1997,
     "duration": 163,
     "note": 3,
     "country": "Gallifrey",
@@ -211,6 +232,7 @@
   },
   {
     "title": "Girlfriend Without Fear",
+    "year": 1998,
     "duration": 164,
     "note": 3,
     "country": "Gallifrey",
@@ -221,6 +243,7 @@
   },
   {
     "title": "Widows And Deputies",
+    "year": 2021,
     "duration": 75,
     "note": 3,
     "country": "Canterlot",
@@ -231,6 +254,7 @@
   },
   {
     "title": "Assassins And Strangers",
+    "year": 2008,
     "duration": 78,
     "note": 4,
     "country": "Innistrad",
@@ -241,6 +265,7 @@
   },
   {
     "title": "Enemies Of Science",
+    "year": 1991,
     "duration": 85,
     "note": 3,
     "country": "Wonderland",
@@ -248,5 +273,172 @@
     "technique": "Animated",
     "rating": "16+",
     "themes": [ "", "" ]
+  },
+  {
+    "title": "Ride And Pride",
+    "year": 2006,
+    "duration": 111,
+    "note": 3,
+    "country": "Canterlot",
+    "genre": "Fantasy",
+    "technique": "Animated",
+    "rating": "0+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "Whispers Next Door",
+    "year": 2004,
+    "duration": 144,
+    "note": 3,
+    "country": "Valinor",
+    "genre": "Horror",
+    "technique": "LiveAction",
+    "rating": "16+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "Army Of Outer Space",
+    "year": 1996,
+    "duration": 81,
+    "note": 3,
+    "country": "Innistrad",
+    "genre": "ScienceFiction",
+    "technique": "LiveAction",
+    "rating": "16+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "Secrets In The Neighborhood",
+    "year": 1990,
+    "duration": 66,
+    "note": 2,
+    "country": "Innistrad",
+    "genre": "Drama",
+    "technique": "LiveAction",
+    "rating": "16+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "Lover Of My Dreams",
+    "year": 1998,
+    "duration": 147,
+    "note": 5,
+    "country": "Temeria",
+    "genre": "Romance",
+    "technique": "LiveAction",
+    "rating": "16+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "Fame Without Shame",
+    "year": 2007,
+    "duration": 63,
+    "note": 3,
+    "country": "Wonderland",
+    "genre": "Musical",
+    "technique": "LiveAction",
+    "rating": "12+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "Climax Of The Idiot",
+    "year": 1981,
+    "duration": 110,
+    "note": 3,
+    "country": "Hyrule",
+    "genre": "Comedy",
+    "technique": "LiveAction",
+    "rating": "16+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "Soldiers And Secretaries",
+    "year": 2024,
+    "duration": 164,
+    "note": 4,
+    "country": "Innistrad",
+    "genre": "Romance",
+    "technique": "LiveAction",
+    "rating": "0+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "Shattered Dreams",
+    "year": 1997,
+    "duration": 200,
+    "note": 5,
+    "country": "Morrowind",
+    "genre": "Drama",
+    "technique": "LiveAction",
+    "rating": "0+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "Screams Of The Cursed",
+    "year": 1994,
+    "duration": 196,
+    "note": 5,
+    "country": "Wonderland",
+    "genre": "Horror",
+    "technique": "LiveAction",
+    "rating": "16+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "Ultimate Revenge",
+    "year": 1986,
+    "duration": 156,
+    "note": 5,
+    "country": "Gallifrey",
+    "genre": "Action",
+    "technique": "LiveAction",
+    "rating": "0+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "Empty Tears",
+    "year": 2009,
+    "duration": 77,
+    "note": 4,
+    "country": "Canterlot",
+    "genre": "Drama",
+    "technique": "Animated",
+    "rating": "12+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "Love and Destiny",
+    "year": 2023,
+    "duration": 173,
+    "note": 4,
+    "country": "Morrowind",
+    "genre": "Romance",
+    "technique": "LiveAction",
+    "rating": "18+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "Harmony in the Stars",
+    "year": 1990,
+    "duration": 174,
+    "note": 1,
+    "country": "Gallifrey",
+    "genre": "Musical",
+    "technique": "LiveAction",
+    "rating": "12+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "The Cosmic Terror",
+    "year": 2000,
+    "duration": 141,
+    "note": 2,
+    "country": "Gallifrey",
+    "genre": "Horror",
+    "technique": "Animated",
+    "rating": "12+",
+    "themes": [ "", "" ]
   }
+
+
 ]

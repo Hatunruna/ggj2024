@@ -44,6 +44,7 @@ namespace mm {
 
   void from_json(const nlohmann::json& j, FilmData& data) {
     j.at("title").get_to(data.title);
+    j.at("year").get_to(data.year);
     j.at("duration").get_to(data.duration);
     j.at("note").get_to(data.note);
     j.at("country").get_to(data.country);
@@ -53,12 +54,16 @@ namespace mm {
     j.at("themes").get_to(data.themes);
   }
 
-  std::vector<FilmData> load_database(gf::ResourceManager& resources) {
+  std::vector<FilmData> load_database(gf::ResourceManager& resources, gf::Random& random) {
     std::vector<FilmData> db;
 
     auto filename = resources.getAbsolutePath("database.json");
     std::ifstream ifs(filename);
     nlohmann::json::parse(ifs).get_to(db);
+
+    for (auto& film : db) {
+      film.generated_by_ai = random.computeBernoulli(0.25);
+    }
 
     return db;
   }

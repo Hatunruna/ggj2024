@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 
+#include <gf/Random.h>
 #include <gf/ResourceManager.h>
 
 namespace mm {
@@ -54,9 +55,10 @@ namespace mm {
     FilmTechnique technique;
     FilmRating rating;
     std::vector<std::string> themes;
+    bool generated_by_ai = false;
   };
 
-  std::vector<FilmData> load_database(gf::ResourceManager& resources);
+  std::vector<FilmData> load_database(gf::ResourceManager& resources, gf::Random& random);
 
 }
 
