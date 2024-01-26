@@ -8,10 +8,12 @@ namespace mm {
   : gf::Scene(game.getRenderer().getSize())
   , m_game(game)
   , m_background(game.resources)
+  , m_movieManager(game.resources)
   {
     setClearColor(gf::Color::White);
 
-    addWorldEntity(m_background);
+    // addWorldEntity(m_background);
+    addWorldEntity(m_movieManager);
 
     setWorldViewSize(WorldSize);
     setWorldViewCenter(WorldSize * 0.5f);

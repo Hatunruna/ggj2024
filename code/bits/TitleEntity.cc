@@ -9,7 +9,7 @@
 namespace mm {
 
   TitleEntity::TitleEntity(gf::ResourceManager& resources)
-  : m_font(resources.getFont("GoudyBookletter1911.otf"))
+  : m_font(resources.getFont("fonts/GoudyBookletter1911.otf"))
 //   , m_backgroundTexture(resources.getTexture("logo.png"))
   {
   }

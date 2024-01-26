@@ -3,6 +3,7 @@
 
 #include <gf/Scene.h>
 
+#include "MovieManager.h"
 #include "TheaterBackgroundEntity.h"
 
 namespace mm {
@@ -16,6 +17,7 @@ namespace mm {
   private:
     GameHub& m_game;
     TheaterBackgroundEntity m_background;
+    MovieManager m_movieManager;
   };
 
 }
