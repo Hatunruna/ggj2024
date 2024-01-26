@@ -29,9 +29,13 @@ add_executable(${GAME}
   code/bits/HeroState.cc
   code/bits/MapEntity.cc
   code/bits/MapState.cc
+  code/bits/Office.cc
   code/bits/PhysicsModel.cc
+  code/bits/Projector.cc
   code/bits/StartScene.cc
   code/bits/TitleEntity.cc
+  code/bits/TheaterRoom.cc
+  code/bits/TheaterScene.cc
   code/bits/WorldScene.cc
 )
 

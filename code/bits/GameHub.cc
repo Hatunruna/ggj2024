@@ -9,6 +9,7 @@ namespace xy {
   , state(random)
   , start(*this)
   , world(*this)
+  , theater(*this)
   {
     pushScene(start);
   }

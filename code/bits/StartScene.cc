@@ -39,7 +39,7 @@ namespace xy {
     }
 
     if (m_startAction.isActive()) {
-      m_game.replaceScene(m_game.world);
+      m_game.replaceScene(m_game.theater);
     }
   }
 
