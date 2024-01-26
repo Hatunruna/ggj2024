@@ -5,13 +5,18 @@
 namespace mm {
 
   TheaterBackgroundEntity::TheaterBackgroundEntity(gf::ResourceManager& resources)
-  : m_backgroundTexture(resources.getTexture("images/background.png"))
+  : m_theaterBackgroundTexture(resources.getTexture("images/theater-background.png"))
+  , m_officeBackgroundTexture(resources.getTexture("images/office-background.png"))
   {}
 
   void TheaterBackgroundEntity::render(gf::RenderTarget& target, const gf::RenderStates& states) {
-    gf::Sprite m_background;
-    m_background.setTexture(m_backgroundTexture);
-    m_background.draw(target, states);
+    gf::Sprite theaterBackground;
+    theaterBackground.setTexture(m_theaterBackgroundTexture);
+    theaterBackground.draw(target, states);
+
+    gf::Sprite officeBackground;
+    officeBackground.setTexture(m_officeBackgroundTexture);
+    officeBackground.draw(target, states);
   }
 
 }

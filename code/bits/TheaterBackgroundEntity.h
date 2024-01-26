@@ -14,7 +14,8 @@ namespace mm {
     virtual void render(gf::RenderTarget& target, const gf::RenderStates& states) override;
 
   private:
-    gf::Texture& m_backgroundTexture;
+    gf::Texture& m_theaterBackgroundTexture;
+    gf::Texture& m_officeBackgroundTexture;
   };
 
 }

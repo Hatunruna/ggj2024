@@ -10,7 +10,7 @@ namespace mm {
   , m_background(game.resources)
   , m_movieManager(game.resources)
   {
-    setClearColor(gf::Color::White);
+    setClearColor(gf::Color::Black);
 
     addWorldEntity(m_background);
     addWorldEntity(m_movieManager);
