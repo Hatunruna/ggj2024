@@ -12,7 +12,7 @@ namespace mm {
   {
     setClearColor(gf::Color::White);
 
-    // addWorldEntity(m_background);
+    addWorldEntity(m_background);
     addWorldEntity(m_movieManager);
 
     setWorldViewSize(WorldSize);

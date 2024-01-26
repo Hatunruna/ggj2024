@@ -23,6 +23,7 @@ namespace mm {
   private:
     gf::Font& m_font;
     gf::Texture& m_movieInfoBackgroundTexture;
+    gf::Texture& m_movieInfoLightTexture;
 
     gf::ScreenView m_renderView;
     gf::RenderTexture m_movieRenderTexture;
