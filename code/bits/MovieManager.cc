@@ -15,9 +15,9 @@ namespace {
 namespace mm {
 
   MovieManager::MovieManager(gf::ResourceManager& resources)
-  : m_movieRenderTexture(RenderTextureSize)
-  , m_font(resources.getFont("fonts/GoudyBookletter1911.otf"))
+  : m_font(resources.getFont("fonts/GoudyBookletter1911.otf"))
   , m_movieInfoBackgroundTexture(resources.getTexture("images/movie-info.png"))
+  , m_movieRenderTexture(RenderTextureSize)
   {
     m_movieRenderTexture.setSmooth();
     m_renderView.setInitialFramebufferSize(RenderTextureSize);
@@ -36,7 +36,7 @@ namespace mm {
 
     gf::Sprite movieInfo;
     auto& texture = m_movieRenderTexture.getTexture();
-    gf::Log::debug("texture size: %dx%d\n", texture.getSize().width, texture.getSize().height);
+    // gf::Log::debug("texture size: %dx%d\n", texture.getSize().width, texture.getSize().height);
     movieInfo.setTexture(m_movieRenderTexture.getTexture());
     movieInfo.setPosition(WorldSize * 0.5f);
     movieInfo.draw(target, states);
@@ -47,7 +47,13 @@ namespace mm {
     if (!alreadyRendered) {
       gf::Log::debug("Asset generated\n");
       alreadyRendered = true;
+
+      auto& view = m_movieRenderTexture.getView();
+      gf::Log::debug("view: %gx%g, %gx%g\n", view.getCenter().x, view.getCenter().y, view.getSize().width, view.getSize().height);
+
       m_movieRenderTexture.setActive();
+      m_movieRenderTexture.setView(m_renderView);
+
       m_movieRenderTexture.clear(gf::Color::Blue);
 
       gf::RectangleShape box;
