@@ -7,7 +7,6 @@
 #include "GameState.h"
 #include "StartScene.h"
 #include "TheaterScene.h"
-#include "WorldScene.h"
 
 namespace xy {
 
@@ -18,7 +17,6 @@ namespace xy {
     GameState state;
 
     StartScene start;
-    WorldScene world;
     TheaterScene theater;
   };
 

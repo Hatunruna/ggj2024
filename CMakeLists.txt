@@ -21,22 +21,15 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/code/config.h.in ${CMAKE_CURRENT_BINA
 
 add_executable(${GAME}
   code/main.cc
-  code/bits/Body.cc
   code/bits/GameData.cc
   code/bits/GameHub.cc
   code/bits/GameState.cc
-  code/bits/HeroEntity.cc
-  code/bits/HeroState.cc
-  code/bits/MapEntity.cc
-  code/bits/MapState.cc
   code/bits/Office.cc
-  code/bits/PhysicsModel.cc
   code/bits/Projector.cc
   code/bits/StartScene.cc
   code/bits/TitleEntity.cc
   code/bits/TheaterRoom.cc
   code/bits/TheaterScene.cc
-  code/bits/WorldScene.cc
 )
 
 target_include_directories(${GAME}
