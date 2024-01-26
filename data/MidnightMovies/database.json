@@ -438,7 +438,115 @@
     "technique": "Animated",
     "rating": "12+",
     "themes": [ "", "" ]
+  },
+  {
+    "title": "Hilarity Unlimited",
+    "year": 1990,
+    "duration": 104,
+    "note": 1,
+    "country": "Morrowind",
+    "genre": "Comedy",
+    "technique": "Animated",
+    "rating": "0+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "Starlight Chronicles",
+    "year": 1976,
+    "duration": 129,
+    "note": 3,
+    "country": "Gallifrey",
+    "genre": "Fantasy",
+    "technique": "LiveAction",
+    "rating": "18+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "Goblin Giggles",
+    "year": 2016,
+    "duration": 180,
+    "note": 2,
+    "country": "Valinor",
+    "genre": "Comedy",
+    "technique": "LiveAction",
+    "rating": "12+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "Realm Of Legends",
+    "year": 1981,
+    "duration": 71,
+    "note": 1,
+    "country": "Valinor",
+    "genre": "Fantasy",
+    "technique": "Animated",
+    "rating": "0+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "The Forgotten Sunsets",
+    "year": 2008,
+    "duration": 66,
+    "note": 2,
+    "country": "Valinor",
+    "genre": "Drama",
+    "technique": "LiveAction",
+    "rating": "12+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "The Wild Wizard Of The West",
+    "year": 2003,
+    "duration": 103,
+    "note": 4,
+    "country": "Valinor",
+    "genre": "Western",
+    "technique": "LiveAction",
+    "rating": "12+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "Harmony Of The Faeries",
+    "year": 1993,
+    "duration": 181,
+    "note": 2,
+    "country": "Morrowind",
+    "genre": "Musical",
+    "technique": "LiveAction",
+    "rating": "16+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "Dragons Of Destiny",
+    "year": 1978,
+    "duration": 62,
+    "note": 5,
+    "country": "Innistrad",
+    "genre": "Fantasy",
+    "technique": "LiveAction",
+    "rating": "0+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "Eternal Heroes",
+    "year": 1977,
+    "duration": 66,
+    "note": 4,
+    "country": "Morrowind",
+    "genre": "Action",
+    "technique": "LiveAction",
+    "rating": "18+",
+    "themes": [ "", "" ]
+  },
+  {
+    "title": "Action Ponies On A Mission",
+    "year": 2008,
+    "duration": 146,
+    "note": 5,
+    "country": "Canterlot",
+    "genre": "Action",
+    "technique": "Animated",
+    "rating": "16+",
+    "themes": [ "", "" ]
   }
-
-
 ]
