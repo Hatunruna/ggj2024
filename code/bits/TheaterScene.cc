@@ -9,10 +9,6 @@ namespace mm {
   {
     setClearColor(gf::Color::Black);
 
-    addWorldEntity(m_room);
-    addWorldEntity(m_office);
-    addWorldEntity(m_projector);
-
     setWorldViewCenter(game.getRenderer().getSize() * gf::vec(0.5f, 0.5f));
   }
 

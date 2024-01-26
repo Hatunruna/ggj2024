@@ -3,10 +3,6 @@
 
 #include <gf/Scene.h>
 
-#include "Projector.h"
-#include "Office.h"
-#include "TheaterRoom.h"
-
 namespace mm {
 
   struct GameHub;
@@ -17,9 +13,6 @@ namespace mm {
 
   private:
     GameHub& m_game;
-    TheaterRoom m_room;
-    Office m_office;
-    Projector m_projector;
   };
 
 }
