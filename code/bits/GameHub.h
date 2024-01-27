@@ -6,6 +6,7 @@
 #include "GameData.h"
 #include "GameState.h"
 #include "StartScene.h"
+#include "ConstraintListScene.h"
 #include "TheaterScene.h"
 
 namespace mm {
@@ -17,6 +18,7 @@ namespace mm {
     GameState state;
 
     StartScene start;
+    ConstraintListScene list;
     TheaterScene theater;
   };
 

@@ -480,6 +480,19 @@ namespace mm {
     });
   }
 
+  std::vector<MovieConstraint> whyMovieNotAccepted(const MovieData& movie, const std::vector<MovieConstraint>& constraints) {
+    std::vector<MovieConstraint> notAccepted;
+
+    for (auto constraint : constraints) {
+      if (!isMovieAcceptable(movie, constraint)) {
+        notAccepted.push_back(constraint);
+      }
+    }
+
+    assert(!notAccepted.empty());
+    return notAccepted;
+  }
+
   MovieLevel computeLevel(const std::vector<MovieData>& database, std::size_t constraintCount, std::size_t movieCount, gf::Random& random) {
     const std::vector<MovieConstraint> constraintsByType[] = {
       {

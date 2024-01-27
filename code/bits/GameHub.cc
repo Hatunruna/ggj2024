@@ -7,6 +7,7 @@ namespace mm {
   GameHub::GameHub()
   : GameManager("Game", { GAME_DATADIR })
   , start(*this)
+  , list(*this)
   , theater(*this)
   {
     pushScene(start);
