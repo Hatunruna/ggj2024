@@ -333,9 +333,9 @@ namespace mm {
       case MovieConstraint::TitleWithEvenWords:
         return numberOfWords(movie.title) % 2 == 0;
       case MovieConstraint::TitleWithLessThan16Letters:
-        return numberOfLetters(movie.title) >= 16;
-      case MovieConstraint::TitleWithMoreThan16Letters:
         return numberOfLetters(movie.title) <= 16;
+      case MovieConstraint::TitleWithMoreThan16Letters:
+        return numberOfLetters(movie.title) >= 16;
       // year
       case MovieConstraint::YearAfter1980:
         return movie.year >= 1980;
