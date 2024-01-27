@@ -17,6 +17,7 @@ namespace mm {
     TheaterScene(GameHub& game);
 
     void doProcessEvent(gf::Event& event) override;
+    void doUpdate(gf::Time time) override;
     void doRender(gf::RenderTarget& target, const gf::RenderStates &states) override;
 
   private:
@@ -28,6 +29,7 @@ namespace mm {
     IconWidget m_broadcastButton;
     IconWidget m_trashButton;
     IconWidget m_recallButton;
+    gf::Vector2f m_lastPointer = { 0.0f, 0.0f };
     gf::WidgetContainer m_widgets;
   };
 

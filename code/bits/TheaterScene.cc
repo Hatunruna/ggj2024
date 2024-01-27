@@ -10,9 +10,9 @@ namespace mm {
   , m_game(game)
   , m_background(game)
   , m_movieManager(game)
-  , m_broadcastButton(game.resources.getTexture("icons/check-solid.png"), gf::Color::Green, gf::Color::lighter(gf::Color::Green), gf::Color::Green)
-  , m_trashButton(game.resources.getTexture("icons/xmark-solid.png"), gf::Color::Red, gf::Color::lighter(gf::Color::Red), gf::Color::Red)
-  , m_recallButton(game.resources.getTexture("icons/note-sticky-regular.png"), gf::Color::Azure, gf::Color::lighter(gf::Color::Azure), gf::Color::Azure)
+  , m_broadcastButton(game.resources.getTexture("icons/check-solid.png"), gf::Color::Green, gf::Color::lighter(gf::Color::Green), gf::Color::darker(gf::Color::Green))
+  , m_trashButton(game.resources.getTexture("icons/xmark-solid.png"), gf::Color::Red, gf::Color::lighter(gf::Color::Red), gf::Color::darker(gf::Color::Red))
+  , m_recallButton(game.resources.getTexture("icons/note-sticky-regular.png"), gf::Color::Azure, gf::Color::lighter(gf::Color::Azure), gf::Color::darker(gf::Color::Azure))
   {
     setClearColor(gf::Color::Black);
 
@@ -86,12 +86,28 @@ namespace mm {
     }
   }
 
+  void TheaterScene::doUpdate([[maybe_unused]] gf::Time time) {
+    if (m_game.state.movieState == MovieState::WaitingMovie) {
+      if (m_broadcastButton.isDisabled()) {
+        m_broadcastButton.setDefault();
+      }
+
+      if (m_trashButton.isDisabled()) {
+        m_trashButton.setDefault();
+      }
+    } else {
+      m_broadcastButton.setDisabled();
+      m_trashButton.setDisabled();
+    }
+  }
+
   void TheaterScene::doRender(gf::RenderTarget& target, const gf::RenderStates &states) {
     if (!isActive()) {
       return;
     }
 
     renderWorldEntities(target, states);
+
     m_widgets.render(target, states);
 
     renderHudEntities(target, states);

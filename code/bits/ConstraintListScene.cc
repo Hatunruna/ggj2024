@@ -51,6 +51,7 @@ namespace mm {
 
   void ConstraintListScene::doRender(gf::RenderTarget& target, const gf::RenderStates &states) {
     renderWorldEntities(target, states);
+
     m_widgets.render(target, states);
 
     renderHudEntities(target, states);
