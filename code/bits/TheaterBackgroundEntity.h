@@ -6,11 +6,10 @@
 #include <gf/ResourceManager.h>
 #include <gf/Texture.h>
 
-#include "GameData.h"
-
 namespace mm {
 
   struct GameHub;
+  struct GameState;
 
   class TheaterBackgroundEntity: public gf::Entity {
   public:
@@ -20,7 +19,7 @@ namespace mm {
     virtual void render(gf::RenderTarget& target, const gf::RenderStates& states) override;
 
   private:
-    GameData& m_gameData;
+    GameState& m_gameState;
 
     gf::Texture& m_theaterBackgroundTexture;
 
@@ -28,7 +27,6 @@ namespace mm {
     std::vector<gf::Animation> m_happyAnimations;
     gf::Texture& m_monsterPause;
     int m_currentAnimation = 0;
-    gf::Time m_elapsedTime;
 
     gf::Texture& m_officeBackgroundTexture;
   };

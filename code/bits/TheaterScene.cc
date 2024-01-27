@@ -27,7 +27,10 @@ namespace mm {
     m_broadcastButton.setRadius(15.0f);
     m_broadcastButton.setPadding(20.0f);
     m_broadcastButton.setCallback([this](){
-      m_game.state.movieState = MovieState::DepartureMovie;
+      if (m_game.state.movieState == MovieState::WaitingMovie) {
+        m_game.state.movieState = MovieState::DepartureMovie;
+        m_game.state.monsterState = MonsterState::Happy;
+      }
     });
     m_widgets.addWidget(m_broadcastButton);
 
@@ -39,7 +42,10 @@ namespace mm {
     m_trashButton.setRadius(15.0f);
     m_trashButton.setPadding(20.0f);
     m_trashButton.setCallback([this](){
-      m_game.state.movieState = MovieState::DepartureMovie;
+      if (m_game.state.movieState == MovieState::WaitingMovie) {
+        m_game.state.movieState = MovieState::DepartureMovie;
+        m_game.state.monsterState = MonsterState::Angry;
+      }
     });
     m_widgets.addWidget(m_trashButton);
 

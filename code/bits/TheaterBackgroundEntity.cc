@@ -12,7 +12,7 @@ namespace {
 namespace mm {
 
   TheaterBackgroundEntity::TheaterBackgroundEntity(GameHub& game)
-  : m_gameData(game.data)
+  : m_gameState(game.state)
   , m_theaterBackgroundTexture(game.resources.getTexture("images/theater-background.png"))
   , m_monsterPause(game.resources.getTexture("images/monster-pause.png"))
   , m_officeBackgroundTexture(game.resources.getTexture("images/office-background.png"))
@@ -46,14 +46,8 @@ namespace mm {
 
   void TheaterBackgroundEntity::update(gf::Time time)
   {
-    switch (m_gameData.monsterState) {
+    switch (m_gameState.monsterState) {
     case MonsterState::Neutral:
-      m_elapsedTime += time;
-      if (m_elapsedTime.asSeconds() >= IdleTime) {
-        m_elapsedTime = gf::Time::Zero;
-
-        m_gameData.monsterState = MonsterState::Angry;
-      }
       break;
 
     case MonsterState::Angry:
@@ -64,7 +58,7 @@ namespace mm {
       animation.update(time);
       if (animation.isFinished()) {
         animation.reset();
-        m_gameData.monsterState = MonsterState::Happy;
+        m_gameState.monsterState = MonsterState::Neutral;
       }
       break;
     }
@@ -77,7 +71,7 @@ namespace mm {
       animation.update(time);
       if (animation.isFinished()) {
         animation.reset();
-        m_gameData.monsterState = MonsterState::Neutral;
+        m_gameState.monsterState = MonsterState::Neutral;
       }
       break;
     }
@@ -89,7 +83,7 @@ namespace mm {
     theaterBackground.setTexture(m_theaterBackgroundTexture);
     theaterBackground.draw(target, states);
 
-    switch (m_gameData.monsterState) {
+    switch (m_gameState.monsterState) {
     case MonsterState::Neutral:
     {
       gf::Sprite monster;

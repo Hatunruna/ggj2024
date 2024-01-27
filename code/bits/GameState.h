@@ -14,10 +14,17 @@ namespace mm {
     DepartureMovie,
   };
 
+  enum class MonsterState : std::uint8_t {
+    Neutral,
+    Angry,
+    Happy,
+  };
+
   struct GameState {
     static constexpr uint16_t Version = 1;
 
     MovieState movieState = MovieState::NoMovie;
+    MonsterState monsterState = MonsterState::Neutral;
 
     void loadFromFile(const gf::Path& filename);
     void saveToFile(const gf::Path& filename);
@@ -25,7 +32,7 @@ namespace mm {
 
   template<typename Archive>
   Archive& operator|(Archive& ar, GameState& state) {
-    return ar | state.movieState;
+    return ar | state.movieState | state.monsterState;
   }
 
 }
