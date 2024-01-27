@@ -26,6 +26,9 @@ namespace mm {
     m_broadcastButton.setScale(2.0f);
     m_broadcastButton.setRadius(15.0f);
     m_broadcastButton.setPadding(20.0f);
+    m_broadcastButton.setCallback([this](){
+      m_game.state.movieState = MovieState::DepartureMovie;
+    });
     m_widgets.addWidget(m_broadcastButton);
 
     m_trashButton.setDefaultBackgroundColor(gf::Color::Red);
@@ -35,6 +38,9 @@ namespace mm {
     m_trashButton.setScale(2.0f);
     m_trashButton.setRadius(15.0f);
     m_trashButton.setPadding(20.0f);
+    m_trashButton.setCallback([this](){
+      m_game.state.movieState = MovieState::DepartureMovie;
+    });
     m_widgets.addWidget(m_trashButton);
 
     setWorldViewSize(WorldSize);

@@ -21,14 +21,14 @@ namespace {
 namespace mm {
 
   MovieManager::MovieManager(GameHub& game)
-  : m_gameData(game.data)
+  : m_gameState(game.state)
   , m_font(game.resources.getFont("fonts/GoudyBookletter1911.otf"))
   , m_movieInfoBackgroundTexture(game.resources.getTexture("images/movie-info.png"))
   , m_movieInfoLightTexture(game.resources.getTexture("images/movie-info-light.png"))
   , m_reviewPositiveTexture(game.resources.getTexture("images/reviews/star-fill.png"))
   , m_reviewNegativeTexture(game.resources.getTexture("images/reviews/star-empty.png"))
   , m_movieRenderTexture(RenderTextureSize)
-  , m_arrivingTween(MovieAngleInitial, MovieAngleTarget, m_gameData.movieAngle, gf::milliseconds(500), gf::Ease::backInOut)
+  , m_arrivingTween(MovieAngleInitial, MovieAngleTarget, angle, gf::milliseconds(500), gf::Ease::backInOut)
   {
     m_movieRenderTexture.setSmooth();
     m_renderView.setInitialFramebufferSize(RenderTextureSize);
@@ -47,35 +47,30 @@ namespace mm {
 
   void MovieManager::update(gf::Time time) {
 
-    switch (m_gameData.movieState)
+    switch (m_gameState.movieState)
     {
     case MovieState::NoMovie:
       generateMovieTexture();
-      m_gameData.movieState = MovieState::ArrivingMovie;
+      m_gameState.movieState = MovieState::ArrivingMovie;
       m_arrivingTween.restart();
       break;
 
     case MovieState::ArrivingMovie:
       m_arrivingTween.update(time);
       if (m_arrivingTween.isFinished()) {
-        m_elapsedTime = gf::Time::Zero;
-        m_gameData.movieState = MovieState::WaitingMovie;
+        m_gameState.movieState = MovieState::WaitingMovie;
         m_arrivingTween.restart();
       }
       break;
 
     case MovieState::WaitingMovie:
-      m_elapsedTime += time;
-      if (m_elapsedTime >= gf::seconds(WaitingTime)) {
-        m_gameData.movieState = MovieState::DepartureMovie;
-      }
       break;
 
     case MovieState::DepartureMovie:
-      m_gameData.movieAngle -= MovieVelocity * time.asSeconds();
-      if (m_gameData.movieAngle <= MovieAngleInitial) {
-        m_gameData.movieAngle = MovieAngleInitial;
-        m_gameData.movieState = MovieState::ArrivingMovie;
+      angle -= MovieVelocity * time.asSeconds();
+      if (angle <= MovieAngleInitial) {
+        angle = MovieAngleInitial;
+        m_gameState.movieState = MovieState::ArrivingMovie;
       }
       break;
     }
@@ -89,7 +84,7 @@ namespace mm {
     movieInfo.setTexture(m_movieRenderTexture.getTexture());
     movieInfo.setPosition(MoviePosition);
     movieInfo.setOrigin(gf::vec(1036.0f, 1330.0f));
-    movieInfo.setRotation(m_gameData.movieAngle);
+    movieInfo.setRotation(angle);
     movieInfo.draw(target, states);
   }
 

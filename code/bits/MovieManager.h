@@ -11,8 +11,8 @@
 
 namespace mm {
 
-  struct GameData;
   struct GameHub;
+  struct GameState;
 
   class MovieManager: public gf::Entity {
   public:
@@ -25,7 +25,7 @@ namespace mm {
     void generateMovieTexture();
 
   private:
-    GameData& m_gameData;
+    GameState& m_gameState;
 
     gf::Font& m_font;
     gf::Texture& m_movieInfoBackgroundTexture;
@@ -37,7 +37,7 @@ namespace mm {
     gf::ScreenView m_renderView;
     gf::RenderTexture m_movieRenderTexture;
 
-    gf::Time m_elapsedTime;
+    float angle = 0.0f;
     gf::Tween<float> m_arrivingTween;
   };
 
