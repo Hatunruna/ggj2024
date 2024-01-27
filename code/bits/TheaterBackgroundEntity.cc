@@ -66,6 +66,17 @@ namespace mm {
 
       m_happyAnimations.emplace_back(std::move(animation));
     }
+
+    m_projectorAnimation.addTileset(game.resources.getTexture("images/projector-0.png"), gf::vec(4, 1), frequency, 4);
+    m_projectorAnimation.addTileset(game.resources.getTexture("images/projector-1.png"), gf::vec(4, 1), frequency, 4);
+    m_projectorAnimation.addTileset(game.resources.getTexture("images/projector-2.png"), gf::vec(4, 1), frequency, 4);
+    m_projectorAnimation.addTileset(game.resources.getTexture("images/projector-3.png"), gf::vec(4, 1), frequency, 4);
+    m_projectorAnimation.addTileset(game.resources.getTexture("images/projector-4.png"), gf::vec(4, 1), frequency, 4);
+    m_projectorAnimation.addTileset(game.resources.getTexture("images/projector-5.png"), gf::vec(4, 1), frequency, 4);
+    m_projectorAnimation.addTileset(game.resources.getTexture("images/projector-6.png"), gf::vec(4, 1), frequency, 4);
+    m_projectorAnimation.addTileset(game.resources.getTexture("images/projector-7.png"), gf::vec(4, 1), frequency, 4);
+    m_projectorAnimation.addTileset(game.resources.getTexture("images/projector-6.png"), gf::vec(4, 1), frequency, 4);
+    m_projectorAnimation.setLoop(true);
   }
 
   void TheaterBackgroundEntity::update(gf::Time time)
@@ -122,12 +133,20 @@ namespace mm {
       break;
     }
     }
+
+    m_projectorAnimation.update(time);
   }
 
   void TheaterBackgroundEntity::render(gf::RenderTarget& target, const gf::RenderStates& states) {
     gf::Sprite theaterBackground;
     theaterBackground.setTexture(m_theaterBackgroundTexture);
     theaterBackground.draw(target, states);
+
+    gf::AnimatedSprite projector;
+    projector.setAnimation(m_projectorAnimation);
+    projector.setPosition(WorldSize);
+    projector.setAnchor(gf::Anchor::BottomRight);
+    projector.draw(target, states);
 
     switch (m_gameState.monsterState) {
     case MonsterState::Neutral:

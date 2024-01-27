@@ -26,6 +26,7 @@ namespace mm {
     std::vector<gf::Animation> m_angryAnimations;
     std::vector<gf::Animation> m_happyAnimations;
     gf::Texture& m_monsterPause;
+    gf::Animation m_projectorAnimation;
 
     gf::Texture& m_officeBackgroundTexture;
   };
