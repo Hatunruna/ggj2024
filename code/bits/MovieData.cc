@@ -9,21 +9,21 @@ namespace mm {
 
   std::string toString(MovieCountry country) {
     switch (country) {
-      case mm::MovieCountry::Canterlot:
+      case MovieCountry::Canterlot:
         return "Canterlot";
-      case mm::MovieCountry::Gallifrey:
+      case MovieCountry::Gallifrey:
         return "Gallifrey";
-      case mm::MovieCountry::Hyrule:
+      case MovieCountry::Hyrule:
         return "Hyrule";
-      case mm::MovieCountry::Innistrad:
+      case MovieCountry::Innistrad:
         return "Innistrad";
-      case mm::MovieCountry::Morrowind:
+      case MovieCountry::Morrowind:
         return "Morrowind";
-      case mm::MovieCountry::Temeria:
+      case MovieCountry::Temeria:
         return "Temeria";
-      case mm::MovieCountry::Valinor:
+      case MovieCountry::Valinor:
         return "Valinor";
-      case mm::MovieCountry::Wonderland:
+      case MovieCountry::Wonderland:
         return "Wonderland";
     }
 
@@ -206,7 +206,75 @@ namespace mm {
       case MovieConstraint::NoteLessThan4:
         return "The movie has 4 stars or less";
       // country
+      case MovieConstraint::CountryIsCanterlot:
+        return "The movie comes from Canterlot";
+      case MovieConstraint::CountryIsGallifrey:
+        return "The movie comes from Gallifrey";
+      case MovieConstraint::CountryIsHyrule:
+        return "The movie comes from Hyrule";
+      case MovieConstraint::CountryIsInnistrad:
+        return "The movie comes from Innistrad";
+      case MovieConstraint::CountryIsMorrowind:
+        return "The movie comes from Morrowind";
+      case MovieConstraint::CountryIsTemeria:
+        return "The movie comes from Temeria";
+      case MovieConstraint::CountryIsValinor:
+        return "The movie comes from Valinor";
+      case MovieConstraint::CountryIsWonderland:
+        return "The movie comes from Wonderland";
+      case MovieConstraint::CountryIsNotCanterlot:
+        return "The movie does not come from Canterlot";
+      case MovieConstraint::CountryIsNotGallifrey:
+        return "The movie does not come from Gallifrey";
+      case MovieConstraint::CountryIsNotHyrule:
+        return "The movie does not come from Hyrule";
+      case MovieConstraint::CountryIsNotInnistrad:
+        return "The movie does not come from Innistrad";
+      case MovieConstraint::CountryIsNotMorrowind:
+        return "The movie does not come from Morrowind";
+      case MovieConstraint::CountryIsNotTemeria:
+        return "The movie does not come from Temeria";
+      case MovieConstraint::CountryIsNotValinor:
+        return "The movie does not come from Valinor";
+      case MovieConstraint::CountryIsNotWonderland:
+        return "The movie does not come from Wonderland";
       // genre
+      case MovieConstraint::GenreIsAction:
+        return "The movie is an action movie";
+      case MovieConstraint::GenreIsComedy:
+        return "The movie is a comedy";
+      case MovieConstraint::GenreIsDrama:
+        return "The movie is a drama";
+      case MovieConstraint::GenreIsFantasy:
+        return "The movie is a fantasy movie";
+      case MovieConstraint::GenreIsHorror:
+        return "The movie is a horror movie";
+      case MovieConstraint::GenreIsMusical:
+        return "The movie is a musical movie";
+      case MovieConstraint::GenreIsRomance:
+        return "The movie is a romance";
+      case MovieConstraint::GenreIsScienceFiction:
+        return "The movie is a sci-fi movie";
+      case MovieConstraint::GenreIsWestern:
+        return "The movie is a western";
+      case MovieConstraint::GenreIsNotAction:
+        return "The movie is not an action movie";
+      case MovieConstraint::GenreIsNotComedy:
+        return "The movie is not a comedy";
+      case MovieConstraint::GenreIsNotDrama:
+        return "The movie is not a drama";
+      case MovieConstraint::GenreIsNotFantasy:
+        return "The movie is not a fantasy movie";
+      case MovieConstraint::GenreIsNotHorror:
+        return "The movie is not a horror movie";
+      case MovieConstraint::GenreIsNotMusical:
+        return "The movie is not a musical movie";
+      case MovieConstraint::GenreIsNotRomance:
+        return "The movie is not a romance";
+      case MovieConstraint::GenreIsNotScienceFiction:
+        return "The movie is not a sci-fi movie";
+      case MovieConstraint::GenreIsNotWestern:
+        return "The movie is not a western";
       // technique
       case MovieConstraint::TechniqueIsAnimation:
         return "The movie is in animation";
@@ -221,6 +289,18 @@ namespace mm {
       case MovieConstraint::TechniqueIsNotStopMotion:
         return "The movie is not in stop motion";
       // rating
+      case MovieConstraint::RatingLessThan12:
+        return "The movie is authorized for 0-11";
+      case MovieConstraint::RatingLessThan16:
+        return "The movie is authorized for 0-15";
+      case MovieConstraint::RatingLessThan18:
+        return "The movie is authorized for 0-17";
+      case MovieConstraint::RatingMoreThan12:
+        return "The movie is only authorized for 12+";
+      case MovieConstraint::RatingMoreThan16:
+        return "The movie is only authorized for 16+";
+      case MovieConstraint::RatingMoreThan18:
+        return "The movie is only authorized for 18+";
     }
 
     assert(false);
@@ -294,7 +374,75 @@ namespace mm {
       case MovieConstraint::NoteLessThan4:
         return movie.note <= 4;
       // country
+      case MovieConstraint::CountryIsCanterlot:
+        return movie.country == MovieCountry::Canterlot;
+      case MovieConstraint::CountryIsGallifrey:
+        return movie.country == MovieCountry::Gallifrey;
+      case MovieConstraint::CountryIsHyrule:
+        return movie.country == MovieCountry::Hyrule;
+      case MovieConstraint::CountryIsInnistrad:
+        return movie.country == MovieCountry::Innistrad;
+      case MovieConstraint::CountryIsMorrowind:
+        return movie.country == MovieCountry::Morrowind;
+      case MovieConstraint::CountryIsTemeria:
+        return movie.country == MovieCountry::Temeria;
+      case MovieConstraint::CountryIsValinor:
+        return movie.country == MovieCountry::Valinor;
+      case MovieConstraint::CountryIsWonderland:
+        return movie.country == MovieCountry::Wonderland;
+      case MovieConstraint::CountryIsNotCanterlot:
+        return movie.country != MovieCountry::Canterlot;
+      case MovieConstraint::CountryIsNotGallifrey:
+        return movie.country != MovieCountry::Gallifrey;
+      case MovieConstraint::CountryIsNotHyrule:
+        return movie.country != MovieCountry::Hyrule;
+      case MovieConstraint::CountryIsNotInnistrad:
+        return movie.country != MovieCountry::Innistrad;
+      case MovieConstraint::CountryIsNotMorrowind:
+        return movie.country != MovieCountry::Morrowind;
+      case MovieConstraint::CountryIsNotTemeria:
+        return movie.country != MovieCountry::Temeria;
+      case MovieConstraint::CountryIsNotValinor:
+        return movie.country != MovieCountry::Valinor;
+      case MovieConstraint::CountryIsNotWonderland:
+        return movie.country != MovieCountry::Wonderland;
       // genre
+      case MovieConstraint::GenreIsAction:
+        return movie.genre == MovieGenre::Action;
+      case MovieConstraint::GenreIsComedy:
+        return movie.genre == MovieGenre::Comedy;
+      case MovieConstraint::GenreIsDrama:
+        return movie.genre == MovieGenre::Drama;
+      case MovieConstraint::GenreIsFantasy:
+        return movie.genre == MovieGenre::Fantasy;
+      case MovieConstraint::GenreIsHorror:
+        return movie.genre == MovieGenre::Horror;
+      case MovieConstraint::GenreIsMusical:
+        return movie.genre == MovieGenre::Musical;
+      case MovieConstraint::GenreIsRomance:
+        return movie.genre == MovieGenre::Romance;
+      case MovieConstraint::GenreIsScienceFiction:
+        return movie.genre == MovieGenre::ScienceFiction;
+      case MovieConstraint::GenreIsWestern:
+        return movie.genre == MovieGenre::Western;
+      case MovieConstraint::GenreIsNotAction:
+        return movie.genre != MovieGenre::Action;
+      case MovieConstraint::GenreIsNotComedy:
+        return movie.genre != MovieGenre::Comedy;
+      case MovieConstraint::GenreIsNotDrama:
+        return movie.genre != MovieGenre::Drama;
+      case MovieConstraint::GenreIsNotFantasy:
+        return movie.genre != MovieGenre::Fantasy;
+      case MovieConstraint::GenreIsNotHorror:
+        return movie.genre != MovieGenre::Horror;
+      case MovieConstraint::GenreIsNotMusical:
+        return movie.genre != MovieGenre::Musical;
+      case MovieConstraint::GenreIsNotRomance:
+        return movie.genre != MovieGenre::Romance;
+      case MovieConstraint::GenreIsNotScienceFiction:
+        return movie.genre != MovieGenre::ScienceFiction;
+      case MovieConstraint::GenreIsNotWestern:
+        return movie.genre != MovieGenre::Western;
       // technique
       case MovieConstraint::TechniqueIsAnimation:
         return movie.technique == MovieTechnique::Animation;
@@ -308,6 +456,19 @@ namespace mm {
         return movie.technique != MovieTechnique::LiveAction;
       case MovieConstraint::TechniqueIsNotStopMotion:
         return movie.technique != MovieTechnique::StopMotion;
+      // rating
+      case MovieConstraint::RatingLessThan12:
+        return movie.rating < MovieRating::Above12;
+      case MovieConstraint::RatingLessThan16:
+        return movie.rating < MovieRating::Above16;
+      case MovieConstraint::RatingLessThan18:
+        return movie.rating < MovieRating::Above18;
+      case MovieConstraint::RatingMoreThan12:
+        return movie.rating >= MovieRating::Above12;
+      case MovieConstraint::RatingMoreThan16:
+        return movie.rating >= MovieRating::Above16;
+      case MovieConstraint::RatingMoreThan18:
+        return movie.rating >= MovieRating::Above18;
     }
 
     return true;
@@ -320,65 +481,105 @@ namespace mm {
   }
 
   MovieLevel computeLevel(const std::vector<MovieData>& database, std::size_t constraintCount, std::size_t movieCount, gf::Random& random) {
-    const std::vector<mm::MovieConstraint> constraintsByType[] = {
+    const std::vector<MovieConstraint> constraintsByType[] = {
       {
         // title
-        mm::MovieConstraint::TitleWithOddWords,
-        mm::MovieConstraint::TitleWithEvenWords,
-        mm::MovieConstraint::TitleWithLessThan16Letters,
-        mm::MovieConstraint::TitleWithMoreThan16Letters,
+        MovieConstraint::TitleWithOddWords,
+        MovieConstraint::TitleWithEvenWords,
+        MovieConstraint::TitleWithLessThan16Letters,
+        MovieConstraint::TitleWithMoreThan16Letters,
       },
       {
         // year
-        mm::MovieConstraint::YearAfter1980,
-        mm::MovieConstraint::YearAfter1990,
-        mm::MovieConstraint::YearAfter2000,
-        mm::MovieConstraint::YearAfter2010,
-        mm::MovieConstraint::YearBefore1990,
-        mm::MovieConstraint::YearBefore2000,
-        mm::MovieConstraint::YearBefore2010,
-        mm::MovieConstraint::YearBefore2020,
-        mm::MovieConstraint::YearIsLeap,
-        mm::MovieConstraint::YearIsNotLeap,
-        mm::MovieConstraint::YearIsOdd,
-        mm::MovieConstraint::YearIsEven,
+        MovieConstraint::YearAfter1980,
+        MovieConstraint::YearAfter1990,
+        MovieConstraint::YearAfter2000,
+        MovieConstraint::YearAfter2010,
+        MovieConstraint::YearBefore1990,
+        MovieConstraint::YearBefore2000,
+        MovieConstraint::YearBefore2010,
+        MovieConstraint::YearBefore2020,
+        MovieConstraint::YearIsLeap,
+        MovieConstraint::YearIsNotLeap,
+        MovieConstraint::YearIsOdd,
+        MovieConstraint::YearIsEven,
       },
       {
         // duration
-        mm::MovieConstraint::DurationMoreThan90,
-        mm::MovieConstraint::DurationMoreThan120,
-        mm::MovieConstraint::DurationMoreThan150,
-        mm::MovieConstraint::DurationLessThan120,
-        mm::MovieConstraint::DurationLessThan150,
-        mm::MovieConstraint::DurationLessThan180,
+        MovieConstraint::DurationMoreThan90,
+        MovieConstraint::DurationMoreThan120,
+        MovieConstraint::DurationMoreThan150,
+        MovieConstraint::DurationLessThan120,
+        MovieConstraint::DurationLessThan150,
+        MovieConstraint::DurationLessThan180,
       },
       {
         // note
-        mm::MovieConstraint::NoteMoreThan2,
-        mm::MovieConstraint::NoteMoreThan3,
-        mm::MovieConstraint::NoteMoreThan4,
-        mm::MovieConstraint::NoteLessThan2,
-        mm::MovieConstraint::NoteLessThan3,
-        mm::MovieConstraint::NoteLessThan4,
+        MovieConstraint::NoteMoreThan2,
+        MovieConstraint::NoteMoreThan3,
+        MovieConstraint::NoteMoreThan4,
+        MovieConstraint::NoteLessThan2,
+        MovieConstraint::NoteLessThan3,
+        MovieConstraint::NoteLessThan4,
       },
-      // {
+      {
         // country
-      // },
-      // {
+        MovieConstraint::CountryIsCanterlot,
+        MovieConstraint::CountryIsGallifrey,
+        MovieConstraint::CountryIsHyrule,
+        MovieConstraint::CountryIsInnistrad,
+        MovieConstraint::CountryIsMorrowind,
+        MovieConstraint::CountryIsTemeria,
+        MovieConstraint::CountryIsValinor,
+        MovieConstraint::CountryIsWonderland,
+        MovieConstraint::CountryIsNotCanterlot,
+        MovieConstraint::CountryIsNotGallifrey,
+        MovieConstraint::CountryIsNotHyrule,
+        MovieConstraint::CountryIsNotInnistrad,
+        MovieConstraint::CountryIsNotMorrowind,
+        MovieConstraint::CountryIsNotTemeria,
+        MovieConstraint::CountryIsNotValinor,
+        MovieConstraint::CountryIsNotWonderland,
+      },
+      {
         // genre
-      // },
+        MovieConstraint::GenreIsAction,
+        MovieConstraint::GenreIsComedy,
+        MovieConstraint::GenreIsDrama,
+        MovieConstraint::GenreIsFantasy,
+        MovieConstraint::GenreIsHorror,
+        MovieConstraint::GenreIsMusical,
+        MovieConstraint::GenreIsRomance,
+        MovieConstraint::GenreIsScienceFiction,
+        MovieConstraint::GenreIsWestern,
+        MovieConstraint::GenreIsNotAction,
+        MovieConstraint::GenreIsNotComedy,
+        MovieConstraint::GenreIsNotDrama,
+        MovieConstraint::GenreIsNotFantasy,
+        MovieConstraint::GenreIsNotHorror,
+        MovieConstraint::GenreIsNotMusical,
+        MovieConstraint::GenreIsNotRomance,
+        MovieConstraint::GenreIsNotScienceFiction,
+        MovieConstraint::GenreIsNotWestern,
+      },
       {
         // technique
-        mm::MovieConstraint::TechniqueIsAnimation,
-        mm::MovieConstraint::TechniqueIsLiveAction,
-        mm::MovieConstraint::TechniqueIsStopMotion,
-        mm::MovieConstraint::TechniqueIsNotAnimation,
-        mm::MovieConstraint::TechniqueIsNotLiveAction,
-        mm::MovieConstraint::TechniqueIsNotStopMotion,
+        MovieConstraint::TechniqueIsAnimation,
+        MovieConstraint::TechniqueIsLiveAction,
+        MovieConstraint::TechniqueIsStopMotion,
+        MovieConstraint::TechniqueIsNotAnimation,
+        MovieConstraint::TechniqueIsNotLiveAction,
+        MovieConstraint::TechniqueIsNotStopMotion,
       },
-      // {
+      {
         // rating
-      // },
+        MovieConstraint::RatingLessThan12,
+        MovieConstraint::RatingLessThan16,
+        MovieConstraint::RatingLessThan18,
+        MovieConstraint::RatingMoreThan12,
+        MovieConstraint::RatingMoreThan16,
+        MovieConstraint::RatingMoreThan18,
+      },
     };
 
     assert(constraintCount <= std::size(constraintsByType));
