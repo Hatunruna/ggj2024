@@ -26,7 +26,7 @@ namespace mm {
   , m_movieInfoBackgroundTexture(game.resources.getTexture("images/movie-info.png"))
   , m_movieInfoLightTexture(game.resources.getTexture("images/movie-info-light.png"))
   , m_movieRenderTexture(RenderTextureSize)
-  , m_arrivingTween(MovieAngleInitial, MovieAngleTarget, m_gameData.movieAngle, gf::milliseconds(500), gf::Ease::backOut)
+  , m_arrivingTween(MovieAngleInitial, MovieAngleTarget, m_gameData.movieAngle, gf::milliseconds(500), gf::Ease::backInOut)
   {
     m_movieRenderTexture.setSmooth();
     m_renderView.setInitialFramebufferSize(RenderTextureSize);
