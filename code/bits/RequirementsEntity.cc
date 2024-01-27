@@ -23,7 +23,13 @@ namespace mm {
   void RequirementsEntity::render(gf::RenderTarget& target, const gf::RenderStates& states) {
     gf::Coordinates coordinates(target);
 
-    gf::Text text("cdcdsdc cdsd sd qqs\ndsq d sqdqsdqs  dsqds\ndsqdqsdsq \ndsqdsqdqsqsddd  dsqds\n", m_font, coordinates.getRelativeCharacterSize(0.08));
+    std::string constraintText;
+
+    for (auto constraint : m_gameState.movieLevel.constraints) {
+      constraintText += toString(constraint) + '\n';
+    }
+
+    gf::Text text(constraintText, m_font, coordinates.getRelativeCharacterSize(0.08));
     text.setColor(gf::Color::White);
     text.setParagraphWidth(coordinates.getRelativeSize({ 0.7f, 0.0f }).width);
     text.setAlignment(gf::Alignment::Center);

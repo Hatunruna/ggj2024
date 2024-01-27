@@ -28,9 +28,14 @@ namespace mm {
     m_broadcastButton.setPadding(20.0f);
     m_broadcastButton.setCallback([this](){
       if (m_game.state.movieState == MovieState::WaitingMovie) {
+        if (isMovieAcceptable(m_game.state.movieLevel.movies[m_game.state.currentMovie], m_game.state.movieLevel.constraints)) {
+          m_game.state.monsterState = MonsterState::Happy;
+        } else {
+          m_game.state.monsterState = MonsterState::Angry;
+        }
+
         ++m_game.state.currentMovie;
         m_game.state.movieState = MovieState::DepartureMovie;
-        m_game.state.monsterState = MonsterState::Happy;
       }
     });
     m_widgets.addWidget(m_broadcastButton);
@@ -44,9 +49,14 @@ namespace mm {
     m_trashButton.setPadding(20.0f);
     m_trashButton.setCallback([this](){
       if (m_game.state.movieState == MovieState::WaitingMovie) {
+        if (isMovieAcceptable(m_game.state.movieLevel.movies[m_game.state.currentMovie], m_game.state.movieLevel.constraints)) {
+          m_game.state.monsterState = MonsterState::Angry;
+        } else {
+          m_game.state.monsterState = MonsterState::Happy;
+        }
+
         ++m_game.state.currentMovie;
         m_game.state.movieState = MovieState::DepartureMovie;
-        m_game.state.monsterState = MonsterState::Angry;
       }
     });
     m_widgets.addWidget(m_trashButton);
