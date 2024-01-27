@@ -3,8 +3,8 @@
 
 #include <gf/Scene.h>
 #include <gf/WidgetContainer.h>
-#include <gf/Widgets.h>
 
+#include "IconWidget.h"
 #include "RequirementsEntity.h"
 
 namespace mm {
@@ -30,7 +30,7 @@ namespace mm {
     RequirementsEntity m_requirementsEntity;
 
     // Widgets
-    gf::TextButtonWidget m_okButton;
+    IconWidget m_okButton;
     gf::WidgetContainer m_widgets;
   };
 

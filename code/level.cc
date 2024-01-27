@@ -17,7 +17,7 @@ int main() {
 
   auto db = mm::loadDatabase(resources, random);
 
-  auto level = mm::computeLevel(db, 1, 10, random);
+  auto level = mm::computeLevel(db, 4, 30, random);
 
   std::cout << "Constraints:\n";
 

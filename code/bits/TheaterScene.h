@@ -3,8 +3,8 @@
 
 #include <gf/Scene.h>
 #include <gf/WidgetContainer.h>
-#include <gf/Widgets.h>
 
+#include "IconWidget.h"
 #include "MovieManager.h"
 #include "TheaterBackgroundEntity.h"
 
@@ -25,9 +25,9 @@ namespace mm {
     MovieManager m_movieManager;
 
     // Widgets
-    gf::TextButtonWidget m_broadcastButton;
-    gf::TextButtonWidget m_trashButton;
-    gf::TextButtonWidget m_recallButton;
+    IconWidget m_broadcastButton;
+    IconWidget m_trashButton;
+    IconWidget m_recallButton;
     gf::WidgetContainer m_widgets;
   };
 

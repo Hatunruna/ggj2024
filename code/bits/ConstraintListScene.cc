@@ -10,20 +10,16 @@ namespace mm {
   , m_game(game)
   , m_type(type)
   , m_requirementsEntity(game)
-  , m_okButton("Ok!", game.resources.getFont("fonts/GoudyBookletter1911.otf"), 128)
+  , m_okButton(game.resources.getTexture("icons/video-solid.png"), gf::Color::Azure, gf::Color::lighter(gf::Color::Azure), gf::Color::Azure)
   {
     setClearColor(gf::Color::Black);
 
     addHudEntity(m_requirementsEntity);
 
     // Widgets
-    m_okButton.setDefaultBackgroundColor(gf::Color::Azure);
-    m_okButton.setDefaultTextColor(gf::Color::Black);
-    m_okButton.setPosition(WorldSize * gf::vec(0.50f, 0.95f));
+    m_okButton.setPosition(WorldSize * gf::vec(0.50f, 0.90f));
     m_okButton.setAnchor(gf::Anchor::BottomCenter);
-    m_okButton.setScale(2.0f);
-    m_okButton.setRadius(15.0f);
-    m_okButton.setPadding(20.0f);
+    m_okButton.setScale(0.5f);
     m_okButton.setCallback([this](){
       if (m_type == ConstraintListType::First) {
         m_game.replaceScene(m_game.theater);
