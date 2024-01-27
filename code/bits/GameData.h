@@ -14,9 +14,17 @@ namespace mm {
     DepartureMovie,
   };
 
+  enum class MonsterState {
+    Neutral,
+    Angry,
+    Happy,
+  };
+
   struct GameData {
     MovieState movieState = MovieState::NoMovie;
     float movieAngle = 0.0f;
+
+    MonsterState monsterState = MonsterState::Neutral;
   };
 
 }

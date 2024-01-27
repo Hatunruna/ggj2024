@@ -7,7 +7,7 @@ namespace mm {
   TheaterScene::TheaterScene(GameHub& game)
   : gf::Scene(game.getRenderer().getSize())
   , m_game(game)
-  , m_background(game.resources)
+  , m_background(game)
   , m_movieManager(game)
   {
     setClearColor(gf::Color::Black);

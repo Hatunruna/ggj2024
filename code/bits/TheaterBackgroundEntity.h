@@ -1,20 +1,35 @@
 #ifndef MM_THEATER_BACKGROUND_ENTITY_H
 #define MM_THEATER_BACKGROUND_ENTITY_H
 
+#include <gf/Animation.h>
 #include <gf/Entity.h>
 #include <gf/ResourceManager.h>
 #include <gf/Texture.h>
 
+#include "GameData.h"
+
 namespace mm {
+
+  struct GameHub;
 
   class TheaterBackgroundEntity: public gf::Entity {
   public:
-    TheaterBackgroundEntity(gf::ResourceManager& resources);
+    TheaterBackgroundEntity(GameHub& game);
 
+    virtual void update(gf::Time time) override;
     virtual void render(gf::RenderTarget& target, const gf::RenderStates& states) override;
 
   private:
+    GameData& m_gameData;
+
     gf::Texture& m_theaterBackgroundTexture;
+
+    std::vector<gf::Animation> m_angryAnimations;
+    std::vector<gf::Animation> m_happyAnimations;
+    gf::Texture& m_monsterPause;
+    int m_currentAnimation = 0;
+    gf::Time m_elapsedTime;
+
     gf::Texture& m_officeBackgroundTexture;
   };
 
