@@ -63,6 +63,8 @@ namespace mm {
     bool generated_by_ai = false;
   };
 
+  std::string getTexturePath(const std::string& title);
+
   std::vector<MovieData> loadDatabase(gf::ResourceManager& resources, gf::Random& random);
 
   std::size_t numberOfLetters(const std::string& text);

@@ -114,6 +114,20 @@ namespace mm {
     j.at("rating").get_to(data.rating);
   }
 
+  std::string getTexturePath(const std::string& title) {
+    std::string texturePath = "images/posters/";
+
+    std::string titleEscaped = title;
+    for (std::size_t i = 0; i < title.size(); ++i) {
+      if (titleEscaped[i] == ' ') {
+        titleEscaped.replace(i, 1, "_");
+      }
+    }
+    texturePath += titleEscaped + ".png";
+
+    return texturePath;
+  }
+
   std::vector<MovieData> loadDatabase(gf::ResourceManager& resources, gf::Random& random) {
     std::vector<MovieData> db;
 

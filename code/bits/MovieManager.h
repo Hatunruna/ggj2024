@@ -4,6 +4,7 @@
 #include <gf/Entity.h>
 #include <gf/Font.h>
 #include <gf/Ref.h>
+#include <gf/ResourceManager.h>
 #include <gf/RenderTexture.h>
 #include <gf/Tween.h>
 #include <gf/Vector.h>
@@ -26,6 +27,7 @@ namespace mm {
     void generateMovieTexture(const MovieData& movie);
 
   private:
+    gf::ResourceManager& m_resources;
     GameState& m_gameState;
 
     gf::Font& m_font;

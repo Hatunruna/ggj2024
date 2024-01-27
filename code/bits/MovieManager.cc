@@ -21,7 +21,8 @@ namespace {
 namespace mm {
 
   MovieManager::MovieManager(GameHub& game)
-  : m_gameState(game.state)
+  : m_resources(game.resources)
+  , m_gameState(game.state)
   , m_font(game.resources.getFont("fonts/GoudyBookletter1911.otf"))
   , m_movieInfoBackgroundTexture(game.resources.getTexture("images/movie-info.png"))
   , m_movieInfoLightTexture(game.resources.getTexture("images/movie-info-light.png"))
@@ -117,12 +118,18 @@ namespace mm {
     title.setAnchor(gf::Anchor::CenterLeft);
     title.draw(m_movieRenderTexture, gf::RenderStates());
 
+    gf::Sprite poster;
+    poster.setTexture(m_resources.getTexture(getTexturePath(movie.title)));
+    poster.setPosition(gf::vec(195.0f, 325.0f));
+    poster.setScale(0.5f);
+    poster.draw(m_movieRenderTexture, gf::RenderStates());
+
     gf::Text info;
     info.setFont(m_font);
     info.setCharacterSize(35);
     info.setColor(gf::Color::Black);
     std::string infoText;
-    infoText += "Duration: " + std::to_string(movie.duration) + "min\n";
+    infoText += "Duration: " + std::to_string(movie.duration) + " min\n";
     infoText += "Genre: " + toString(movie.genre) + "\n";
     infoText += "Technique: " + toString(movie.technique) + "\n";
     infoText += "Country: " + toString(movie.country) + "\n";
