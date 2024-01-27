@@ -5,9 +5,10 @@
 
 namespace mm {
 
-  ConstraintListScene::ConstraintListScene(GameHub& game)
+  ConstraintListScene::ConstraintListScene(GameHub& game, ConstraintListType type)
   : gf::Scene(game.getRenderer().getSize())
   , m_game(game)
+  , m_type(type)
   , m_requirementsEntity(game)
   , m_okButton("Ok!", game.resources.getFont("fonts/GoudyBookletter1911.otf"), 128)
   {
@@ -24,7 +25,11 @@ namespace mm {
     m_okButton.setRadius(15.0f);
     m_okButton.setPadding(20.0f);
     m_okButton.setCallback([this](){
-      m_game.replaceScene(m_game.theater);
+      if (m_type == ConstraintListType::First) {
+        m_game.replaceScene(m_game.theater);
+      } else {
+        m_game.popScene();
+      }
     });
     m_widgets.addWidget(m_okButton);
 

@@ -7,8 +7,9 @@ namespace mm {
   GameHub::GameHub()
   : GameManager("Game", { GAME_DATADIR })
   , start(*this)
-  , list(*this)
+  , listFirst(*this, ConstraintListType::First)
   , theater(*this)
+  , listRecall(*this, ConstraintListType::Recall)
   {
     pushScene(start);
   }

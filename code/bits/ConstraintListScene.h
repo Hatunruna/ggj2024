@@ -11,15 +11,21 @@ namespace mm {
 
   struct GameHub;
 
+  enum class ConstraintListType {
+    First,
+    Recall,
+  };
+
   class ConstraintListScene: public gf::Scene {
   public:
-    ConstraintListScene(GameHub& game);
+    ConstraintListScene(GameHub& game, ConstraintListType type);
 
     void doProcessEvent(gf::Event& event) override;
     void doRender(gf::RenderTarget& target, const gf::RenderStates &states) override;
 
   private:
     GameHub& m_game;
+    ConstraintListType m_type;
 
     RequirementsEntity m_requirementsEntity;
 

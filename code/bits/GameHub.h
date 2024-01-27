@@ -18,8 +18,9 @@ namespace mm {
     GameState state;
 
     StartScene start;
-    ConstraintListScene list;
+    ConstraintListScene listFirst;
     TheaterScene theater;
+    ConstraintListScene listRecall;
   };
 
 

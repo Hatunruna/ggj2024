@@ -12,6 +12,7 @@ namespace mm {
   , m_movieManager(game)
   , m_broadcastButton("Broadcast", game.resources.getFont("fonts/GoudyBookletter1911.otf"), 128)
   , m_trashButton("Trash", game.resources.getFont("fonts/GoudyBookletter1911.otf"), 128)
+  , m_recallButton("??", game.resources.getFont("fonts/GoudyBookletter1911.otf"), 128)
   {
     setClearColor(gf::Color::Black);
 
@@ -61,11 +62,27 @@ namespace mm {
     });
     m_widgets.addWidget(m_trashButton);
 
+    m_recallButton.setDefaultBackgroundColor(gf::Color::Blue);
+    m_recallButton.setDefaultTextColor(gf::Color::Black);
+    m_recallButton.setPosition(WorldSize * gf::vec(0.1f, 0.1f));
+    m_recallButton.setAnchor(gf::Anchor::TopLeft);
+    m_recallButton.setScale(2.0f);
+    m_recallButton.setRadius(15.0f);
+    m_recallButton.setPadding(20.0f);
+    m_recallButton.setCallback([this](){
+      m_game.pushScene(m_game.listRecall);
+    });
+    m_widgets.addWidget(m_recallButton);
+
     setWorldViewSize(WorldSize);
     setWorldViewCenter(WorldSize * 0.5f);
   }
 
   void TheaterScene::doProcessEvent(gf::Event& event) {
+    if (!isActive()) {
+      return;
+    }
+
     switch (event.type) {
     case gf::EventType::MouseMoved:
       m_widgets.pointTo(m_game.getRenderer().mapPixelToCoords(event.mouseCursor.coords, getWorldView()));
@@ -82,6 +99,10 @@ namespace mm {
   }
 
   void TheaterScene::doRender(gf::RenderTarget& target, const gf::RenderStates &states) {
+    if (!isActive()) {
+      return;
+    }
+
     renderWorldEntities(target, states);
     m_widgets.render(target, states);
 

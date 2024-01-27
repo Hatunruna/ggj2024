@@ -16,8 +16,8 @@ namespace mm {
   public:
     TheaterScene(GameHub& game);
 
-    virtual void doProcessEvent(gf::Event& event) override;
-    virtual void doRender(gf::RenderTarget& target, const gf::RenderStates &states) override;
+    void doProcessEvent(gf::Event& event) override;
+    void doRender(gf::RenderTarget& target, const gf::RenderStates &states) override;
 
   private:
     GameHub& m_game;
@@ -27,6 +27,7 @@ namespace mm {
     // Widgets
     gf::TextButtonWidget m_broadcastButton;
     gf::TextButtonWidget m_trashButton;
+    gf::TextButtonWidget m_recallButton;
     gf::WidgetContainer m_widgets;
   };
 
