@@ -32,12 +32,36 @@ namespace mm {
       m_angryAnimations.emplace_back(std::move(animation));
     }
 
+    {
+      gf::Animation animation;
+      animation.addTileset(game.resources.getTexture("images/monster-angry-b-0.png"), gf::vec(4, 1), frequency, 4);
+      animation.addTileset(game.resources.getTexture("images/monster-angry-b-1.png"), gf::vec(4, 1), frequency, 4);
+      animation.addTileset(game.resources.getTexture("images/monster-angry-b-2.png"), gf::vec(4, 1), frequency, 4);
+      animation.addTileset(game.resources.getTexture("images/monster-angry-b-3.png"), gf::vec(4, 1), frequency, 4);
+      animation.addTileset(game.resources.getTexture("images/monster-angry-b-4.png"), gf::vec(4, 1), frequency, 4);
+      animation.addTileset(game.resources.getTexture("images/monster-angry-b-5.png"), gf::vec(4, 1), frequency, 1);
+      animation.setLoop(false);
+
+      m_angryAnimations.emplace_back(std::move(animation));
+    }
+
     // Load happy animations
     {
       gf::Animation animation;
       animation.addTileset(game.resources.getTexture("images/monster-happy-a-0.png"), gf::vec(4, 1), frequency, 4);
       animation.addTileset(game.resources.getTexture("images/monster-happy-a-1.png"), gf::vec(4, 1), frequency, 4);
       animation.addTileset(game.resources.getTexture("images/monster-happy-a-2.png"), gf::vec(4, 1), frequency, 4);
+      animation.setLoop(false);
+
+      m_happyAnimations.emplace_back(std::move(animation));
+    }
+
+    {
+      gf::Animation animation;
+      animation.addTileset(game.resources.getTexture("images/monster-happy-b-0.png"), gf::vec(4, 1), frequency, 4);
+      animation.addTileset(game.resources.getTexture("images/monster-happy-b-1.png"), gf::vec(4, 1), frequency, 4);
+      animation.addTileset(game.resources.getTexture("images/monster-happy-b-2.png"), gf::vec(4, 1), frequency, 4);
+      animation.addTileset(game.resources.getTexture("images/monster-happy-b-3.png"), gf::vec(4, 1), frequency, 2);
       animation.setLoop(false);
 
       m_happyAnimations.emplace_back(std::move(animation));
@@ -52,8 +76,19 @@ namespace mm {
 
     case MonsterState::Angry:
     {
-      assert(m_currentAnimation < static_cast<int>(m_angryAnimations.size()));
-      gf::Animation& animation = m_angryAnimations[m_currentAnimation];
+      gf::Animation& animation = m_angryAnimations[0];
+
+      animation.update(time);
+      if (animation.isFinished()) {
+        animation.reset();
+        m_gameState.monsterState = MonsterState::Neutral;
+      }
+      break;
+    }
+
+    case MonsterState::SoftAngry:
+    {
+      gf::Animation& animation = m_angryAnimations[1];
 
       animation.update(time);
       if (animation.isFinished()) {
@@ -65,8 +100,19 @@ namespace mm {
 
     case MonsterState::Happy:
     {
-      assert(m_currentAnimation < static_cast<int>(m_happyAnimations.size()));
-      gf::Animation& animation = m_happyAnimations[m_currentAnimation];
+      gf::Animation& animation = m_happyAnimations[0];
+
+      animation.update(time);
+      if (animation.isFinished()) {
+        animation.reset();
+        m_gameState.monsterState = MonsterState::Neutral;
+      }
+      break;
+    }
+
+    case MonsterState::SoftHappy:
+    {
+      gf::Animation& animation = m_happyAnimations[1];
 
       animation.update(time);
       if (animation.isFinished()) {
@@ -96,10 +142,18 @@ namespace mm {
 
     case MonsterState::Angry:
     {
-      assert(m_currentAnimation < static_cast<int>(m_angryAnimations.size()));
-
       gf::AnimatedSprite monster;
-      monster.setAnimation(m_angryAnimations[m_currentAnimation]);
+      monster.setAnimation(m_angryAnimations[0]);
+      monster.setPosition(WorldSize);
+      monster.setAnchor(gf::Anchor::BottomRight);
+      monster.draw(target, states);
+      break;
+    }
+
+    case MonsterState::SoftAngry:
+    {
+      gf::AnimatedSprite monster;
+      monster.setAnimation(m_angryAnimations[1]);
       monster.setPosition(WorldSize);
       monster.setAnchor(gf::Anchor::BottomRight);
       monster.draw(target, states);
@@ -108,10 +162,18 @@ namespace mm {
 
     case MonsterState::Happy:
     {
-      assert(m_currentAnimation < static_cast<int>(m_happyAnimations.size()));
-
       gf::AnimatedSprite monster;
-      monster.setAnimation(m_happyAnimations[m_currentAnimation]);
+      monster.setAnimation(m_happyAnimations[0]);
+      monster.setPosition(WorldSize);
+      monster.setAnchor(gf::Anchor::BottomRight);
+      monster.draw(target, states);
+      break;
+    }
+
+    case MonsterState::SoftHappy:
+    {
+      gf::AnimatedSprite monster;
+      monster.setAnimation(m_happyAnimations[1]);
       monster.setPosition(WorldSize);
       monster.setAnchor(gf::Anchor::BottomRight);
       monster.draw(target, states);

@@ -26,7 +26,6 @@ namespace mm {
     std::vector<gf::Animation> m_angryAnimations;
     std::vector<gf::Animation> m_happyAnimations;
     gf::Texture& m_monsterPause;
-    int m_currentAnimation = 0;
 
     gf::Texture& m_officeBackgroundTexture;
   };

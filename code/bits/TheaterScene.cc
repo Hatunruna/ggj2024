@@ -45,10 +45,10 @@ namespace mm {
     m_trashButton.setCallback([this](){
       if (m_game.state.movieState == MovieState::WaitingMovie) {
         if (isMovieAcceptable(m_game.state.movieLevel.movies[m_game.state.currentMovie], m_game.state.movieLevel.constraints)) {
-          m_game.state.monsterState = MonsterState::Angry;
+          m_game.state.monsterState = MonsterState::SoftAngry;
           ++m_game.state.incorrectChoices;
         } else {
-          m_game.state.monsterState = MonsterState::Happy;
+          m_game.state.monsterState = MonsterState::SoftHappy;
           ++m_game.state.correctChoices;
         }
 

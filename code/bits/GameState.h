@@ -19,7 +19,9 @@ namespace mm {
   enum class MonsterState : std::uint8_t {
     Neutral,
     Angry,
+    SoftAngry,
     Happy,
+    SoftHappy,
   };
 
   enum class MonsterHappiness : std::uint8_t {
