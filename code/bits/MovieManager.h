@@ -13,6 +13,7 @@ namespace mm {
 
   struct GameHub;
   struct GameState;
+  struct MovieData;
 
   class MovieManager: public gf::Entity {
   public:
@@ -22,7 +23,7 @@ namespace mm {
     virtual void render(gf::RenderTarget& target, const gf::RenderStates& states) override;
 
   private:
-    void generateMovieTexture();
+    void generateMovieTexture(const MovieData& movie);
 
   private:
     GameState& m_gameState;

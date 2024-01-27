@@ -5,6 +5,8 @@
 
 #include <gf/Path.h>
 
+#include "MovieData.h"
+
 namespace mm {
 
   enum class MovieState : std::uint8_t {
@@ -25,6 +27,9 @@ namespace mm {
 
     MovieState movieState = MovieState::NoMovie;
     MonsterState monsterState = MonsterState::Neutral;
+
+    MovieLevel movieLevel;
+    int currentMovie = 0;
 
     void loadFromFile(const gf::Path& filename);
     void saveToFile(const gf::Path& filename);

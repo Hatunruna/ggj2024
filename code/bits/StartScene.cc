@@ -39,6 +39,10 @@ namespace mm {
     }
 
     if (m_startAction.isActive()) {
+      m_game.data.movieDatabase = loadDatabase(m_game.resources, m_game.random);
+      m_game.state.movieLevel = computeLevel(m_game.data.movieDatabase, 1, 10, m_game.random);
+      m_game.state.currentMovie = 0;
+
       m_game.replaceScene(m_game.theater);
     }
   }

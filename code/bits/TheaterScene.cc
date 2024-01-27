@@ -28,6 +28,7 @@ namespace mm {
     m_broadcastButton.setPadding(20.0f);
     m_broadcastButton.setCallback([this](){
       if (m_game.state.movieState == MovieState::WaitingMovie) {
+        ++m_game.state.currentMovie;
         m_game.state.movieState = MovieState::DepartureMovie;
         m_game.state.monsterState = MonsterState::Happy;
       }
@@ -43,6 +44,7 @@ namespace mm {
     m_trashButton.setPadding(20.0f);
     m_trashButton.setCallback([this](){
       if (m_game.state.movieState == MovieState::WaitingMovie) {
+        ++m_game.state.currentMovie;
         m_game.state.movieState = MovieState::DepartureMovie;
         m_game.state.monsterState = MonsterState::Angry;
       }

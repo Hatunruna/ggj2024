@@ -50,10 +50,17 @@ namespace mm {
     switch (m_gameState.movieState)
     {
     case MovieState::NoMovie:
-      generateMovieTexture();
-      m_gameState.movieState = MovieState::ArrivingMovie;
-      m_arrivingTween.restart();
+    {
+      const auto& movies = m_gameState.movieLevel.movies;
+      int currentMovie = m_gameState.currentMovie;
+      if (currentMovie < static_cast<int>(movies.size())) {
+        gf::Log::debug("current movie index: %d\n", currentMovie);
+        generateMovieTexture(movies[currentMovie]);
+        m_gameState.movieState = MovieState::ArrivingMovie;
+        m_arrivingTween.restart();
+      }
       break;
+    }
 
     case MovieState::ArrivingMovie:
       m_arrivingTween.update(time);
@@ -70,7 +77,7 @@ namespace mm {
       angle -= MovieVelocity * time.asSeconds();
       if (angle <= MovieAngleInitial) {
         angle = MovieAngleInitial;
-        m_gameState.movieState = MovieState::ArrivingMovie;
+        m_gameState.movieState = MovieState::NoMovie;
       }
       break;
     }
@@ -88,79 +95,76 @@ namespace mm {
     movieInfo.draw(target, states);
   }
 
-  void MovieManager::generateMovieTexture() {
-    static bool alreadyRendered = false;
-    if (!alreadyRendered) {
-      gf::Log::debug("Asset generated\n");
-      alreadyRendered = true;
+  void MovieManager::generateMovieTexture(const MovieData& movie) {
+    m_movieRenderTexture.setActive();
+    m_movieRenderTexture.setView(m_renderView);
 
-      m_movieRenderTexture.setActive();
-      m_movieRenderTexture.setView(m_renderView);
+    m_movieRenderTexture.clear(gf::Color::Transparent);
 
-      m_movieRenderTexture.clear(gf::Color::Transparent);
+    gf::Sprite background;
+    background.setTexture(m_movieInfoBackgroundTexture);
+    background.setPosition(gf::vec(0.0f, 0.0f));
+    background.draw(m_movieRenderTexture, gf::RenderStates());
 
-      gf::Sprite background;
-      background.setTexture(m_movieInfoBackgroundTexture);
-      background.setPosition(gf::vec(0.0f, 0.0f));
-      background.draw(m_movieRenderTexture, gf::RenderStates());
+    gf::Text title;
+    title.setFont(m_font);
+    title.setCharacterSize(50);
+    title.setColor(gf::Color::Black);
+    title.setString(movie.title);
+    title.setParagraphWidth(600.0f);
+    title.setPosition(gf::vec(163, 248));
+    title.setAlignment(gf::Alignment::Center);
+    title.setAnchor(gf::Anchor::CenterLeft);
+    title.draw(m_movieRenderTexture, gf::RenderStates());
 
-      gf::Text title;
-      title.setFont(m_font);
-      title.setCharacterSize(50);
-      title.setColor(gf::Color::Black);
-      title.setString("Enemy In The Beginning");
-      title.setParagraphWidth(600.0f);
-      title.setPosition(gf::vec(163, 248));
-      title.setAlignment(gf::Alignment::Center);
-      title.setAnchor(gf::Anchor::CenterLeft);
-      title.draw(m_movieRenderTexture, gf::RenderStates());
+    gf::Text info;
+    info.setFont(m_font);
+    info.setCharacterSize(35);
+    info.setColor(gf::Color::Black);
+    std::string infoText;
+    infoText += "Duration: " + std::to_string(movie.duration) + "min\n";
+    infoText += "Genre: " + toString(movie.genre) + "\n";
+    infoText += "Technique: " + toString(movie.technique) + "\n";
+    infoText += "Country: " + toString(movie.country) + "\n";
+    infoText += "Year: " + std::to_string(movie.year) + "\n";
+    info.setString(infoText);
+    info.setParagraphWidth(363.0f);
+    info.setPosition(gf::vec(400, 460));
+    info.setAnchor(gf::Anchor::CenterLeft);
+    info.draw(m_movieRenderTexture, gf::RenderStates());
 
-      gf::Text info;
-      info.setFont(m_font);
-      info.setCharacterSize(35);
-      info.setColor(gf::Color::Black);
-      std::string infoText;
-      infoText += "Duration: 142 min\n";
-      infoText += "Genre: Action\n";
-      infoText += "Technique: Live Action\n";
-      infoText += "Country: Temeria\n";
-      infoText += "Year: 2014\n";
-      info.setString(infoText);
-      info.setParagraphWidth(363.0f);
-      info.setPosition(gf::vec(400, 460));
-      info.setAnchor(gf::Anchor::CenterLeft);
-      info.draw(m_movieRenderTexture, gf::RenderStates());
-
-      for (int i = 0; i < 5; ++i) {
-        gf::Sprite review;
-        review.setTexture(m_reviewNegativeTexture);
-        review.setPosition(gf::vec(175.0f + i * 80.0f, 640.0f));
-        review.setScale(0.35f);
-        review.draw(m_movieRenderTexture, gf::RenderStates());
-      }
-
-      for (int i = 0; i < 2; ++i) {
-        gf::Sprite review;
-        review.setTexture(m_reviewPositiveTexture);
-        review.setPosition(gf::vec(175.0f + i * 80.0f, 640.0f));
-        review.setScale(0.35f);
-        review.draw(m_movieRenderTexture, gf::RenderStates());
-      }
-
-      gf::Sprite ageRating;
-      m_ratingTextures[2].get().setSmooth();
-      ageRating.setTexture(m_ratingTextures[2]);
-      ageRating.setPosition(gf::vec(650.0f, 625.0f));
-      ageRating.setScale(0.5f);
-      ageRating.draw(m_movieRenderTexture, gf::RenderStates());
-
-      gf::Sprite light;
-      light.setTexture(m_movieInfoLightTexture);
-      light.setPosition(gf::vec(0.0f, 0.0f));
-      light.draw(m_movieRenderTexture, gf::RenderStates());
-
-      m_movieRenderTexture.display();
+    for (int i = 0; i < 5; ++i) {
+      gf::Sprite review;
+      review.setTexture(m_reviewNegativeTexture);
+      review.setPosition(gf::vec(175.0f + i * 80.0f, 640.0f));
+      review.setScale(0.35f);
+      review.draw(m_movieRenderTexture, gf::RenderStates());
     }
+
+    assert(movie.note >= 0 && movie.note <= 5);
+    for (int i = 0; i < movie.note; ++i) {
+      gf::Sprite review;
+      review.setTexture(m_reviewPositiveTexture);
+      review.setPosition(gf::vec(175.0f + i * 80.0f, 640.0f));
+      review.setScale(0.35f);
+      review.draw(m_movieRenderTexture, gf::RenderStates());
+    }
+
+    gf::Sprite ageRating;
+    m_ratingTextures[2].get().setSmooth();
+    int textureIndex = static_cast<int>(movie.rating);
+    assert(textureIndex >= 0 && textureIndex <= static_cast<int>(m_ratingTextures.size()));
+    ageRating.setTexture(m_ratingTextures[textureIndex]);
+    ageRating.setPosition(gf::vec(650.0f, 625.0f));
+    ageRating.setScale(0.5f);
+    ageRating.draw(m_movieRenderTexture, gf::RenderStates());
+
+    gf::Sprite light;
+    light.setTexture(m_movieInfoLightTexture);
+    light.setPosition(gf::vec(0.0f, 0.0f));
+    light.draw(m_movieRenderTexture, gf::RenderStates());
+
+    m_movieRenderTexture.display();
   }
 
 }
