@@ -27,11 +27,13 @@ add_subdirectory(vendor/json)
 
 add_executable(${GAME}
   code/main.cc
+  code/bits/ConstraintListScene.cc
   code/bits/GameData.cc
   code/bits/GameHub.cc
   code/bits/GameState.cc
   code/bits/MovieData.cc
   code/bits/MovieManager.cc
+  code/bits/RequirementsEntity.cc
   code/bits/StartScene.cc
   code/bits/TitleEntity.cc
   code/bits/TheaterScene.cc
