@@ -135,9 +135,25 @@ namespace mm {
     return db;
   }
 
+  std::size_t numberOfLetters(const std::string& text) {
+    return std::count_if(text.begin(), text.end(), [](char c) { return c != ' '; });
+  }
+
+  std::size_t numberOfWords(const std::string& text) {
+    return 1 + std::count_if(text.begin(), text.end(), [](char c) { return c == ' '; });
+  }
+
   std::string toString(MovieConstraint constraint) {
     switch (constraint) {
       // title
+      case MovieConstraint::TitleWithOddWords:
+        return "The title has a odd number of words";
+      case MovieConstraint::TitleWithEvenWords:
+        return "The title has an even number of words";
+      case MovieConstraint::TitleWithLessThan16Letters:
+        return "The title has 16 letters or less";
+      case MovieConstraint::TitleWithMoreThan16Letters:
+        return "The title has 16 letters or more";
       // year
       case MovieConstraint::YearAfter1980:
         return "The movie was released in 1980 or after";
@@ -165,17 +181,17 @@ namespace mm {
         return "The movie was released in an even year";
       // duration
       case MovieConstraint::DurationMoreThan90:
-        return "The movie lasts more than 90 minutes";
+        return "The movie lasts 90 minutes or more";
       case MovieConstraint::DurationMoreThan120:
-        return "The movie lasts more than 120 minutes";
+        return "The movie lasts 120 minutes or more";
       case MovieConstraint::DurationMoreThan150:
-        return "The movie lasts more than 150 minutes";
+        return "The movie lasts 150 minutes or more";
       case MovieConstraint::DurationLessThan120:
-        return "The movie lasts less than 120 minutes";
+        return "The movie lasts 120 minutes or less";
       case MovieConstraint::DurationLessThan150:
-        return "The movie lasts less than 150 minutes";
+        return "The movie lasts 150 minutes or less";
       case MovieConstraint::DurationLessThan180:
-        return "The movie lasts less than 180 minutes";
+        return "The movie lasts 180 minutes or less";
       // note
       case MovieConstraint::NoteMoreThan2:
         return "The movie has 2 stars or more";
@@ -218,6 +234,14 @@ namespace mm {
   bool isMovieAcceptable(const MovieData& movie, MovieConstraint constraint) {
     switch (constraint) {
       // title
+      case MovieConstraint::TitleWithOddWords:
+        return numberOfWords(movie.title) % 2 != 0;
+      case MovieConstraint::TitleWithEvenWords:
+        return numberOfWords(movie.title) % 2 == 0;
+      case MovieConstraint::TitleWithLessThan16Letters:
+        return numberOfLetters(movie.title) >= 16;
+      case MovieConstraint::TitleWithMoreThan16Letters:
+        return numberOfLetters(movie.title) <= 16;
       // year
       case MovieConstraint::YearAfter1980:
         return movie.year >= 1980;
@@ -297,9 +321,13 @@ namespace mm {
 
   MovieLevel computeLevel(const std::vector<MovieData>& database, std::size_t constraintCount, std::size_t movieCount, gf::Random& random) {
     const std::vector<mm::MovieConstraint> constraintsByType[] = {
-      // {
+      {
         // title
-      // },
+        mm::MovieConstraint::TitleWithOddWords,
+        mm::MovieConstraint::TitleWithEvenWords,
+        mm::MovieConstraint::TitleWithLessThan16Letters,
+        mm::MovieConstraint::TitleWithMoreThan16Letters,
+      },
       {
         // year
         mm::MovieConstraint::YearAfter1980,

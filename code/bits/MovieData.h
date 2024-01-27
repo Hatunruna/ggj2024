@@ -65,9 +65,15 @@ namespace mm {
 
   std::vector<MovieData> loadDatabase(gf::ResourceManager& resources, gf::Random& random);
 
+  std::size_t numberOfLetters(const std::string& text);
+  std::size_t numberOfWords(const std::string& text);
+
   enum class MovieConstraint {
     // title
-
+    TitleWithOddWords,
+    TitleWithEvenWords,
+    TitleWithLessThan16Letters,
+    TitleWithMoreThan16Letters,
     // year
     YearAfter1980,
     YearAfter1990,

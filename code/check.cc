@@ -12,6 +12,11 @@
 namespace {
 
   constexpr mm::MovieConstraint AllConstraints[] = {
+    // title
+    mm::MovieConstraint::TitleWithOddWords,
+    mm::MovieConstraint::TitleWithEvenWords,
+    mm::MovieConstraint::TitleWithLessThan16Letters,
+    mm::MovieConstraint::TitleWithMoreThan16Letters,
     // year
     mm::MovieConstraint::YearAfter1980,
     mm::MovieConstraint::YearAfter1990,
@@ -65,13 +70,16 @@ int main() {
 
   std::map<std::pair<mm::MovieCountry, mm::MovieGenre>, int> counts;
   std::size_t maxSize = 0;
+  std::size_t avgSize = 0;
 
-  for (auto& film : db) {
-    counts[std::make_pair(film.country, film.genre)]++;
-    maxSize = std::max(maxSize, film.title.size());
+  for (auto& movie : db) {
+    counts[std::make_pair(movie.country, movie.genre)]++;
+    maxSize = std::max(maxSize, movie.title.size());
+    avgSize += mm::numberOfLetters(movie.title);
   }
 
   std::cout << "Max title size: " << maxSize << '\n';
+  std::cout << "Avg title size: " << avgSize / db.size() << '\n';
 
   for (auto [ pair, count ] : counts) {
     if (count > 1) {
