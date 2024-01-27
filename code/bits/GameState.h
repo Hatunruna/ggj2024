@@ -22,6 +22,14 @@ namespace mm {
     Happy,
   };
 
+  enum class MonsterHappiness : std::uint8_t {
+    VeryAngry,
+    Angry,
+    Neutral,
+    Happy,
+    VeryHappy,
+  };
+
   struct GameState {
     static constexpr uint16_t Version = 1;
 
@@ -33,6 +41,8 @@ namespace mm {
     int currentMovie = 0;
     int correctChoices = 0;
     int incorrectChoices = 0;
+
+    MonsterHappiness monsterHappiness = MonsterHappiness::Neutral;
 
     void loadFromFile(const gf::Path& filename);
     void saveToFile(const gf::Path& filename);

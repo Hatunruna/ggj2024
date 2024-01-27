@@ -24,7 +24,9 @@ namespace mm {
     m_okButton.setRadius(15.0f);
     m_okButton.setPadding(20.0f);
     m_okButton.setCallback([this](){
-      if (m_game.startNewShift()) {
+      if (m_game.state.currentLevel < (static_cast<int>(m_game.data.levelSettings.size()) - 1)) {
+        ++m_game.state.currentLevel;
+        m_game.startNewShift();
         m_game.replaceScene(m_game.listFirst);
       } else {
         // End Game...

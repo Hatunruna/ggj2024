@@ -22,10 +22,8 @@ namespace mm {
     pushScenes(scenes);
   }
 
-  bool GameHub::startNewShift() {
-    if (state.currentLevel >= static_cast<int>(data.levelSettings.size())) {
-      return false;
-    }
+  void GameHub::startNewShift() {
+    assert(state.currentLevel < static_cast<int>(data.levelSettings.size()));
 
     const auto& levelSettings = data.levelSettings[state.currentLevel];
     gf::Log::debug("Level Settings: %d constraints %d movies\n", levelSettings.constraintCount, levelSettings.movieCount);
@@ -33,8 +31,6 @@ namespace mm {
     state.currentMovie = 0;
     state.correctChoices = 0;
     state.incorrectChoices = 0;
-    ++state.currentLevel;
-    return true;
   }
 
 }

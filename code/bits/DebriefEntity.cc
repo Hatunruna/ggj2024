@@ -3,6 +3,7 @@
 #include <gf/Alignment.h>
 #include <gf/Anchor.h>
 #include <gf/Coordinates.h>
+#include <gf/Shapes.h>
 #include <gf/Text.h>
 
 #include "GameData.h"
@@ -44,6 +45,42 @@ namespace mm {
     debrief.setPosition(coordinates.getRelativePoint({ 0.5f, 0.2f }));
     debrief.setAnchor(gf::Anchor::TopCenter);
     debrief.draw(target, states);
+
+    auto drawBarSide = [&](gf::Vector2f position, gf::Color4f color, float offset = 0.0f) {
+      gf::RoundedRectangleShape rect;
+      rect.setRadius(10.0f);
+      rect.setPosition(coordinates.getRelativePoint(position) + gf::dirx(offset));
+      rect.setColor(color);
+      rect.setSize(coordinates.getRelativeSize(gf::vec(0.10f, 0.05f)) + gf::dirx(40.0f)); // offset to hide the rounded side
+      rect.draw(target, states);
+    };
+
+    drawBarSide(gf::vec(0.25f, 0.65f), gf::Color::darker(gf::Color::Red, 0.2f));
+    drawBarSide(gf::vec(0.65f, 0.65f), gf::Color::darker(gf::Color::Green, 0.2f), -40.0f);
+
+    auto drawBar = [&](gf::Vector2f position, gf::Color4f color) {
+      gf::RectangleShape rect;
+      rect.setPosition(coordinates.getRelativePoint(position));
+      rect.setOutlineColor(gf::Color::Black);
+      rect.setOutlineThickness(coordinates.getRelativeSize(gf::vec(0.001f, 0.00f)).width);
+      rect.setColor(color);
+      rect.setSize(coordinates.getRelativeSize(gf::vec(0.10f, 0.05f)));
+      rect.draw(target, states);
+    };
+
+    drawBar(gf::vec(0.35f, 0.65f), gf::Color::darker(gf::Color::fromRgba32(240, 124, 0, 255), 0.1f));
+    drawBar(gf::vec(0.45f, 0.65f), gf::Color::darker(gf::Color::Yellow, 0.1f));
+    drawBar(gf::vec(0.55f, 0.65f), gf::Color::darker(gf::Color::fromRgba32(143, 255, 34, 255), 0.1f));
+
+    gf::CircleShape cursor;
+    cursor.setPointCount(3); // Fake triangle
+    cursor.setColor(gf::Color::White);
+    int happinessOffset = static_cast<int>(m_gameState.monsterHappiness);
+    cursor.setPosition(coordinates.getRelativePoint(gf::vec(0.30f + happinessOffset * 0.10f, 0.63f)));
+    cursor.setRadius(coordinates.getRelativeSize(gf::vec(0.025f, 0.025f)).width);
+    cursor.setAnchor(gf::Anchor::TopCenter);
+    cursor.setRotation(gf::Pi);
+    cursor.draw(target, states);
   }
 
 }

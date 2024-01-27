@@ -16,7 +16,7 @@ namespace mm {
   struct GameHub : gf::GameManager {
     GameHub();
 
-    bool startNewShift();
+    void startNewShift();
 
     GameData data;
     GameState state;

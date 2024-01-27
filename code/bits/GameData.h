@@ -8,6 +8,9 @@
 namespace mm {
 
   constexpr gf::Vector2i WorldSize = gf::vec(3840, 2160);
+  constexpr float AngerLimit = 0.5f;    // >50% fail = -1 happiness
+  constexpr float NeutralLimit = 0.80f; // >20% fail = same happiness
+                                        // <20% fail = +1 happiness
 
   struct LevelSettings {
     int constraintCount = 0;
