@@ -4,6 +4,7 @@
 #include <gf/Scene.h>
 #include <gf/WidgetContainer.h>
 
+#include "FeedbackEntity.h"
 #include "IconWidget.h"
 #include "MovieManager.h"
 #include "TheaterBackgroundEntity.h"
@@ -24,6 +25,7 @@ namespace mm {
     GameHub& m_game;
     TheaterBackgroundEntity m_background;
     MovieManager m_movieManager;
+    FeedbackEntity m_feedback;
 
     // Widgets
     IconWidget m_broadcastButton;

@@ -10,6 +10,7 @@ namespace mm {
   , m_game(game)
   , m_background(game)
   , m_movieManager(game)
+  , m_feedback(game)
   , m_broadcastButton(game.resources.getTexture("icons/check-solid.png"), gf::Color::Green, gf::Color::lighter(gf::Color::Green), gf::Color::darker(gf::Color::Green))
   , m_trashButton(game.resources.getTexture("icons/xmark-solid.png"), gf::Color::Red, gf::Color::lighter(gf::Color::Red), gf::Color::darker(gf::Color::Red))
   , m_recallButton(game.resources.getTexture("icons/note-sticky-regular.png"), gf::Color::Azure, gf::Color::lighter(gf::Color::Azure), gf::Color::darker(gf::Color::Azure))
@@ -18,6 +19,7 @@ namespace mm {
 
     addWorldEntity(m_background);
     addWorldEntity(m_movieManager);
+    addWorldEntity(m_feedback);
 
     // Widgets
     m_broadcastButton.setPosition(WorldSize * gf::vec(0.25f, 0.95f));
