@@ -31,6 +31,8 @@ namespace mm {
     gf::Log::debug("Level Settings: %d constraints %d movies\n", levelSettings.constraintCount, levelSettings.movieCount);
     state.movieLevel = computeLevel(data.movieDatabase, levelSettings.constraintCount, levelSettings.movieCount, random);
     state.currentMovie = 0;
+    state.correctChoices = 0;
+    state.incorrectChoices = 0;
     ++state.currentLevel;
     return true;
   }

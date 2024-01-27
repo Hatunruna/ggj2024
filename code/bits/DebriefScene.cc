@@ -8,9 +8,12 @@ namespace mm {
   DebriefScene::DebriefScene(GameHub& game)
   : gf::Scene(game.getRenderer().getSize())
   , m_game(game)
+  , debrief(game)
   , m_okButton("Ok!", game.resources.getFont("fonts/GoudyBookletter1911.otf"), 128)
   {
     setClearColor(gf::Color::Black);
+
+    addHudEntity(debrief);
 
     // Widgets
     m_okButton.setDefaultBackgroundColor(gf::Color::Azure);

@@ -31,6 +31,8 @@ namespace mm {
 
     MovieLevel movieLevel;
     int currentMovie = 0;
+    int correctChoices = 0;
+    int incorrectChoices = 0;
 
     void loadFromFile(const gf::Path& filename);
     void saveToFile(const gf::Path& filename);

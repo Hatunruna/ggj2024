@@ -5,6 +5,8 @@
 #include <gf/WidgetContainer.h>
 #include <gf/Widgets.h>
 
+#include "DebriefEntity.h"
+
 namespace mm {
 
   struct GameHub;
@@ -18,6 +20,8 @@ namespace mm {
 
   private:
     GameHub& m_game;
+
+    DebriefEntity debrief;
 
     // Widgets
     gf::TextButtonWidget m_okButton;

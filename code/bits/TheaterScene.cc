@@ -27,8 +27,10 @@ namespace mm {
       if (m_game.state.movieState == MovieState::WaitingMovie) {
         if (isMovieAcceptable(m_game.state.movieLevel.movies[m_game.state.currentMovie], m_game.state.movieLevel.constraints)) {
           m_game.state.monsterState = MonsterState::Happy;
+          ++m_game.state.correctChoices;
         } else {
           m_game.state.monsterState = MonsterState::Angry;
+          ++m_game.state.incorrectChoices;
         }
 
         ++m_game.state.currentMovie;
@@ -44,8 +46,10 @@ namespace mm {
       if (m_game.state.movieState == MovieState::WaitingMovie) {
         if (isMovieAcceptable(m_game.state.movieLevel.movies[m_game.state.currentMovie], m_game.state.movieLevel.constraints)) {
           m_game.state.monsterState = MonsterState::Angry;
+          ++m_game.state.incorrectChoices;
         } else {
           m_game.state.monsterState = MonsterState::Happy;
+          ++m_game.state.correctChoices;
         }
 
         ++m_game.state.currentMovie;
