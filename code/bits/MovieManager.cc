@@ -25,6 +25,8 @@ namespace mm {
   , m_font(game.resources.getFont("fonts/GoudyBookletter1911.otf"))
   , m_movieInfoBackgroundTexture(game.resources.getTexture("images/movie-info.png"))
   , m_movieInfoLightTexture(game.resources.getTexture("images/movie-info-light.png"))
+  , m_reviewPositiveTexture(game.resources.getTexture("images/reviews/star-fill.png"))
+  , m_reviewNegativeTexture(game.resources.getTexture("images/reviews/star-empty.png"))
   , m_movieRenderTexture(RenderTextureSize)
   , m_arrivingTween(MovieAngleInitial, MovieAngleTarget, m_gameData.movieAngle, gf::milliseconds(500), gf::Ease::backInOut)
   {
@@ -33,6 +35,14 @@ namespace mm {
     m_renderView.setSize(RenderTextureSize);
     m_renderView.setCenter(RenderTextureSize * 0.5f);
     m_movieRenderTexture.setView(m_renderView);
+
+    m_ratingTextures.emplace_back(game.resources.getTexture("images/ratings/all-ages.png"));
+    m_ratingTextures.emplace_back(game.resources.getTexture("images/ratings/above-12.png"));
+    m_ratingTextures.emplace_back(game.resources.getTexture("images/ratings/above-16.png"));
+    m_ratingTextures.emplace_back(game.resources.getTexture("images/ratings/above-18.png"));
+
+    m_reviewPositiveTexture.setSmooth();
+    m_reviewNegativeTexture.setSmooth();
   }
 
   void MovieManager::update(gf::Time time) {
@@ -125,6 +135,29 @@ namespace mm {
       info.setPosition(gf::vec(400, 460));
       info.setAnchor(gf::Anchor::CenterLeft);
       info.draw(m_movieRenderTexture, gf::RenderStates());
+
+      for (int i = 0; i < 5; ++i) {
+        gf::Sprite review;
+        review.setTexture(m_reviewNegativeTexture);
+        review.setPosition(gf::vec(175.0f + i * 80.0f, 640.0f));
+        review.setScale(0.35f);
+        review.draw(m_movieRenderTexture, gf::RenderStates());
+      }
+
+      for (int i = 0; i < 2; ++i) {
+        gf::Sprite review;
+        review.setTexture(m_reviewPositiveTexture);
+        review.setPosition(gf::vec(175.0f + i * 80.0f, 640.0f));
+        review.setScale(0.35f);
+        review.draw(m_movieRenderTexture, gf::RenderStates());
+      }
+
+      gf::Sprite ageRating;
+      m_ratingTextures[2].get().setSmooth();
+      ageRating.setTexture(m_ratingTextures[2]);
+      ageRating.setPosition(gf::vec(650.0f, 625.0f));
+      ageRating.setScale(0.5f);
+      ageRating.draw(m_movieRenderTexture, gf::RenderStates());
 
       gf::Sprite light;
       light.setTexture(m_movieInfoLightTexture);

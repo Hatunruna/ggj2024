@@ -3,6 +3,7 @@
 
 #include <gf/Entity.h>
 #include <gf/Font.h>
+#include <gf/Ref.h>
 #include <gf/RenderTexture.h>
 #include <gf/Tween.h>
 #include <gf/Vector.h>
@@ -29,6 +30,9 @@ namespace mm {
     gf::Font& m_font;
     gf::Texture& m_movieInfoBackgroundTexture;
     gf::Texture& m_movieInfoLightTexture;
+    std::vector<gf::Ref<gf::Texture>> m_ratingTextures;
+    gf::Texture& m_reviewPositiveTexture;
+    gf::Texture& m_reviewNegativeTexture;
 
     gf::ScreenView m_renderView;
     gf::RenderTexture m_movieRenderTexture;
