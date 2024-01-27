@@ -326,6 +326,10 @@ namespace mm {
   }
 
   bool isMovieAcceptable(const MovieData& movie, MovieConstraint constraint) {
+    if (movie.generated_by_ai) {
+      return false;
+    }
+
     switch (constraint) {
       // title
       case MovieConstraint::TitleWithOddWords:
@@ -666,10 +670,15 @@ namespace mm {
         acceptedMovies.resize(maxAcceptedMovies);
       }
 
+      if (movieCount - acceptedMovies.size() > rejectedMovies.size()) {
+        // not enough rejected movies
+        continue;
+      }
+
       level.movies = acceptedMovies;
-      assert(movieCount - acceptedMovies.size() <= rejectedMovies.size());
 
       for (std::size_t i = 0; i < movieCount - acceptedMovies.size(); ++i) {
+        assert(i < rejectedMovies.size());
         level.movies.push_back(rejectedMovies[i]);
       }
 
