@@ -2,6 +2,7 @@
 
 #include <gf/Color.h>
 #include <gf/Keyboard.h>
+#include <gf/Mouse.h>
 
 #include "GameHub.h"
 
@@ -20,7 +21,9 @@ namespace mm {
 //     m_startAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::B);
 //     m_startAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::X);
 //     m_startAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Y);
-    m_startAction.addKeycodeKeyControl(gf::Keycode::Space);
+    m_startAction.addMouseButtonControl(gf::MouseButton::Left);
+    m_startAction.addMouseButtonControl(gf::MouseButton::Middle);
+    m_startAction.addMouseButtonControl(gf::MouseButton::Right);
 
     addAction(m_startAction);
 
