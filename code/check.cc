@@ -9,33 +9,9 @@
 
 #include "config.h"
 
-int main() {
-  gf::ResourceManager resources;
-  resources.addSearchDir(GAME_DATADIR);
+namespace {
 
-  gf::Random random;
-
-  auto db = mm::loadDatabase(resources, random);
-
-  std::cout << "Total number of movies: " << db.size() << '\n';
-
-  std::map<std::pair<mm::MovieCountry, mm::MovieGenre>, int> counts;
-  std::size_t maxSize = 0;
-
-  for (auto& film : db) {
-    counts[std::make_pair(film.country, film.genre)]++;
-    maxSize = std::max(maxSize, film.title.size());
-  }
-
-  std::cout << "Max title size: " << maxSize << '\n';
-
-  for (auto [ pair, count ] : counts) {
-    if (count > 1) {
-      std::cout << '(' << mm::toString(pair.first) << ',' << mm::toString(pair.second) << ") has more than one occurrence\n";
-    }
-  }
-
-  constexpr mm::MovieConstraint allConstraints[] = {
+  constexpr mm::MovieConstraint AllConstraints[] = {
     // year
     mm::MovieConstraint::YearAfter1980,
     mm::MovieConstraint::YearAfter1990,
@@ -75,9 +51,38 @@ int main() {
     // rating
   };
 
+}
+
+int main() {
+  gf::ResourceManager resources;
+  resources.addSearchDir(GAME_DATADIR);
+
+  gf::Random random;
+
+  auto db = mm::loadDatabase(resources, random);
+
+  std::cout << "Total number of movies: " << db.size() << '\n';
+
+  std::map<std::pair<mm::MovieCountry, mm::MovieGenre>, int> counts;
+  std::size_t maxSize = 0;
+
+  for (auto& film : db) {
+    counts[std::make_pair(film.country, film.genre)]++;
+    maxSize = std::max(maxSize, film.title.size());
+  }
+
+  std::cout << "Max title size: " << maxSize << '\n';
+
+  for (auto [ pair, count ] : counts) {
+    if (count > 1) {
+      std::cout << '(' << mm::toString(pair.first) << ',' << mm::toString(pair.second) << ") has more than one occurrence\n";
+    }
+  }
+
+
   std::cout << "------\n";
 
-  for (auto constraint : allConstraints) {
+  for (auto constraint : AllConstraints) {
     std::size_t count = 0;
 
     for (auto& movie : db) {
@@ -94,13 +99,13 @@ int main() {
   for (auto& movie : db) {
     std::size_t count = 0;
 
-    for (auto constraint : allConstraints) {
+    for (auto constraint : AllConstraints) {
       if (isMovieAcceptable(movie, constraint)) {
         ++count;
       }
     }
 
-    std::cout << "Movie '" << movie.title << "' fullfills " << count << '/' << std::size(allConstraints) << " constraints\n";
+    std::cout << "Movie '" << movie.title << "' fullfills " << count << '/' << std::size(AllConstraints) << " constraints\n";
   }
 
 

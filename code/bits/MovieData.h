@@ -110,10 +110,15 @@ namespace mm {
   };
 
   std::string toString(MovieConstraint constraint);
-
-  std::vector<MovieConstraint> computeConstraints(std::size_t count, gf::Random& random);
-
   bool isMovieAcceptable(const MovieData& film, MovieConstraint constraint);
+
+  struct MovieLevel {
+    std::vector<MovieConstraint> constraints;
+    std::vector<MovieData> movies;
+  };
+
+  MovieLevel computeLevel(const std::vector<MovieData>& database, std::size_t contraintCount, std::size_t movieCount, gf::Random& random);
+
 
 }
 

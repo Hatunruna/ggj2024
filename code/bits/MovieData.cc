@@ -209,10 +209,6 @@ namespace mm {
     return "??";
   }
 
-  std::vector<MovieConstraint> computeConstraints(std::size_t count, gf::Random& random) {
-    return {};
-  }
-
   constexpr bool isLeap(int year) {
     return (year % 100 == 0) ? (year % 400 == 0) : (year % 4 == 0);
   }
@@ -289,6 +285,136 @@ namespace mm {
     }
 
     return true;
+  }
+
+  MovieLevel computeLevel(const std::vector<MovieData>& database, std::size_t constraintCount, std::size_t movieCount, gf::Random& random) {
+    const std::vector<mm::MovieConstraint> constraintsByType[] = {
+      // {
+        // title
+      // },
+      {
+        // year
+        mm::MovieConstraint::YearAfter1980,
+        mm::MovieConstraint::YearAfter1990,
+        mm::MovieConstraint::YearAfter2000,
+        mm::MovieConstraint::YearAfter2010,
+        mm::MovieConstraint::YearBefore1990,
+        mm::MovieConstraint::YearBefore2000,
+        mm::MovieConstraint::YearBefore2010,
+        mm::MovieConstraint::YearBefore2020,
+        mm::MovieConstraint::YearIsLeap,
+        mm::MovieConstraint::YearIsNotLeap,
+        mm::MovieConstraint::YearIsOdd,
+        mm::MovieConstraint::YearIsEven,
+      },
+      {
+        // duration
+        mm::MovieConstraint::DurationMoreThan90,
+        mm::MovieConstraint::DurationMoreThan120,
+        mm::MovieConstraint::DurationMoreThan150,
+        mm::MovieConstraint::DurationLessThan120,
+        mm::MovieConstraint::DurationLessThan150,
+        mm::MovieConstraint::DurationLessThan180,
+      },
+      {
+        // note
+        mm::MovieConstraint::NoteMoreThan2,
+        mm::MovieConstraint::NoteMoreThan3,
+        mm::MovieConstraint::NoteMoreThan4,
+        mm::MovieConstraint::NoteLessThan2,
+        mm::MovieConstraint::NoteLessThan3,
+        mm::MovieConstraint::NoteLessThan4,
+      },
+      // {
+        // country
+      // },
+      // {
+        // genre
+      // },
+      {
+        // technique
+        mm::MovieConstraint::TechniqueIsAnimation,
+        mm::MovieConstraint::TechniqueIsLiveAction,
+        mm::MovieConstraint::TechniqueIsStopMotion,
+        mm::MovieConstraint::TechniqueIsNotAnimation,
+        mm::MovieConstraint::TechniqueIsNotLiveAction,
+        mm::MovieConstraint::TechniqueIsNotStopMotion,
+      },
+      // {
+        // rating
+      // },
+    };
+
+    assert(constraintCount <= std::size(constraintsByType));
+    assert(movieCount <= database.size());
+
+    MovieLevel level;
+
+    for (;;) {
+      level.constraints.clear();
+      level.movies.clear();
+
+      // choose constraint types
+
+      std::vector<std::size_t> constraintTypeIndices(std::size(constraintsByType));
+      std::iota(constraintTypeIndices.begin(), constraintTypeIndices.end(), 0);
+      std::shuffle(constraintTypeIndices.begin(), constraintTypeIndices.end(), random.getEngine());
+      constraintTypeIndices.resize(constraintCount);
+
+      // choose constraints
+
+      for (auto typeIndex : constraintTypeIndices) {
+        const auto& constraints = constraintsByType[typeIndex];
+        assert(!constraints.empty());
+        level.constraints.push_back(constraints[random.computeUniformInteger(std::size_t(0), constraints.size() - 1)]);
+      }
+
+      // classify movies
+
+      std::vector<MovieData> acceptedMovies;
+      std::vector<MovieData> rejectedMovies;
+
+      for (auto& movie : database) {
+        if (std::all_of(level.constraints.begin(), level.constraints.end(), [&](MovieConstraint constraint) {
+          return isMovieAcceptable(movie, constraint);
+        })) {
+          acceptedMovies.push_back(movie);
+        } else {
+          rejectedMovies.push_back(movie);
+        }
+      }
+
+      // check if there is enough accepted movies
+
+      std::size_t minAcceptedMovies = 1 + movieCount / 5;
+      std::size_t maxAcceptedMovies = 1 + movieCount / 2;
+
+      if (acceptedMovies.size() < minAcceptedMovies) {
+        // there is not enough accepted movies for this set of constraints
+        // do it again
+        continue;
+      }
+
+      // choose movies
+
+      std::shuffle(acceptedMovies.begin(), acceptedMovies.end(), random.getEngine());
+      std::shuffle(rejectedMovies.begin(), rejectedMovies.end(), random.getEngine());
+
+      if (acceptedMovies.size() > maxAcceptedMovies) {
+        acceptedMovies.resize(maxAcceptedMovies);
+      }
+
+      level.movies = acceptedMovies;
+      assert(movieCount - acceptedMovies.size() <= rejectedMovies.size());
+
+      for (std::size_t i = 0; i < movieCount - acceptedMovies.size(); ++i) {
+        level.movies.push_back(rejectedMovies[i]);
+      }
+
+      break;
+    }
+
+    return level;
   }
 
 }
