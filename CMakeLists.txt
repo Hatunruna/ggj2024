@@ -34,6 +34,7 @@ add_executable(${GAME}
   code/bits/GameData.cc
   code/bits/GameHub.cc
   code/bits/GameState.cc
+  code/bits/IconWidget.cc
   code/bits/MovieData.cc
   code/bits/MovieManager.cc
   code/bits/RequirementsEntity.cc
