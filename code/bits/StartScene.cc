@@ -21,10 +21,8 @@ namespace mm {
 //     m_startAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::X);
 //     m_startAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Y);
     m_startAction.addKeycodeKeyControl(gf::Keycode::Space);
-    addAction(m_startAction);
 
-//     m_fullscreenAction.addGamepadButtonControl(gf::AnyGamepad, gf::GamepadButton::Guide);
-    addAction(m_fullscreenAction);
+    addAction(m_startAction);
 
     addHudEntity(m_titleEntity);
   }

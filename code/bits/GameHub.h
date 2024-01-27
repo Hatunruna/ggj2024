@@ -3,6 +3,7 @@
 
 #include <gf/GameManager.h>
 
+#include "CommonScene.h"
 #include "GameData.h"
 #include "GameState.h"
 #include "StartScene.h"
@@ -17,6 +18,7 @@ namespace mm {
     GameData data;
     GameState state;
 
+    CommonScene common;
     StartScene start;
     ConstraintListScene listFirst;
     TheaterScene theater;
