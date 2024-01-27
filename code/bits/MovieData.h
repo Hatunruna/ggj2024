@@ -110,7 +110,8 @@ namespace mm {
   };
 
   std::string toString(MovieConstraint constraint);
-  bool isMovieAcceptable(const MovieData& film, MovieConstraint constraint);
+  bool isMovieAcceptable(const MovieData& movie, MovieConstraint constraint);
+  bool isMovieAcceptable(const MovieData& movie, const std::vector<MovieConstraint>& constraints);
 
   struct MovieLevel {
     std::vector<MovieConstraint> constraints;

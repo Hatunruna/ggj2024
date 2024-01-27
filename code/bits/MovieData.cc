@@ -154,13 +154,13 @@ namespace mm {
       case MovieConstraint::YearBefore2020:
         return "The movie was released in 2020 or before";
       case MovieConstraint::YearIsLeap:
-        return "The movie was released int a leap year";
+        return "The movie was released in a leap year";
       case MovieConstraint::YearIsNotLeap:
-        return "The movie was released int a non-leap year";
+        return "The movie was released in a non-leap year";
       case MovieConstraint::YearIsOdd:
-        return "The movie was released int a odd year";
+        return "The movie was released in a odd year";
       case MovieConstraint::YearIsEven:
-        return "The movie was released int an even year";
+        return "The movie was released in an even year";
       // duration
       case MovieConstraint::DurationMoreThan90:
         return "The movie lasts more than 90 minutes";
@@ -213,78 +213,84 @@ namespace mm {
     return (year % 100 == 0) ? (year % 400 == 0) : (year % 4 == 0);
   }
 
-  bool isMovieAcceptable(const MovieData& film, MovieConstraint constraint) {
+  bool isMovieAcceptable(const MovieData& movie, MovieConstraint constraint) {
     switch (constraint) {
       // title
       // year
       case MovieConstraint::YearAfter1980:
-        return film.year >= 1980;
+        return movie.year >= 1980;
       case MovieConstraint::YearAfter1990:
-        return film.year >= 1990;
+        return movie.year >= 1990;
       case MovieConstraint::YearAfter2000:
-        return film.year >= 2000;
+        return movie.year >= 2000;
       case MovieConstraint::YearAfter2010:
-        return film.year >= 2010;
+        return movie.year >= 2010;
       case MovieConstraint::YearBefore1990:
-        return film.year <= 1990;
+        return movie.year <= 1990;
       case MovieConstraint::YearBefore2000:
-        return film.year <= 2000;
+        return movie.year <= 2000;
       case MovieConstraint::YearBefore2010:
-        return film.year <= 2010;
+        return movie.year <= 2010;
       case MovieConstraint::YearBefore2020:
-        return film.year <= 2020;
+        return movie.year <= 2020;
       case MovieConstraint::YearIsLeap:
-        return isLeap(film.year);
+        return isLeap(movie.year);
       case MovieConstraint::YearIsNotLeap:
-        return !isLeap(film.year);
+        return !isLeap(movie.year);
       case MovieConstraint::YearIsOdd:
-        return film.year % 2 != 0;
+        return movie.year % 2 != 0;
       case MovieConstraint::YearIsEven:
-        return film.year % 2 == 0;
+        return movie.year % 2 == 0;
       // duration
       case MovieConstraint::DurationMoreThan90:
-        return film.duration >= 90;
+        return movie.duration >= 90;
       case MovieConstraint::DurationMoreThan120:
-        return film.duration >= 120;
+        return movie.duration >= 120;
       case MovieConstraint::DurationMoreThan150:
-        return film.duration >= 150;
+        return movie.duration >= 150;
       case MovieConstraint::DurationLessThan120:
-        return film.duration <= 120;
+        return movie.duration <= 120;
       case MovieConstraint::DurationLessThan150:
-        return film.duration <= 150;
+        return movie.duration <= 150;
       case MovieConstraint::DurationLessThan180:
-        return film.duration <= 180;
+        return movie.duration <= 180;
       // note
       case MovieConstraint::NoteMoreThan2:
-        return film.note >= 2;
+        return movie.note >= 2;
       case MovieConstraint::NoteMoreThan3:
-        return film.note >= 3;
+        return movie.note >= 3;
       case MovieConstraint::NoteMoreThan4:
-        return film.note >= 4;
+        return movie.note >= 4;
       case MovieConstraint::NoteLessThan2:
-        return film.note <= 2;
+        return movie.note <= 2;
       case MovieConstraint::NoteLessThan3:
-        return film.note <= 3;
+        return movie.note <= 3;
       case MovieConstraint::NoteLessThan4:
-        return film.note <= 4;
+        return movie.note <= 4;
       // country
       // genre
       // technique
       case MovieConstraint::TechniqueIsAnimation:
-        return film.technique == MovieTechnique::Animation;
+        return movie.technique == MovieTechnique::Animation;
       case MovieConstraint::TechniqueIsLiveAction:
-        return film.technique == MovieTechnique::LiveAction;
+        return movie.technique == MovieTechnique::LiveAction;
       case MovieConstraint::TechniqueIsStopMotion:
-        return film.technique == MovieTechnique::StopMotion;
+        return movie.technique == MovieTechnique::StopMotion;
       case MovieConstraint::TechniqueIsNotAnimation:
-        return film.technique != MovieTechnique::Animation;
+        return movie.technique != MovieTechnique::Animation;
       case MovieConstraint::TechniqueIsNotLiveAction:
-        return film.technique != MovieTechnique::LiveAction;
+        return movie.technique != MovieTechnique::LiveAction;
       case MovieConstraint::TechniqueIsNotStopMotion:
-        return film.technique != MovieTechnique::StopMotion;
+        return movie.technique != MovieTechnique::StopMotion;
     }
 
     return true;
+  }
+
+  bool isMovieAcceptable(const MovieData& movie, const std::vector<MovieConstraint>& constraints) {
+    return std::all_of(constraints.begin(), constraints.end(), [&](MovieConstraint constraint) {
+      return isMovieAcceptable(movie, constraint);
+    });
   }
 
   MovieLevel computeLevel(const std::vector<MovieData>& database, std::size_t constraintCount, std::size_t movieCount, gf::Random& random) {
@@ -375,9 +381,7 @@ namespace mm {
       std::vector<MovieData> rejectedMovies;
 
       for (auto& movie : database) {
-        if (std::all_of(level.constraints.begin(), level.constraints.end(), [&](MovieConstraint constraint) {
-          return isMovieAcceptable(movie, constraint);
-        })) {
+        if (isMovieAcceptable(movie, level.constraints)) {
           acceptedMovies.push_back(movie);
         } else {
           rejectedMovies.push_back(movie);
@@ -411,6 +415,7 @@ namespace mm {
         level.movies.push_back(rejectedMovies[i]);
       }
 
+      std::shuffle(level.movies.begin(), level.movies.end(), random.getEngine());
       break;
     }
 
