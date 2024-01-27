@@ -10,7 +10,7 @@ namespace mm {
 
   TitleEntity::TitleEntity(gf::ResourceManager& resources)
   : m_font(resources.getFont("fonts/Ignotum-Regular.ttf"))
-  , m_backgroundTexture(resources.getTexture("title.png"))
+  , m_backgroundTexture(resources.getTexture("images/title.png"))
   {
   }
 
@@ -20,7 +20,7 @@ namespace mm {
   void TitleEntity::render(gf::RenderTarget &target, const gf::RenderStates &states) {
     gf::Coordinates coords(target);
 
-    float backgroundHeight = coords.getRelativeSize(gf::vec(0.0f, 0.8f)).height;
+    float backgroundHeight = coords.getRelativeSize(gf::vec(0.0f, 1.0f)).height;
     float backgroundScale = backgroundHeight / m_backgroundTexture.getSize().height;
 
     gf::Sprite background(m_backgroundTexture);
@@ -35,6 +35,8 @@ namespace mm {
     gf::Text title("Midnight Movies", m_font, titleCharacterSize);
     title.setColor(gf::Color::White);
     title.setPosition(coords.getCenter());
+    title.setOutlineColor(gf::Color::Black);
+    title.setOutlineThickness(titleCharacterSize * 0.02f);
     title.setAnchor(gf::Anchor::Center);
     target.draw(title, states);
 
