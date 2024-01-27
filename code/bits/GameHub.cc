@@ -7,7 +7,7 @@
 namespace mm {
 
   GameHub::GameHub()
-  : GameManager("Game", { GAME_DATADIR })
+  : GameManager("Midnight Movies", { GAME_DATADIR })
   , common(*this)
   , start(*this)
   , listFirst(*this, ConstraintListType::First)
