@@ -4,6 +4,7 @@
 #include <gf/Entity.h>
 #include <gf/Font.h>
 #include <gf/RenderTexture.h>
+#include <gf/Tween.h>
 #include <gf/Vector.h>
 #include <gf/Views.h>
 
@@ -33,6 +34,7 @@ namespace mm {
     gf::RenderTexture m_movieRenderTexture;
 
     gf::Time m_elapsedTime;
+    gf::Tween<float> m_arrivingTween;
   };
 
 }

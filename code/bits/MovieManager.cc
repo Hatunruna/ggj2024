@@ -5,6 +5,7 @@
 #include <gf/Shapes.h>
 #include <gf/Sprite.h>
 #include <gf/Text.h>
+#include <gf/Time.h>
 
 #include "GameHub.h"
 
@@ -25,6 +26,7 @@ namespace mm {
   , m_movieInfoBackgroundTexture(game.resources.getTexture("images/movie-info.png"))
   , m_movieInfoLightTexture(game.resources.getTexture("images/movie-info-light.png"))
   , m_movieRenderTexture(RenderTextureSize)
+  , m_arrivingTween(MovieAngleInitial, MovieAngleTarget, m_gameData.movieAngle, gf::milliseconds(500), gf::Ease::backOut)
   {
     m_movieRenderTexture.setSmooth();
     m_renderView.setInitialFramebufferSize(RenderTextureSize);
@@ -39,16 +41,16 @@ namespace mm {
     {
     case MovieState::NoMovie:
       generateMovieTexture();
-      m_gameData.movieAngle = MovieAngleInitial;
       m_gameData.movieState = MovieState::ArrivingMovie;
+      m_arrivingTween.restart();
       break;
 
     case MovieState::ArrivingMovie:
-      m_gameData.movieAngle += MovieVelocity * time.asSeconds();
-      if (m_gameData.movieAngle >= MovieAngleTarget) {
-        m_gameData.movieAngle = MovieAngleTarget;
+      m_arrivingTween.update(time);
+      if (m_arrivingTween.isFinished()) {
         m_elapsedTime = gf::Time::Zero;
         m_gameData.movieState = MovieState::WaitingMovie;
+        m_arrivingTween.restart();
       }
       break;
 
