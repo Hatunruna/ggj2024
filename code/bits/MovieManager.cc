@@ -10,6 +10,9 @@
 
 namespace {
   constexpr gf::Vector2i RenderTextureSize = gf::vec(1152, 1392);
+  constexpr gf::Vector2f MoviePosition = mm::WorldSize * gf::vec(0.60f, 1.20f);
+  constexpr float MovieVelocity = gf::Pi * 2.0f; // 2pi rad/s
+  constexpr float MovieAngleTarget = -gf::Pi / 16;
 }
 
 namespace mm {
@@ -29,21 +32,19 @@ namespace mm {
   }
 
   void MovieManager::update(gf::Time time) {
-    constexpr gf::Vector2f MovieTarget = WorldSize * gf::vec(0.30f, 0.65f);
-    constexpr float MovieVelocity = 8000.0f; // 2000 px/s
 
     switch (m_gameData.movieState)
     {
     case MovieState::NoMovie:
       generateMovieTexture();
-      m_gameData.moviePosition = WorldSize * gf::vec(-0.30f, 0.65f);
+      m_gameData.movieAngle = -gf::Pi;
       m_gameData.movieState = MovieState::ArrivingMovie;
       break;
 
     case MovieState::ArrivingMovie:
-      m_gameData.moviePosition.x += MovieVelocity * time.asSeconds();
-      if (m_gameData.moviePosition.x >= MovieTarget.x) {
-        m_gameData.moviePosition.x = MovieTarget.x;
+      m_gameData.movieAngle += MovieVelocity * time.asSeconds();
+      if (m_gameData.movieAngle >= MovieAngleTarget) {
+        m_gameData.movieAngle = MovieAngleTarget;
         m_gameData.movieState = MovieState::WaitingMovie;
       }
       break;
@@ -57,10 +58,9 @@ namespace mm {
     auto& texture = m_movieRenderTexture.getTexture();
     movieInfo.setScale(2.0f);
     movieInfo.setTexture(m_movieRenderTexture.getTexture());
-    movieInfo.setPosition(m_gameData.moviePosition);
-    constexpr float angle = -gf::Pi / 16.0f;
-    movieInfo.setRotation(angle);
-    movieInfo.setAnchor(gf::Anchor::Center);
+    movieInfo.setPosition(MoviePosition);
+    movieInfo.setOrigin(gf::vec(1036.0f, 1330.0f));
+    movieInfo.setRotation(m_gameData.movieAngle);
     movieInfo.draw(target, states);
   }
 

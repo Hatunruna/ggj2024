@@ -16,7 +16,7 @@ namespace mm {
 
   struct GameData {
     MovieState movieState = MovieState::NoMovie;
-    gf::Vector2f moviePosition = gf::vec(0.0f, 0.0f);
+    float movieAngle = 0.0f;
   };
 
 }
