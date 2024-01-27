@@ -28,6 +28,7 @@ namespace mm {
   , m_movieInfoLightTexture(game.resources.getTexture("images/movie-info-light.png"))
   , m_reviewPositiveTexture(game.resources.getTexture("images/reviews/star-fill.png"))
   , m_reviewNegativeTexture(game.resources.getTexture("images/reviews/star-empty.png"))
+  , m_aiTexture(game.resources.getTexture("images/ai.png"))
   , m_movieRenderTexture(RenderTextureSize)
   , m_arrivingTween(MovieAngleInitial, MovieAngleTarget, angle, gf::milliseconds(500), gf::Ease::backInOut)
   {
@@ -118,6 +119,20 @@ namespace mm {
     background.setTexture(m_movieInfoBackgroundTexture);
     background.setPosition(gf::vec(0.0f, 0.0f));
     background.draw(m_movieRenderTexture, gf::RenderStates());
+
+    if (movie.generated_by_ai) {
+      gf::Vector2f aiPosition;
+      aiPosition.x = m_game.random.computeUniformFloat(440.0f, 720.0f);
+      aiPosition.y = m_game.random.computeUniformFloat(200.0f, 620.0f);
+
+      gf::Sprite ai;
+      ai.setTexture(m_aiTexture);
+      ai.setPosition(aiPosition);
+      ai.setScale(0.25f);
+      ai.setColor(gf::Color::Opaque());
+      ai.setAnchor(gf::Anchor::Center);
+      ai.draw(m_movieRenderTexture, gf::RenderStates());
+    }
 
     gf::Text title;
     title.setFont(m_font);

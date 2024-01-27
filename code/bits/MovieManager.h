@@ -37,6 +37,7 @@ namespace mm {
     std::vector<gf::Ref<gf::Texture>> m_ratingTextures;
     gf::Texture& m_reviewPositiveTexture;
     gf::Texture& m_reviewNegativeTexture;
+    gf::Texture& m_aiTexture;
 
     gf::ScreenView m_renderView;
     gf::RenderTexture m_movieRenderTexture;
