@@ -2,6 +2,8 @@
 #define MM_THEATER_SCENE_H
 
 #include <gf/Scene.h>
+#include <gf/WidgetContainer.h>
+#include <gf/Widgets.h>
 
 #include "MovieManager.h"
 #include "TheaterBackgroundEntity.h"
@@ -14,10 +16,18 @@ namespace mm {
   public:
     TheaterScene(GameHub& game);
 
+    virtual void doProcessEvent(gf::Event& event) override;
+    virtual void doRender(gf::RenderTarget& target, const gf::RenderStates &states) override;
+
   private:
     GameHub& m_game;
     TheaterBackgroundEntity m_background;
     MovieManager m_movieManager;
+
+    // Widgets
+    gf::TextButtonWidget m_broadcastButton;
+    gf::TextButtonWidget m_trashButton;
+    gf::WidgetContainer m_widgets;
   };
 
 }
