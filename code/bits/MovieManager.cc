@@ -73,7 +73,6 @@ namespace mm {
     target.setActive();
 
     gf::Sprite movieInfo;
-    auto& texture = m_movieRenderTexture.getTexture();
     movieInfo.setScale(2.0f);
     movieInfo.setTexture(m_movieRenderTexture.getTexture());
     movieInfo.setPosition(MoviePosition);

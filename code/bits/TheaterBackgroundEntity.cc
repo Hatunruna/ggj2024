@@ -58,7 +58,7 @@ namespace mm {
 
     case MonsterState::Angry:
     {
-      assert(m_currentAnimation < m_angryAnimations.size());
+      assert(m_currentAnimation < static_cast<int>(m_angryAnimations.size()));
       gf::Animation& animation = m_angryAnimations[m_currentAnimation];
 
       animation.update(time);
@@ -71,7 +71,7 @@ namespace mm {
 
     case MonsterState::Happy:
     {
-      assert(m_currentAnimation < m_happyAnimations.size());
+      assert(m_currentAnimation < static_cast<int>(m_happyAnimations.size()));
       gf::Animation& animation = m_happyAnimations[m_currentAnimation];
 
       animation.update(time);
@@ -102,7 +102,7 @@ namespace mm {
 
     case MonsterState::Angry:
     {
-      assert(m_currentAnimation < m_angryAnimations.size());
+      assert(m_currentAnimation < static_cast<int>(m_angryAnimations.size()));
 
       gf::AnimatedSprite monster;
       monster.setAnimation(m_angryAnimations[m_currentAnimation]);
@@ -114,7 +114,7 @@ namespace mm {
 
     case MonsterState::Happy:
     {
-      assert(m_currentAnimation < m_happyAnimations.size());
+      assert(m_currentAnimation < static_cast<int>(m_happyAnimations.size()));
 
       gf::AnimatedSprite monster;
       monster.setAnimation(m_happyAnimations[m_currentAnimation]);
