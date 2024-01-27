@@ -32,6 +32,7 @@ namespace mm {
     gf::ScreenView m_renderView;
     gf::RenderTexture m_movieRenderTexture;
 
+    gf::Time m_elapsedTime;
   };
 
 }

@@ -12,7 +12,9 @@ namespace {
   constexpr gf::Vector2i RenderTextureSize = gf::vec(1152, 1392);
   constexpr gf::Vector2f MoviePosition = mm::WorldSize * gf::vec(0.60f, 1.20f);
   constexpr float MovieVelocity = gf::Pi * 2.0f; // 2pi rad/s
+  constexpr float MovieAngleInitial = -gf::Pi;
   constexpr float MovieAngleTarget = -gf::Pi / 16;
+  constexpr float WaitingTime = 2.0f; // 2 sec (debug)
 }
 
 namespace mm {
@@ -37,7 +39,7 @@ namespace mm {
     {
     case MovieState::NoMovie:
       generateMovieTexture();
-      m_gameData.movieAngle = -gf::Pi;
+      m_gameData.movieAngle = MovieAngleInitial;
       m_gameData.movieState = MovieState::ArrivingMovie;
       break;
 
@@ -45,7 +47,23 @@ namespace mm {
       m_gameData.movieAngle += MovieVelocity * time.asSeconds();
       if (m_gameData.movieAngle >= MovieAngleTarget) {
         m_gameData.movieAngle = MovieAngleTarget;
+        m_elapsedTime = gf::Time::Zero;
         m_gameData.movieState = MovieState::WaitingMovie;
+      }
+      break;
+
+    case MovieState::WaitingMovie:
+      m_elapsedTime += time;
+      if (m_elapsedTime >= gf::seconds(WaitingTime)) {
+        m_gameData.movieState = MovieState::DepartureMovie;
+      }
+      break;
+
+    case MovieState::DepartureMovie:
+      m_gameData.movieAngle -= MovieVelocity * time.asSeconds();
+      if (m_gameData.movieAngle <= MovieAngleInitial) {
+        m_gameData.movieAngle = MovieAngleInitial;
+        m_gameData.movieState = MovieState::ArrivingMovie;
       }
       break;
     }
