@@ -109,14 +109,9 @@ namespace mm {
 
   void from_json(const nlohmann::json& j, MovieData& data) {
     j.at("title").get_to(data.title);
-    j.at("year").get_to(data.year);
-    j.at("duration").get_to(data.duration);
-    j.at("note").get_to(data.note);
     j.at("country").get_to(data.country);
     j.at("genre").get_to(data.genre);
-    j.at("technique").get_to(data.technique);
     j.at("rating").get_to(data.rating);
-    j.at("themes").get_to(data.themes);
   }
 
   std::vector<MovieData> loadDatabase(gf::ResourceManager& resources, gf::Random& random) {
@@ -126,7 +121,14 @@ namespace mm {
     std::ifstream ifs(filename);
     nlohmann::json::parse(ifs).get_to(db);
 
+    constexpr MovieTechnique Techniques[] { MovieTechnique::Animation, MovieTechnique::LiveAction, MovieTechnique::StopMotion };
+    std::discrete_distribution<std::size_t> techniqueDistribution({ 0.3, 0.65, 0.05 });
+
     for (auto& film : db) {
+      film.year = random.computeUniformInteger(1970, 2024);
+      film.duration = random.computeUniformInteger(60, 200);
+      film.note = random.computeUniformInteger(1, 5);
+      film.technique = Techniques[techniqueDistribution(random.getEngine())];
       film.generated_by_ai = random.computeBernoulli(0.25);
     }
 

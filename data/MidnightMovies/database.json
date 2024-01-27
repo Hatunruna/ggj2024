@@ -1,552 +1,302 @@
 [
   {
     "title": "Notes and Nudes",
-    "year": 2010,
-    "duration": 118,
-    "note": 3,
     "country": "Valinor",
     "genre": "Musical",
-    "technique": "LiveAction",
-    "rating": "18+",
-    "themes": [ "", "" ]
+    "rating": "18+"
   },
   {
     "title": "Yeehaw",
-    "year": 2018,
-    "duration": 120,
-    "note": 5,
     "country": "Canterlot",
     "genre": "Comedy",
-    "technique": "LiveAction",
-    "rating": "12+",
-    "themes": [ "", "" ]
+    "rating": "0+"
   },
   {
     "title": "Edge Of The Galaxy",
-    "year": 2002,
-    "duration": 78,
-    "note": 2,
     "country": "Morrowind",
     "genre": "ScienceFiction",
-    "technique": "LiveAction",
-    "rating": "12+",
-    "themes": [ "", "" ]
+    "rating": "12+"
   },
   {
     "title": "Boy Of My Admiration",
-    "year": 2017,
-    "duration": 82,
-    "note": 3,
     "country": "Hyrule",
     "genre": "Romance",
-    "technique": "StopMotion",
-    "rating": "0+",
-    "themes": [ "", "" ]
+    "rating": "0+"
   },
   {
     "title": "Breath Of The World",
-    "year": 2021,
-    "duration": 92,
-    "note": 5,
     "country": "Hyrule",
     "genre": "Action",
-    "technique": "Animated",
-    "rating": "0+",
-    "themes": [ "", "" ]
+    "rating": "12+"
   },
   {
     "title": "Bastards from the Wastelands",
-    "year": 1970,
-    "duration": 73,
-    "note": 5,
     "country": "Morrowind",
     "genre": "Western",
-    "technique": "LiveAction",
-    "rating": "16+",
-    "themes": [ "", "" ]
+    "rating": "16+"
   },
   {
     "title": "Loves And Butterflies",
-    "year": 1992,
-    "duration": 196,
-    "note": 4,
     "country": "Canterlot",
     "genre": "Musical",
-    "technique": "LiveAction",
-    "rating": "16+",
-    "themes": [ "", "" ]
+    "rating": "16+"
   },
   {
     "title": "Exterminate The Savages",
-    "year": 2003,
-    "duration": 122,
-    "note": 1,
     "country": "Gallifrey",
     "genre": "Western",
-    "technique": "LiveAction",
-    "rating": "16+",
-    "themes": [ "", "" ]
+    "rating": "12+"
   },
   {
     "title": "Screams In My Dreams",
-    "year": 2012,
-    "duration": 116,
-    "note": 4,
     "country": "Temeria",
     "genre": "Horror",
-    "technique": "LiveAction",
-    "rating": "18+",
-    "themes": [ "", "" ]
+    "rating": "18+"
   },
   {
     "title": "The Cyberwarriors",
-    "year": 2001,
-    "duration": 77,
-    "note": 5,
     "country": "Gallifrey",
     "genre": "ScienceFiction",
-    "technique": "StopMotion",
-    "rating": "12+",
-    "themes": [ "", "" ]
+    "rating": "12+"
   },
   {
     "title": "Snakes And Warriors",
-    "year": 1979,
-    "duration": 97,
-    "note": 1,
     "country": "Hyrule",
     "genre": "Horror",
-    "technique": "Animated",
-    "rating": "0+",
-    "themes": [ "", "" ]
+    "rating": "16+"
   },
   {
     "title": "Enemy In The Beginning Of Time",
-    "year": 2008,
-    "duration": 142,
-    "note": 1,
     "country": "Temeria",
     "genre": "Action",
-    "technique": "LiveAction",
-    "rating": "16+",
-    "themes": [ "", "" ]
+    "rating": "12+"
   },
   {
     "title": "Hunter Of The Night",
-    "year": 1982,
-    "duration": 99,
-    "note": 4,
     "country": "Innistrad",
     "genre": "Action",
-    "technique": "LiveAction",
-    "rating": "0+",
-    "themes": [ "", "" ]
+    "rating": "0+"
   },
   {
     "title": "Cats Without Restrictions",
-    "year": 1999,
-    "duration": 200,
-    "note": 1,
     "country": "Innistrad",
     "genre": "Comedy",
-    "technique": "LiveAction",
-    "rating": "0+",
-    "themes": [ "", "" ]
+    "rating": "0+"
   },
   {
     "title": "Boy Of Doom",
-    "year": 1993,
-    "duration": 107,
-    "note": 4,
     "country": "Gallifrey",
     "genre": "Drama",
-    "technique": "LiveAction",
-    "rating": "12+",
-    "themes": [ "", "" ]
+    "rating": "12+"
   },
   {
     "title": "Girls With Sins",
-    "year": 2002,
-    "duration": 66,
-    "note": 5,
     "country": "Valinor",
     "genre": "Romance",
-    "technique": "LiveAction",
-    "rating": "18+",
-    "themes": [ "", "" ]
+    "rating": "18+"
   },
   {
     "title": "Creating Tomorrow",
-    "year": 2016,
-    "duration": 95,
-    "note": 4,
     "country": "Temeria",
     "genre": "ScienceFiction",
-    "technique": "Animated",
-    "rating": "12+",
-    "themes": [ "", "" ]
+    "rating": "12+"
   },
   {
     "title": "Crying In The City",
-    "year": 1995,
-    "duration": 172,
-    "note": 2,
     "country": "Wonderland",
     "genre": "Drama",
-    "technique": "Animated",
-    "rating": "16+",
-    "themes": [ "", "" ]
+    "rating": "12+"
   },
   {
     "title": "Cruelty Of The Graveyard",
-    "year": 1985,
-    "duration": 134,
-    "note": 4,
     "country": "Hyrule",
     "genre": "Western",
-    "technique": "Animated",
-    "rating": "12+",
-    "themes": [ "", "" ]
+    "rating": "0+"
   },
   {
     "title": "Mutant Behind Me",
-    "year": 2015,
-    "duration": 166,
-    "note": 2,
     "country": "Canterlot",
     "genre": "Horror",
-    "technique": "Animated",
-    "rating": "18+",
-    "themes": [ "", "" ]
+    "rating": "18+"
   },
   {
     "title": "Excitement Of Her Laugh",
-    "year": 1997,
-    "duration": 163,
-    "note": 3,
     "country": "Gallifrey",
     "genre": "Comedy",
-    "technique": "StopMotion",
-    "rating": "16+",
-    "themes": [ "", "" ]
+    "rating": "16+"
   },
   {
     "title": "Girlfriend Without Fear",
-    "year": 1998,
-    "duration": 164,
-    "note": 3,
     "country": "Gallifrey",
     "genre": "Romance",
-    "technique": "LiveAction",
-    "rating": "12+",
-    "themes": [ "", "" ]
+    "rating": "12+"
   },
   {
     "title": "Widows And Deputies",
-    "year": 2021,
-    "duration": 75,
-    "note": 3,
     "country": "Canterlot",
     "genre": "Western",
-    "technique": "LiveAction",
-    "rating": "0+",
-    "themes": [ "", "" ]
+    "rating": "0+"
   },
   {
     "title": "Assassins And Strangers",
-    "year": 2008,
-    "duration": 78,
-    "note": 4,
     "country": "Innistrad",
     "genre": "Western",
-    "technique": "LiveAction",
-    "rating": "12+",
-    "themes": [ "", "" ]
+    "rating": "12+"
   },
   {
     "title": "Enemies Of Science",
-    "year": 1991,
-    "duration": 85,
-    "note": 3,
     "country": "Wonderland",
     "genre": "ScienceFiction",
-    "technique": "Animated",
-    "rating": "16+",
-    "themes": [ "", "" ]
+    "rating": "16+"
   },
   {
     "title": "Ride And Pride",
-    "year": 2006,
-    "duration": 111,
-    "note": 3,
     "country": "Canterlot",
     "genre": "Fantasy",
-    "technique": "Animated",
-    "rating": "0+",
-    "themes": [ "", "" ]
+    "rating": "0+"
   },
   {
     "title": "Whispers Next Door",
-    "year": 2004,
-    "duration": 144,
-    "note": 3,
     "country": "Valinor",
     "genre": "Horror",
-    "technique": "LiveAction",
-    "rating": "16+",
-    "themes": [ "", "" ]
+    "rating": "16+"
   },
   {
     "title": "Army Of Outer Space",
-    "year": 1996,
-    "duration": 81,
-    "note": 3,
     "country": "Innistrad",
     "genre": "ScienceFiction",
-    "technique": "LiveAction",
-    "rating": "16+",
-    "themes": [ "", "" ]
+    "rating": "12+"
   },
   {
     "title": "Secrets In The Neighborhood",
-    "year": 1990,
-    "duration": 66,
-    "note": 2,
     "country": "Innistrad",
     "genre": "Drama",
-    "technique": "LiveAction",
-    "rating": "16+",
-    "themes": [ "", "" ]
+    "rating": "16+"
   },
   {
     "title": "Lover Of My Dreams",
-    "year": 1998,
-    "duration": 147,
-    "note": 5,
     "country": "Temeria",
     "genre": "Romance",
-    "technique": "LiveAction",
-    "rating": "16+",
-    "themes": [ "", "" ]
+    "rating": "16+"
   },
   {
     "title": "Fame Without Shame",
-    "year": 2007,
-    "duration": 63,
-    "note": 3,
     "country": "Wonderland",
     "genre": "Musical",
-    "technique": "LiveAction",
-    "rating": "12+",
-    "themes": [ "", "" ]
+    "rating": "12+"
   },
   {
     "title": "Climax Of The Idiot",
-    "year": 1981,
-    "duration": 110,
-    "note": 3,
     "country": "Hyrule",
     "genre": "Comedy",
-    "technique": "LiveAction",
-    "rating": "16+",
-    "themes": [ "", "" ]
+    "rating": "16+"
   },
   {
     "title": "Soldiers And Secretaries",
-    "year": 2024,
-    "duration": 164,
-    "note": 4,
     "country": "Innistrad",
     "genre": "Romance",
-    "technique": "LiveAction",
-    "rating": "0+",
-    "themes": [ "", "" ]
+    "rating": "16+"
   },
   {
     "title": "Shattered Dreams",
-    "year": 1997,
-    "duration": 200,
-    "note": 5,
     "country": "Morrowind",
     "genre": "Drama",
-    "technique": "LiveAction",
-    "rating": "0+",
-    "themes": [ "", "" ]
+    "rating": "12+"
   },
   {
     "title": "Screams Of The Cursed",
-    "year": 1994,
-    "duration": 196,
-    "note": 5,
     "country": "Wonderland",
     "genre": "Horror",
-    "technique": "LiveAction",
-    "rating": "16+",
-    "themes": [ "", "" ]
+    "rating": "16+"
   },
   {
     "title": "Ultimate Revenge",
-    "year": 1986,
-    "duration": 156,
-    "note": 5,
     "country": "Gallifrey",
     "genre": "Action",
-    "technique": "LiveAction",
-    "rating": "0+",
-    "themes": [ "", "" ]
+    "rating": "0+"
   },
   {
     "title": "Empty Tears",
-    "year": 2009,
-    "duration": 77,
-    "note": 4,
     "country": "Canterlot",
     "genre": "Drama",
-    "technique": "Animated",
-    "rating": "12+",
-    "themes": [ "", "" ]
+    "rating": "12+"
   },
   {
     "title": "Love and Destiny",
-    "year": 2023,
-    "duration": 173,
-    "note": 4,
     "country": "Morrowind",
     "genre": "Romance",
-    "technique": "LiveAction",
-    "rating": "18+",
-    "themes": [ "", "" ]
+    "rating": "16+"
   },
   {
     "title": "Harmony in the Stars",
-    "year": 1990,
-    "duration": 174,
-    "note": 1,
     "country": "Gallifrey",
     "genre": "Musical",
-    "technique": "LiveAction",
-    "rating": "12+",
-    "themes": [ "", "" ]
+    "rating": "12+"
   },
   {
     "title": "The Cosmic Terror",
-    "year": 2000,
-    "duration": 141,
-    "note": 2,
     "country": "Gallifrey",
     "genre": "Horror",
-    "technique": "Animated",
-    "rating": "12+",
-    "themes": [ "", "" ]
+    "rating": "16+"
   },
   {
     "title": "Hilarity Unlimited",
-    "year": 1990,
-    "duration": 104,
-    "note": 1,
     "country": "Morrowind",
     "genre": "Comedy",
-    "technique": "Animated",
-    "rating": "0+",
-    "themes": [ "", "" ]
+    "rating": "0+"
   },
   {
     "title": "Starlight Chronicles",
-    "year": 1976,
-    "duration": 129,
-    "note": 3,
     "country": "Gallifrey",
     "genre": "Fantasy",
-    "technique": "LiveAction",
-    "rating": "18+",
-    "themes": [ "", "" ]
+    "rating": "12+"
   },
   {
     "title": "Goblin Giggles",
-    "year": 2016,
-    "duration": 180,
-    "note": 2,
     "country": "Valinor",
     "genre": "Comedy",
-    "technique": "LiveAction",
-    "rating": "12+",
-    "themes": [ "", "" ]
+    "rating": "0+"
   },
   {
     "title": "Realm Of Legends",
-    "year": 1981,
-    "duration": 71,
-    "note": 1,
     "country": "Valinor",
     "genre": "Fantasy",
-    "technique": "Animated",
-    "rating": "0+",
-    "themes": [ "", "" ]
+    "rating": "12+"
   },
   {
     "title": "The Forgotten Sunsets",
-    "year": 2008,
-    "duration": 66,
-    "note": 2,
     "country": "Valinor",
     "genre": "Drama",
-    "technique": "LiveAction",
-    "rating": "12+",
-    "themes": [ "", "" ]
+    "rating": "12+"
   },
   {
     "title": "The Wild Wizard Of The West",
-    "year": 2003,
-    "duration": 103,
-    "note": 4,
     "country": "Valinor",
     "genre": "Western",
-    "technique": "LiveAction",
-    "rating": "12+",
-    "themes": [ "", "" ]
+    "rating": "12+"
   },
   {
     "title": "Harmony Of The Faeries",
-    "year": 1993,
-    "duration": 181,
-    "note": 2,
     "country": "Morrowind",
     "genre": "Musical",
-    "technique": "LiveAction",
-    "rating": "16+",
-    "themes": [ "", "" ]
+    "rating": "16+"
   },
   {
     "title": "Dragons Of Destiny",
-    "year": 1978,
-    "duration": 62,
-    "note": 5,
     "country": "Innistrad",
     "genre": "Fantasy",
-    "technique": "LiveAction",
-    "rating": "0+",
-    "themes": [ "", "" ]
+    "rating": "0+"
   },
   {
     "title": "Eternal Heroes",
-    "year": 1977,
-    "duration": 66,
-    "note": 4,
     "country": "Morrowind",
     "genre": "Action",
-    "technique": "LiveAction",
-    "rating": "18+",
-    "themes": [ "", "" ]
+    "rating": "18+"
   },
   {
     "title": "Action Ponies On A Mission",
-    "year": 2008,
-    "duration": 146,
-    "note": 5,
     "country": "Canterlot",
     "genre": "Action",
-    "technique": "Animated",
-    "rating": "16+",
-    "themes": [ "", "" ]
+    "rating": "16+"
   }
 ]

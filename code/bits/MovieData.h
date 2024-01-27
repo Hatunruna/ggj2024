@@ -60,7 +60,6 @@ namespace mm {
     MovieGenre genre;
     MovieTechnique technique;
     MovieRating rating;
-    std::vector<std::string> themes;
     bool generated_by_ai = false;
   };
 
