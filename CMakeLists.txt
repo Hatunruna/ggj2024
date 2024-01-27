@@ -31,6 +31,7 @@ add_executable(${GAME}
   code/bits/ConstraintListScene.cc
   code/bits/DebriefEntity.cc
   code/bits/DebriefScene.cc
+  code/bits/FeedbackEntity.cc
   code/bits/GameData.cc
   code/bits/GameHub.cc
   code/bits/GameState.cc
