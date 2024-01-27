@@ -129,7 +129,7 @@ namespace mm {
       ai.setTexture(m_aiTexture);
       ai.setPosition(aiPosition);
       ai.setScale(0.25f);
-      ai.setColor(gf::Color::Opaque());
+      ai.setColor(gf::Color::Opaque(0.30f));
       ai.setAnchor(gf::Anchor::Center);
       ai.draw(m_movieRenderTexture, gf::RenderStates());
     }
