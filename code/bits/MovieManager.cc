@@ -6,7 +6,7 @@
 #include <gf/Sprite.h>
 #include <gf/Text.h>
 
-#include "GameData.h"
+#include "GameHub.h"
 
 namespace {
   constexpr gf::Vector2i RenderTextureSize = gf::vec(1152, 1392);
@@ -14,10 +14,11 @@ namespace {
 
 namespace mm {
 
-  MovieManager::MovieManager(gf::ResourceManager& resources)
-  : m_font(resources.getFont("fonts/GoudyBookletter1911.otf"))
-  , m_movieInfoBackgroundTexture(resources.getTexture("images/movie-info.png"))
-  , m_movieInfoLightTexture(resources.getTexture("images/movie-info-light.png"))
+  MovieManager::MovieManager(GameHub& game)
+  : m_gameData(game.data)
+  , m_font(game.resources.getFont("fonts/GoudyBookletter1911.otf"))
+  , m_movieInfoBackgroundTexture(game.resources.getTexture("images/movie-info.png"))
+  , m_movieInfoLightTexture(game.resources.getTexture("images/movie-info-light.png"))
   , m_movieRenderTexture(RenderTextureSize)
   {
     m_movieRenderTexture.setSmooth();
@@ -28,7 +29,25 @@ namespace mm {
   }
 
   void MovieManager::update(gf::Time time) {
-    generateMovieTexture();
+    constexpr gf::Vector2f MovieTarget = WorldSize * gf::vec(0.30f, 0.65f);
+    constexpr float MovieVelocity = 8000.0f; // 2000 px/s
+
+    switch (m_gameData.movieState)
+    {
+    case MovieState::NoMovie:
+      generateMovieTexture();
+      m_gameData.moviePosition = WorldSize * gf::vec(-0.30f, 0.65f);
+      m_gameData.movieState = MovieState::ArrivingMovie;
+      break;
+
+    case MovieState::ArrivingMovie:
+      m_gameData.moviePosition.x += MovieVelocity * time.asSeconds();
+      if (m_gameData.moviePosition.x >= MovieTarget.x) {
+        m_gameData.moviePosition.x = MovieTarget.x;
+        m_gameData.movieState = MovieState::WaitingMovie;
+      }
+      break;
+    }
   }
 
   void MovieManager::render(gf::RenderTarget& target, const gf::RenderStates& states) {
@@ -38,7 +57,7 @@ namespace mm {
     auto& texture = m_movieRenderTexture.getTexture();
     movieInfo.setScale(2.0f);
     movieInfo.setTexture(m_movieRenderTexture.getTexture());
-    movieInfo.setPosition(WorldSize * gf::vec(0.30f, 0.65f));
+    movieInfo.setPosition(m_gameData.moviePosition);
     constexpr float angle = -gf::Pi / 16.0f;
     movieInfo.setRotation(angle);
     movieInfo.setAnchor(gf::Anchor::Center);

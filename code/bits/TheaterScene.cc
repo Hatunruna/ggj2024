@@ -8,7 +8,7 @@ namespace mm {
   : gf::Scene(game.getRenderer().getSize())
   , m_game(game)
   , m_background(game.resources)
-  , m_movieManager(game.resources)
+  , m_movieManager(game)
   {
     setClearColor(gf::Color::Black);
 

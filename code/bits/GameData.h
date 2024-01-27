@@ -7,8 +7,16 @@ namespace mm {
 
   constexpr gf::Vector2i WorldSize = gf::vec(3840, 2160);
 
-  struct GameData {
+  enum class MovieState {
+    NoMovie,
+    ArrivingMovie,
+    WaitingMovie,
+    DepartureMovie,
+  };
 
+  struct GameData {
+    MovieState movieState = MovieState::NoMovie;
+    gf::Vector2f moviePosition = gf::vec(0.0f, 0.0f);
   };
 
 }

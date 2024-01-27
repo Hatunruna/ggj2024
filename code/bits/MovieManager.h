@@ -4,15 +4,17 @@
 #include <gf/Entity.h>
 #include <gf/Font.h>
 #include <gf/RenderTexture.h>
-#include <gf/ResourceManager.h>
 #include <gf/Vector.h>
 #include <gf/Views.h>
 
 namespace mm {
 
+  struct GameData;
+  struct GameHub;
+
   class MovieManager: public gf::Entity {
   public:
-    MovieManager(gf::ResourceManager& resources);
+    MovieManager(GameHub& game);
 
     virtual void update(gf::Time time) override;
     virtual void render(gf::RenderTarget& target, const gf::RenderStates& states) override;
@@ -21,6 +23,8 @@ namespace mm {
     void generateMovieTexture();
 
   private:
+    GameData& m_gameData;
+
     gf::Font& m_font;
     gf::Texture& m_movieInfoBackgroundTexture;
     gf::Texture& m_movieInfoLightTexture;
