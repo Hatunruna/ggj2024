@@ -27,6 +27,7 @@ namespace mm {
 
     MovieState movieState = MovieState::NoMovie;
     MonsterState monsterState = MonsterState::Neutral;
+    int currentLevel = 0;
 
     MovieLevel movieLevel;
     int currentMovie = 0;

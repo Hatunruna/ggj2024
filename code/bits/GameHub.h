@@ -4,6 +4,7 @@
 #include <gf/GameManager.h>
 
 #include "CommonScene.h"
+#include "DebriefScene.h"
 #include "GameData.h"
 #include "GameState.h"
 #include "StartScene.h"
@@ -15,6 +16,8 @@ namespace mm {
   struct GameHub : gf::GameManager {
     GameHub();
 
+    bool startNewShift();
+
     GameData data;
     GameState state;
 
@@ -23,6 +26,7 @@ namespace mm {
     ConstraintListScene listFirst;
     TheaterScene theater;
     ConstraintListScene listRecall;
+    DebriefScene debrief;
   };
 
 

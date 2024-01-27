@@ -1,7 +1,6 @@
 #include "MovieManager.h"
 
 #include <gf/Color.h>
-#include <gf/Log.h>
 #include <gf/Shapes.h>
 #include <gf/Sprite.h>
 #include <gf/Text.h>
@@ -22,6 +21,7 @@ namespace mm {
 
   MovieManager::MovieManager(GameHub& game)
   : m_resources(game.resources)
+  , m_game(game)
   , m_gameState(game.state)
   , m_font(game.resources.getFont("fonts/GoudyBookletter1911.otf"))
   , m_movieInfoBackgroundTexture(game.resources.getTexture("images/movie-info.png"))
@@ -55,10 +55,11 @@ namespace mm {
       const auto& movies = m_gameState.movieLevel.movies;
       int currentMovie = m_gameState.currentMovie;
       if (currentMovie < static_cast<int>(movies.size())) {
-        gf::Log::debug("current movie index: %d\n", currentMovie);
         generateMovieTexture(movies[currentMovie]);
         m_gameState.movieState = MovieState::ArrivingMovie;
         m_arrivingTween.restart();
+      } else {
+        m_game.replaceScene(m_game.debrief);
       }
       break;
     }

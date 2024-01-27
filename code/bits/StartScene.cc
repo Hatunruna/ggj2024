@@ -41,8 +41,8 @@ namespace mm {
 
     if (m_startAction.isActive()) {
       m_game.data.movieDatabase = loadDatabase(m_game.resources, m_game.random);
-      m_game.state.movieLevel = computeLevel(m_game.data.movieDatabase, 1, 10, m_game.random);
-      m_game.state.currentMovie = 0;
+      bool newShift = m_game.startNewShift();
+      assert(newShift);
 
       m_game.replaceScene(m_game.listFirst);
     }

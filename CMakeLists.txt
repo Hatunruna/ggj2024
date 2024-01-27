@@ -29,6 +29,7 @@ add_executable(${GAME}
   code/main.cc
   code/bits/CommonScene.cc
   code/bits/ConstraintListScene.cc
+  code/bits/DebriefScene.cc
   code/bits/GameData.cc
   code/bits/GameHub.cc
   code/bits/GameState.cc

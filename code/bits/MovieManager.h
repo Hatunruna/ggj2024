@@ -28,6 +28,7 @@ namespace mm {
 
   private:
     gf::ResourceManager& m_resources;
+    GameHub& m_game;
     GameState& m_gameState;
 
     gf::Font& m_font;
