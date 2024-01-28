@@ -12,7 +12,7 @@ namespace mm {
 
   RequirementsEntity::RequirementsEntity(GameHub& game)
   : m_gameState(game.state)
-  , m_font(game.resources.getFont("fonts/GoudyBookletter1911.otf"))
+  , m_font(game.resources.getFont("fonts/Renner.ttf"))
   {
   }
 
@@ -31,10 +31,10 @@ namespace mm {
 
     gf::Text text(constraintText, m_font, coordinates.getRelativeCharacterSize(0.08));
     text.setColor(gf::Color::White);
-    text.setParagraphWidth(coordinates.getRelativeSize({ 0.7f, 0.0f }).width);
+    text.setParagraphWidth(coordinates.getRelativeSize({ 0.9f, 0.0f }).width);
     text.setAlignment(gf::Alignment::Center);
-    text.setPosition(coordinates.getRelativePoint({ 0.5f, 0.2f }));
-    text.setAnchor(gf::Anchor::TopCenter);
+    text.setPosition(coordinates.getRelativePoint({ 0.5f, 0.4f }));
+    text.setAnchor(gf::Anchor::Center);
 
     target.draw(text, states);
   }

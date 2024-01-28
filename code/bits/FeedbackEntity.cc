@@ -11,7 +11,7 @@ namespace mm {
 
   namespace {
 
-    constexpr gf::Time TotalTime = gf::seconds(20);
+    constexpr gf::Time TotalTime = gf::seconds(2);
 
   }
 
