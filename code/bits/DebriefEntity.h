@@ -20,6 +20,7 @@ namespace mm {
     GameHub& m_game;
     GameState& m_gameState;
     gf::Font& m_font;
+    gf::Texture& m_backgroundTexture;
   };
 
 }

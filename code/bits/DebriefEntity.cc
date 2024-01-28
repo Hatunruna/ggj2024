@@ -4,6 +4,7 @@
 #include <gf/Anchor.h>
 #include <gf/Coordinates.h>
 #include <gf/Shapes.h>
+#include <gf/Sprite.h>
 #include <gf/Text.h>
 
 #include "GameData.h"
@@ -15,7 +16,8 @@ namespace mm {
   DebriefEntity::DebriefEntity(GameHub& game)
   : m_game(game)
   , m_gameState(game.state)
-  , m_font(game.resources.getFont("fonts/GoudyBookletter1911.otf"))
+  , m_font(game.resources.getFont("fonts/Renner.ttf"))
+  , m_backgroundTexture(game.resources.getTexture("images/title.png"))
   {
   }
 
@@ -25,6 +27,16 @@ namespace mm {
 
   void DebriefEntity::render(gf::RenderTarget& target, const gf::RenderStates& states) {
     gf::Coordinates coordinates(target);
+
+    float backgroundHeight = coordinates.getRelativeSize(gf::vec(0.0f, 1.0f)).height;
+    float backgroundScale = backgroundHeight / m_backgroundTexture.getSize().height;
+
+    gf::Sprite background(m_backgroundTexture);
+    background.setColor(gf::Color::Opaque(0.25));
+    background.setPosition(coordinates.getCenter());
+    background.setAnchor(gf::Anchor::Center);
+    background.setScale(backgroundScale);
+    target.draw(background, states);
 
     gf::Text title("Shift End", m_font, coordinates.getRelativeCharacterSize(0.12));
     title.setColor(gf::Color::White);
