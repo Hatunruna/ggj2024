@@ -30,7 +30,7 @@ namespace mm {
       m_timer -= time;
 
       if (m_timer < gf::Time::zero()) {
-        m_gameHub.replaceScene(m_gameHub.debrief);
+        m_gameHub.endShift();
         m_timer = TotalTime;
       }
     }

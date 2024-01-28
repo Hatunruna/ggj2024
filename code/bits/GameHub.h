@@ -17,6 +17,7 @@ namespace mm {
     GameHub();
 
     void startNewShift();
+    void endShift();
 
     GameData data;
     GameState state;

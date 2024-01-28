@@ -17,6 +17,7 @@ namespace mm {
     void render(gf::RenderTarget& target, const gf::RenderStates& states) override;
 
   private:
+    GameHub& m_game;
     GameState& m_gameState;
     gf::Font& m_font;
   };

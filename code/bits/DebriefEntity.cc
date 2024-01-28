@@ -13,7 +13,8 @@
 namespace mm {
 
   DebriefEntity::DebriefEntity(GameHub& game)
-  : m_gameState(game.state)
+  : m_game(game)
+  , m_gameState(game.state)
   , m_font(game.resources.getFont("fonts/GoudyBookletter1911.otf"))
   {
   }
@@ -36,7 +37,8 @@ namespace mm {
     std::string debriefText;
     debriefText += "Correct choices: " + std::to_string(m_gameState.correctChoices) + "\n";
     debriefText += "Incorrect choices: " + std::to_string(m_gameState.incorrectChoices) + "\n";
-    // debriefText += "Total errors: " + std::to_string(3) + "\n";
+    const int totalMovies = m_game.data.levelSettings[m_game.state.currentLevel].movieCount;
+    debriefText += "Unhandled movies: " + std::to_string(totalMovies - (m_gameState.correctChoices + m_gameState.incorrectChoices)) + "\n";
 
     gf::Text debrief(debriefText, m_font, coordinates.getRelativeCharacterSize(0.08));
     debrief.setColor(gf::Color::White);

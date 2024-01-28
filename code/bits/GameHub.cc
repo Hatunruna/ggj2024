@@ -33,4 +33,19 @@ namespace mm {
     state.incorrectChoices = 0;
   }
 
+  void GameHub::endShift() {
+    const int totalMovies = data.levelSettings[state.currentLevel].movieCount;
+    const float ratio = static_cast<float>(state.correctChoices) / static_cast<float>(totalMovies);
+
+    if (ratio >= NeutralLimit) {
+      int newHappinessValue = gf::clamp(static_cast<int>(state.monsterHappiness) + 1, 0, 4);
+      state.monsterHappiness = static_cast<MonsterHappiness>(newHappinessValue);
+    } else if (ratio <= AngerLimit) {
+      int newHappinessValue = gf::clamp(static_cast<int>(state.monsterHappiness) - 1, 0, 4);
+      state.monsterHappiness = static_cast<MonsterHappiness>(newHappinessValue);
+    }
+
+    replaceScene(debrief);
+  }
+
 }

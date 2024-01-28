@@ -60,18 +60,7 @@ namespace mm {
         m_gameState.movieState = MovieState::ArrivingMovie;
         m_arrivingTween.restart();
       } else {
-        const int totalMovies = m_game.data.levelSettings[m_gameState.currentLevel].movieCount;
-        const float ratio = static_cast<float>(m_gameState.correctChoices) / static_cast<float>(totalMovies);
-
-        if (ratio >= NeutralLimit) {
-          int newHappinessValue = gf::clamp(static_cast<int>(m_gameState.monsterHappiness) + 1, 0, 4);
-          m_gameState.monsterHappiness = static_cast<MonsterHappiness>(newHappinessValue);
-        } else if (ratio <= AngerLimit) {
-          int newHappinessValue = gf::clamp(static_cast<int>(m_gameState.monsterHappiness) - 1, 0, 4);
-          m_gameState.monsterHappiness = static_cast<MonsterHappiness>(newHappinessValue);
-        }
-
-        m_game.replaceScene(m_game.debrief);
+        m_game.endShift();
       }
       break;
     }
