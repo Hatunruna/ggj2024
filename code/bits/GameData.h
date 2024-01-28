@@ -22,10 +22,10 @@ namespace mm {
 
     std::array<LevelSettings, 5> levelSettings = {
       LevelSettings{ 1, 10 },
-      LevelSettings{ 1, 20 },
-      LevelSettings{ 2, 20 },
-      LevelSettings{ 3, 30 },
-      LevelSettings{ 4, 30 },
+      LevelSettings{ 2, 10 },
+      LevelSettings{ 2, 15 },
+      LevelSettings{ 3, 15 },
+      LevelSettings{ 4, 15 },
     };
   };
 
