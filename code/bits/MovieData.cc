@@ -101,7 +101,7 @@ namespace mm {
   })
 
   NLOHMANN_JSON_SERIALIZE_ENUM(MovieRating, {
-    { MovieRating::AllAges, "0+" },
+    { MovieRating::Above0, "0+" },
     { MovieRating::Above12, "12+" },
     { MovieRating::Above16, "16+" },
     { MovieRating::Above18, "18+" },
@@ -303,18 +303,20 @@ namespace mm {
       case MovieConstraint::TechniqueIsNotStopMotion:
         return "The movie is not in stop motion";
       // rating
-      case MovieConstraint::RatingLessThan12:
-        return "The movie is authorized for 0-11";
-      case MovieConstraint::RatingLessThan16:
-        return "The movie is authorized for 0-15";
-      case MovieConstraint::RatingLessThan18:
-        return "The movie is authorized for 0-17";
+      case MovieConstraint::RatingChildOf10:
+        return "The movie can be viewed by a child of 10";
+      case MovieConstraint::RatingTeenagerOf14:
+        return "The movie can be viewed by a teenager of 14";
+      case MovieConstraint::RatingTeenagerOf17:
+        return "The movie can be viewed by a teenager of 17";
+      case MovieConstraint::RatingMoreThan0:
+        return "The movie is authorized for 0+";
       case MovieConstraint::RatingMoreThan12:
-        return "The movie is only authorized for 12+";
+        return "The movie is authorized for 12+";
       case MovieConstraint::RatingMoreThan16:
-        return "The movie is only authorized for 16+";
+        return "The movie is authorized for 16+";
       case MovieConstraint::RatingMoreThan18:
-        return "The movie is only authorized for 18+";
+        return "The movie is authorized for 18+";
     }
 
     assert(false);
@@ -475,18 +477,20 @@ namespace mm {
       case MovieConstraint::TechniqueIsNotStopMotion:
         return movie.technique != MovieTechnique::StopMotion;
       // rating
-      case MovieConstraint::RatingLessThan12:
+      case MovieConstraint::RatingChildOf10:
         return movie.rating < MovieRating::Above12;
-      case MovieConstraint::RatingLessThan16:
+      case MovieConstraint::RatingTeenagerOf14:
         return movie.rating < MovieRating::Above16;
-      case MovieConstraint::RatingLessThan18:
+      case MovieConstraint::RatingTeenagerOf17:
         return movie.rating < MovieRating::Above18;
+      case MovieConstraint::RatingMoreThan0:
+        return movie.rating == MovieRating::Above0;
       case MovieConstraint::RatingMoreThan12:
-        return movie.rating >= MovieRating::Above12;
+        return movie.rating == MovieRating::Above12;
       case MovieConstraint::RatingMoreThan16:
-        return movie.rating >= MovieRating::Above16;
+        return movie.rating == MovieRating::Above16;
       case MovieConstraint::RatingMoreThan18:
-        return movie.rating >= MovieRating::Above18;
+        return movie.rating == MovieRating::Above18;
     }
 
     return true;
@@ -604,9 +608,10 @@ namespace mm {
       },
       {
         // rating
-        MovieConstraint::RatingLessThan12,
-        MovieConstraint::RatingLessThan16,
-        MovieConstraint::RatingLessThan18,
+        MovieConstraint::RatingChildOf10,
+        MovieConstraint::RatingTeenagerOf14,
+        MovieConstraint::RatingTeenagerOf17,
+        MovieConstraint::RatingMoreThan0,
         MovieConstraint::RatingMoreThan12,
         MovieConstraint::RatingMoreThan16,
         MovieConstraint::RatingMoreThan18,

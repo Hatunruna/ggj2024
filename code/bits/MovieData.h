@@ -45,7 +45,7 @@ namespace mm {
   std::string toString(MovieTechnique technique);
 
   enum class MovieRating {
-    AllAges,
+    Above0,
     Above12,
     Above16,
     Above18,
@@ -147,9 +147,10 @@ namespace mm {
     TechniqueIsNotLiveAction,
     TechniqueIsNotStopMotion,
     // rating
-    RatingLessThan12,
-    RatingLessThan16,
-    RatingLessThan18,
+    RatingChildOf10,
+    RatingTeenagerOf14,
+    RatingTeenagerOf17,
+    RatingMoreThan0,
     RatingMoreThan12,
     RatingMoreThan16,
     RatingMoreThan18,

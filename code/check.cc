@@ -88,9 +88,10 @@ namespace {
     mm::MovieConstraint::TechniqueIsNotLiveAction,
     mm::MovieConstraint::TechniqueIsNotStopMotion,
     // rating
-    mm::MovieConstraint::RatingLessThan12,
-    mm::MovieConstraint::RatingLessThan16,
-    mm::MovieConstraint::RatingLessThan18,
+    mm::MovieConstraint::RatingChildOf10,
+    mm::MovieConstraint::RatingTeenagerOf14,
+    mm::MovieConstraint::RatingTeenagerOf17,
+    mm::MovieConstraint::RatingMoreThan0,
     mm::MovieConstraint::RatingMoreThan12,
     mm::MovieConstraint::RatingMoreThan16,
     mm::MovieConstraint::RatingMoreThan18,
