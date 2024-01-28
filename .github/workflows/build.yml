@@ -41,6 +41,13 @@ jobs:
           .\bootstrap-vcpkg.bat
           .\vcpkg.exe install sfml:x64-windows boost-algorithm:x64-windows boost-container:x64-windows boost-filesystem:x64-windows boost-heap:x64-windows freetype:x64-windows pugixml:x64-windows sdl2:x64-windows stb:x64-windows zlib:x64-windows
 
+      - name: Save cached vcpkg dependencies
+        if: steps.cache-vcpkg.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v3
+        with:
+          path: vcpkg
+          key: ${{ runner.os }}-vcpkg-${{ env.VCPKG_COMMIT }}
+
       # Compile GF
       - uses: actions/checkout@v3
         with:
