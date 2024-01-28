@@ -19,7 +19,8 @@ namespace mm {
     m_retryButton.setAnchor(gf::Anchor::BottomCenter);
     m_retryButton.setScale(0.5f);
     m_retryButton.setCallback([this](){
-      // TODO
+      m_game.replaceAllScenes(m_game.common);
+      m_game.pushScene(m_game.start);
     });
     m_widgets.addWidget(m_retryButton);
 
