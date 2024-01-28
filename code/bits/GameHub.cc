@@ -1,6 +1,7 @@
 #include "GameHub.h"
 
 #include <gf/Log.h>
+#include <gf/Window.h>
 
 #include "config.h"
 
@@ -23,6 +24,10 @@ namespace mm {
     scenes.push_back(start);
 
     pushScenes(scenes);
+
+#if NDEBUG
+    getWindow().toggleFullscreen();
+#endif // NDEBUG
   }
 
   void GameHub::startNewShift() {
