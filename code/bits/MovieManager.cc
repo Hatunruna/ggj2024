@@ -30,7 +30,7 @@ namespace mm {
   , m_reviewNegativeTexture(game.resources.getTexture("images/reviews/star-empty.png"))
   , m_aiTexture(game.resources.getTexture("images/ai.png"))
   , m_movieRenderTexture(RenderTextureSize)
-  , m_arrivingTween(MovieAngleInitial, MovieAngleTarget, angle, gf::milliseconds(500), gf::Ease::backInOut)
+  , m_arrivingTween(MovieAngleInitial, MovieAngleTarget, m_angle, gf::milliseconds(500), gf::Ease::backInOut)
   {
     m_movieRenderTexture.setSmooth();
     m_renderView.setInitialFramebufferSize(RenderTextureSize);
@@ -59,6 +59,7 @@ namespace mm {
         generateMovieTexture(movies[currentMovie]);
         m_gameState.movieState = MovieState::ArrivingMovie;
         m_arrivingTween.restart();
+        m_angle = MovieAngleInitial;
       } else {
         m_game.endShift();
       }
@@ -77,9 +78,9 @@ namespace mm {
       break;
 
     case MovieState::DepartureMovie:
-      angle -= MovieVelocity * time.asSeconds();
-      if (angle <= MovieAngleInitial) {
-        angle = MovieAngleInitial;
+      m_angle -= MovieVelocity * time.asSeconds();
+      if (m_angle <= MovieAngleInitial) {
+        m_angle = MovieAngleInitial;
         m_gameState.movieState = MovieState::NoMovie;
       }
       break;
@@ -94,7 +95,7 @@ namespace mm {
     movieInfo.setTexture(m_movieRenderTexture.getTexture());
     movieInfo.setPosition(MoviePosition);
     movieInfo.setOrigin(gf::vec(1036.0f, 1330.0f));
-    movieInfo.setRotation(angle);
+    movieInfo.setRotation(m_angle);
     movieInfo.draw(target, states);
   }
 

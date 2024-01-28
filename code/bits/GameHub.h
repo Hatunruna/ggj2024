@@ -6,6 +6,7 @@
 #include "CommonScene.h"
 #include "DebriefScene.h"
 #include "GameData.h"
+#include "GameOverScene.h"
 #include "GameState.h"
 #include "StartScene.h"
 #include "ConstraintListScene.h"
@@ -28,6 +29,7 @@ namespace mm {
     TheaterScene theater;
     ConstraintListScene listRecall;
     DebriefScene debrief;
+    GameOverScene gameOver;
   };
 
 

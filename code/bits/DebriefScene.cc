@@ -29,7 +29,7 @@ namespace mm {
         m_game.startNewShift();
         m_game.replaceScene(m_game.listFirst);
       } else {
-        // End Game...
+        m_game.replaceScene(m_game.gameOver);
       }
     });
     m_widgets.addWidget(m_okButton);

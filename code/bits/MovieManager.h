@@ -42,7 +42,7 @@ namespace mm {
     gf::ScreenView m_renderView;
     gf::RenderTexture m_movieRenderTexture;
 
-    float angle = 0.0f;
+    float m_angle = 0.0f;
     gf::Tween<float> m_arrivingTween;
   };
 

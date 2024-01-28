@@ -14,6 +14,7 @@ namespace mm {
   , theater(*this)
   , listRecall(*this, ConstraintListType::Recall)
   , debrief(*this)
+  , gameOver(*this)
   {
     std::vector<gf::Ref<gf::Scene>> scenes;
     scenes.push_back(common);
@@ -31,6 +32,7 @@ namespace mm {
     state.currentMovie = 0;
     state.correctChoices = 0;
     state.incorrectChoices = 0;
+    state.movieState = MovieState::NoMovie;
   }
 
   void GameHub::endShift() {
