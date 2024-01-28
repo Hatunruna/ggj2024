@@ -10,6 +10,7 @@ Most assets have been realized by [Bovin Bleu](https://linktr.ee/bovinbleu).
 
 - [Ignotum](https://www.dafont.com/fr/ignotum.font) SIL-1.1
 - [Renner](https://www.dafont.com/fr/renner.font) SIL-1.1
+- [Goudy Bookletter 1911](https://www.dafont.com/fr/goudy-bookletter.font) Public Domain
 
 ## Icons Assets
 
