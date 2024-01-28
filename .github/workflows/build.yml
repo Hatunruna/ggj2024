@@ -48,6 +48,9 @@ jobs:
           path: vcpkg
           key: ${{ runner.os }}-vcpkg-${{ env.VCPKG_COMMIT }}
 
+      - name: DEBUG list install dll
+        run: dir ${{github.workspace}}\vcpkg\installed\x64-windows
+
       # Compile GF
       - uses: actions/checkout@v3
         with:
@@ -79,6 +82,13 @@ jobs:
       - name: Install gf
         if: steps.cache-gf.outputs.cache-hit != 'true'
         run: cmake --install ${{ github.workspace }}/gf/build --config ${{ env.BUILD_TYPE }}
+
+      - name: Save cached gf build
+        if: steps.cache-gf.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v3
+        with:
+          path: gf
+          key: ${{ runner.os }}-gf-${{ steps.extract-gf-revision.outputs.revision }}
 
       # Build the game
       - uses: actions/checkout@v3
