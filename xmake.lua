@@ -3,7 +3,7 @@ set_version("0.1.0")
 
 add_repositories("gf-repo https://github.com/GamedevFramework/xmake-repo")
 
-add_requires("gamedevframework1", "nlohmann_json")
+add_requires("gamedevframework1", "nlohmann_json", "sfml")
 
 add_rules("mode.debug", "mode.releasedbg", "mode.release")
 
@@ -27,6 +27,7 @@ target("MidnightMovies")
     add_files("code/bits/*.cc")
     add_includedirs("$(buildir)/config")
     add_packages("gamedevframework1", "nlohmann_json")
+    add_packages("sfml", {components = "audio"})
 
 target("MidnightMoviesGenerator")
     set_kind("binary")
