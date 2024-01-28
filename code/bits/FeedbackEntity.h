@@ -14,9 +14,11 @@ namespace mm {
     void update(gf::Time time) override;
     void render(gf::RenderTarget &target, const gf::RenderStates &states) override;
   private:
-    GameState& m_gameState;
+    GameHub& m_gameHub;
     gf::Font& m_font;
-    gf::Texture& m_texture;
+    gf::Texture& m_movieTexture;
+    gf::Texture& m_timerTexture;
+    gf::Time m_timer;
   };
 
 }
