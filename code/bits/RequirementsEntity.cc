@@ -15,6 +15,7 @@ namespace mm {
   : m_gameState(game.state)
   , m_font(game.resources.getFont("fonts/Renner.ttf"))
   , m_backgroundTexture(game.resources.getTexture("images/title.png"))
+  , m_aiTexture(game.resources.getTexture("images/ai.png"))
   {
   }
 
@@ -49,6 +50,26 @@ namespace mm {
     text.setAnchor(gf::Anchor::Center);
 
     target.draw(text, states);
+
+
+    gf::Text noAiText("And of course, no AI!", m_font, coordinates.getRelativeCharacterSize(0.05));
+    noAiText.setColor(gf::Color::White);
+    noAiText.setPosition(coordinates.getRelativePoint({ 0.9f, 0.95f }));
+    noAiText.setAnchor(gf::Anchor::CenterRight);
+
+    target.draw(noAiText, states);
+
+
+    float noAiHeight = coordinates.getRelativeSize(gf::vec(0.0f, 1.0f)).height;
+    float noAiScale = noAiHeight / m_aiTexture.getSize().height * 0.08f;
+
+    gf::Sprite noAiSprite(m_aiTexture);
+    noAiSprite.setPosition(coordinates.getRelativePoint({ 0.92f, 0.95f }));
+    noAiSprite.setScale(noAiScale);
+    noAiSprite.setAnchor(gf::Anchor::CenterLeft);
+
+    target.draw(noAiSprite, states);
+
   }
 
 }
