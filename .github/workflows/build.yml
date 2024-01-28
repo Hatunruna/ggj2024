@@ -49,7 +49,7 @@ jobs:
           key: ${{ runner.os }}-vcpkg-${{ env.VCPKG_COMMIT }}
 
       - name: DEBUG list install dll
-        run: dir ${{github.workspace}}\vcpkg\installed\x64-windows
+        run: dir ${{github.workspace}}\vcpkg\installed\x64-windows\bin
 
       # Compile GF
       - uses: actions/checkout@v3
