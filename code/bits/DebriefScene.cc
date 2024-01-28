@@ -9,20 +9,16 @@ namespace mm {
   : gf::Scene(game.getRenderer().getSize())
   , m_game(game)
   , debrief(game)
-  , m_okButton("Ok!", game.resources.getFont("fonts/GoudyBookletter1911.otf"), 128)
+  , m_okButton(game.resources.getTexture("icons/note-sticky-regular.png"), gf::Color::Azure, gf::Color::lighter(gf::Color::Azure), gf::Color::darker(gf::Color::Azure))
   {
     setClearColor(gf::Color::Black);
 
     addHudEntity(debrief);
 
     // Widgets
-    m_okButton.setDefaultBackgroundColor(gf::Color::Azure);
-    m_okButton.setDefaultTextColor(gf::Color::Black);
-    m_okButton.setPosition(WorldSize * gf::vec(0.50f, 0.95f));
+    m_okButton.setPosition(WorldSize * gf::vec(0.50f, 0.90f));
     m_okButton.setAnchor(gf::Anchor::BottomCenter);
-    m_okButton.setScale(2.0f);
-    m_okButton.setRadius(15.0f);
-    m_okButton.setPadding(20.0f);
+    m_okButton.setScale(0.5f);
     m_okButton.setCallback([this](){
       if (m_game.state.currentLevel < (static_cast<int>(m_game.data.levelSettings.size()) - 1)) {
         ++m_game.state.currentLevel;
@@ -56,9 +52,9 @@ namespace mm {
 
   void DebriefScene::doRender(gf::RenderTarget& target, const gf::RenderStates &states) {
     renderWorldEntities(target, states);
-    m_widgets.render(target, states);
-
     renderHudEntities(target, states);
+    m_game.getRenderer().setView(getWorldView()); // HACK
+    m_widgets.render(target, states);
   }
 
 }
