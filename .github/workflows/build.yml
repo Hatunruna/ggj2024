@@ -48,9 +48,6 @@ jobs:
           path: vcpkg
           key: ${{ runner.os }}-vcpkg-${{ env.VCPKG_COMMIT }}
 
-      - name: DEBUG list install dll
-        run: dir ${{github.workspace}}\vcpkg\installed\x64-windows\bin
-
       # Compile GF
       - uses: actions/checkout@v3
         with:
@@ -114,14 +111,14 @@ jobs:
           cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\libpng16.dll ${{github.workspace}}/ggj2024/build/${{env.BUILD_TYPE}}
           cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\pugixml.dll ${{github.workspace}}/ggj2024/build/${{env.BUILD_TYPE}}
           cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\zlib1.dll ${{github.workspace}}/ggj2024/build/${{env.BUILD_TYPE}}
-          cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\FLAC.dll ${{github.workspace}}/ggj2023/build/${{env.BUILD_TYPE}}
-          cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\ogg.dll ${{github.workspace}}/ggj2023/build/${{env.BUILD_TYPE}}
-          cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\OpenAL32.dll ${{github.workspace}}/ggj2023/build/${{env.BUILD_TYPE}}
-          cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\sfml-audio-2.dll ${{github.workspace}}/ggj2023/build/${{env.BUILD_TYPE}}
-          cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\sfml-system-2.dll ${{github.workspace}}/ggj2023/build/${{env.BUILD_TYPE}}
-          cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\vorbis.dll ${{github.workspace}}/ggj2023/build/${{env.BUILD_TYPE}}
-          cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\vorbisenc.dll ${{github.workspace}}/ggj2023/build/${{env.BUILD_TYPE}}
-          cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\vorbisfile.dll ${{github.workspace}}/ggj2023/build/${{env.BUILD_TYPE}}
+          cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\FLAC.dll ${{github.workspace}}/ggj2024/build/${{env.BUILD_TYPE}}
+          cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\ogg.dll ${{github.workspace}}/ggj2024/build/${{env.BUILD_TYPE}}
+          cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\OpenAL32.dll ${{github.workspace}}/ggj2024/build/${{env.BUILD_TYPE}}
+          cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\sfml-audio-2.dll ${{github.workspace}}/ggj2024/build/${{env.BUILD_TYPE}}
+          cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\sfml-system-2.dll ${{github.workspace}}/ggj2024/build/${{env.BUILD_TYPE}}
+          cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\vorbis.dll ${{github.workspace}}/ggj2024/build/${{env.BUILD_TYPE}}
+          cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\vorbisenc.dll ${{github.workspace}}/ggj2024/build/${{env.BUILD_TYPE}}
+          cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\vorbisfile.dll ${{github.workspace}}/ggj2024/build/${{env.BUILD_TYPE}}
 
       - name: Create game
         working-directory: ${{github.workspace}}/ggj2024/build
