@@ -53,11 +53,13 @@ namespace mm {
     movieText.setColor(gf::Color::Gray(0.6f));
     target.draw(movieText, states);
 
+    const gf::Color4f timerColor = m_timer < gf::seconds(10) ? gf::Color::Red : gf::Color::Gray(0.6f);
+
     gf::Sprite timerSprite(m_timerTexture);
     timerSprite.setAnchor(gf::Anchor::CenterLeft);
     timerSprite.setPosition(WorldSize * gf::vec(0.85f, 0.07f));
     timerSprite.setScale(0.3f);
-    timerSprite.setColor(gf::Color::Gray(0.6f));
+    timerSprite.setColor(timerColor);
     target.draw(timerSprite, states);
 
     int remainingSeconds = m_timer.asMilliseconds() / 1000;
@@ -65,7 +67,7 @@ namespace mm {
     gf::Text timerText(std::to_string(remainingSeconds), m_font, 170);
     timerText.setAnchor(gf::Anchor::CenterLeft);
     timerText.setPosition(WorldSize * gf::vec(0.9f, 0.07f));
-    timerText.setColor(gf::Color::Gray(0.6f));
+    timerText.setColor(timerColor);
     target.draw(timerText, states);
 
   }
