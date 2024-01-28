@@ -8,6 +8,8 @@ namespace mm {
 
   GameHub::GameHub()
   : GameManager("Midnight Movies", { GAME_DATADIR })
+  , audioResources({ GAME_DATADIR })
+  , sounds(*this)
   , common(*this)
   , start(*this)
   , listFirst(*this, ConstraintListType::First)
@@ -48,6 +50,8 @@ namespace mm {
     }
 
     state.movieState = MovieState::NoMovie;
+
+    sounds.stopTheaterAmbiance();
 
     replaceScene(debrief);
   }

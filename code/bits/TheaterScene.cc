@@ -27,6 +27,8 @@ namespace mm {
     m_broadcastButton.setScale(0.8f);
     m_broadcastButton.setCallback([this](){
       if (m_game.state.movieState == MovieState::WaitingMovie) {
+        m_game.sounds.playBroadcastSfx();
+
         if (isMovieAcceptable(m_game.state.movieLevel.movies[m_game.state.currentMovie], m_game.state.movieLevel.constraints)) {
           m_game.state.monsterState = MonsterState::Happy;
           ++m_game.state.correctChoices;

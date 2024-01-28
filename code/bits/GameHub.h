@@ -3,6 +3,8 @@
 
 #include <gf/GameManager.h>
 
+#include "AudioController.h"
+#include "AudioManager.h"
 #include "CommonScene.h"
 #include "DebriefScene.h"
 #include "GameData.h"
@@ -19,6 +21,9 @@ namespace mm {
 
     void startNewShift();
     void endShift();
+
+    AudioManager audioResources;
+    AudioController sounds;
 
     GameData data;
     GameState state;

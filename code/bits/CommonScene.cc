@@ -15,6 +15,8 @@ namespace mm {
     m_fullscreenAction.addKeycodeKeyControl(gf::Keycode::F);
     m_fullscreenAction.addKeycodeKeyControl(gf::Keycode::F11);
     addAction(m_fullscreenAction);
+
+    addHudEntity(game.sounds);
   }
 
   void CommonScene::doHandleActions(gf::Window& window) {

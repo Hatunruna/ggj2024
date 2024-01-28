@@ -12,6 +12,7 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra")
 include(GNUInstallDirs)
 
 find_package(gf REQUIRED COMPONENTS graphics)
+find_package(SFML REQUIRED COMPONENTS audio)
 
 if (UNIX)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address")
@@ -27,6 +28,8 @@ add_subdirectory(vendor/json)
 
 add_executable(${GAME}
   code/main.cc
+  code/bits/AudioController.cc
+  code/bits/AudioManager.cc
   code/bits/CommonScene.cc
   code/bits/ConstraintListScene.cc
   code/bits/DebriefEntity.cc
@@ -58,6 +61,7 @@ target_include_directories(${GAME}
 target_link_libraries(${GAME}
   PRIVATE
     gf::graphics
+    sfml-audio
 )
 
 if (WIN32)
@@ -78,14 +82,14 @@ if (WIN32)
       $<TARGET_FILE_DIR:${GAME}>/libpng16d.dll
       $<TARGET_FILE_DIR:${GAME}>/pugixml.dll
       $<TARGET_FILE_DIR:${GAME}>/zlibd1.dll
-      # $<TARGET_FILE_DIR:${GAME}>/FLAC.dll
-      # $<TARGET_FILE_DIR:${GAME}>/ogg.dll
-      # $<TARGET_FILE_DIR:${GAME}>/OpenAL32.dll
-      # $<TARGET_FILE_DIR:${GAME}>/sfml-audio-d-2.dll
-      # $<TARGET_FILE_DIR:${GAME}>/sfml-system-d-2.dll
-      # $<TARGET_FILE_DIR:${GAME}>/vorbis.dll
-      # $<TARGET_FILE_DIR:${GAME}>/vorbisenc.dll
-      # $<TARGET_FILE_DIR:${GAME}>/vorbisfile.dll
+      $<TARGET_FILE_DIR:${GAME}>/FLAC.dll
+      $<TARGET_FILE_DIR:${GAME}>/ogg.dll
+      $<TARGET_FILE_DIR:${GAME}>/OpenAL32.dll
+      $<TARGET_FILE_DIR:${GAME}>/sfml-audio-d-2.dll
+      $<TARGET_FILE_DIR:${GAME}>/sfml-system-d-2.dll
+      $<TARGET_FILE_DIR:${GAME}>/vorbis.dll
+      $<TARGET_FILE_DIR:${GAME}>/vorbisenc.dll
+      $<TARGET_FILE_DIR:${GAME}>/vorbisfile.dll
       $<TARGET_FILE_DIR:${GAME}>/${GAME}.pdb
     DESTINATION .
     CONFIGURATIONS Debug
@@ -103,14 +107,14 @@ if (WIN32)
       $<TARGET_FILE_DIR:${GAME}>/libpng16.dll
       $<TARGET_FILE_DIR:${GAME}>/pugixml.dll
       $<TARGET_FILE_DIR:${GAME}>/zlib1.dll
-      # $<TARGET_FILE_DIR:${GAME}>/FLAC.dll
-      # $<TARGET_FILE_DIR:${GAME}>/ogg.dll
-      # $<TARGET_FILE_DIR:${GAME}>/OpenAL32.dll
-      # $<TARGET_FILE_DIR:${GAME}>/sfml-audio-2.dll
-      # $<TARGET_FILE_DIR:${GAME}>/sfml-system-2.dll
-      # $<TARGET_FILE_DIR:${GAME}>/vorbis.dll
-      # $<TARGET_FILE_DIR:${GAME}>/vorbisenc.dll
-      # $<TARGET_FILE_DIR:${GAME}>/vorbisfile.dll
+      $<TARGET_FILE_DIR:${GAME}>/FLAC.dll
+      $<TARGET_FILE_DIR:${GAME}>/ogg.dll
+      $<TARGET_FILE_DIR:${GAME}>/OpenAL32.dll
+      $<TARGET_FILE_DIR:${GAME}>/sfml-audio-2.dll
+      $<TARGET_FILE_DIR:${GAME}>/sfml-system-2.dll
+      $<TARGET_FILE_DIR:${GAME}>/vorbis.dll
+      $<TARGET_FILE_DIR:${GAME}>/vorbisenc.dll
+      $<TARGET_FILE_DIR:${GAME}>/vorbisfile.dll
     DESTINATION .
     CONFIGURATIONS Release
   )
