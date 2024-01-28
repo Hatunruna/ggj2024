@@ -47,6 +47,8 @@ namespace mm {
       state.monsterHappiness = static_cast<MonsterHappiness>(newHappinessValue);
     }
 
+    state.movieState = MovieState::NoMovie;
+
     replaceScene(debrief);
   }
 
