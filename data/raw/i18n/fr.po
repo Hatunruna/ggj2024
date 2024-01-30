@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Midnight Movies 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 19:01+0100\n"
+"POT-Creation-Date: 2024-01-30 21:36+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Julien Bernard <julien.bernard@univ-fcomte.fr>\n"
 "Language-Team: fr <LL@li.org>\n"
@@ -16,6 +16,418 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: code/bits/DebriefEntity.cc:42
+msgid "Shift End"
+msgstr ""
+
+#: code/bits/DebriefEntity.cc:51
+msgid "Correct choices: "
+msgstr "Choix corrects : "
+
+#: code/bits/DebriefEntity.cc:52
+msgid "Incorrect choices: "
+msgstr "Choix incorrects : "
+
+#: code/bits/DebriefEntity.cc:54
+msgid "Unhandled movies: "
+msgstr "Films non-traités : "
+
+#: code/bits/GameOverEntity.cc:42
+msgid ""
+"Congratulations! The monster has enjoyed this midnights movies and laughs "
+"openly.\n"
+"You have saved the city (and our life).\n"
+"Enjoy your vacations!"
+msgstr ""
+
+#: code/bits/GameOverEntity.cc:52
+msgid ""
+"Unfortunately, the monster was not satisfied by your performance.\n"
+"After feeding the monster, he left the cinema and start to destroying the "
+"town.\n"
+"Good luck in another life!"
+msgstr ""
+
+#: code/bits/MovieData.cc:39
+msgid "Action"
+msgstr "Action"
+
+#: code/bits/MovieData.cc:41
+msgid "Comedy"
+msgstr "Comédie"
+
+#: code/bits/MovieData.cc:43
+msgid "Drama"
+msgstr "Drame"
+
+#: code/bits/MovieData.cc:45
+msgid "Fantasy"
+msgstr "Fantasy"
+
+#: code/bits/MovieData.cc:47
+msgid "Horror"
+msgstr "Horreur"
+
+#: code/bits/MovieData.cc:49
+msgid "Musical"
+msgstr "Musical"
+
+#: code/bits/MovieData.cc:51
+msgid "Romance"
+msgstr "Romance"
+
+#: code/bits/MovieData.cc:53
+msgid "Science Fiction"
+msgstr "Science Fiction"
+
+#: code/bits/MovieData.cc:55
+msgid "Western"
+msgstr "Western"
+
+#: code/bits/MovieData.cc:65
+msgid "Animation"
+msgstr "Animation"
+
+#: code/bits/MovieData.cc:67
+msgid "Live Action"
+msgstr "Live Action"
+
+#: code/bits/MovieData.cc:69
+msgid "Stop Motion"
+msgstr "Stop motion"
+
+#: code/bits/MovieData.cc:160
+msgid "The title has a odd number of words"
+msgstr ""
+
+#: code/bits/MovieData.cc:162
+msgid "The title has an even number of words"
+msgstr ""
+
+#: code/bits/MovieData.cc:164
+msgid "The title has 16 letters or less"
+msgstr ""
+
+#: code/bits/MovieData.cc:166
+msgid "The title has 16 letters or more"
+msgstr ""
+
+#: code/bits/MovieData.cc:169
+msgid "The movie was released in 1980 or after"
+msgstr ""
+
+#: code/bits/MovieData.cc:171
+msgid "The movie was released in 1990 or after"
+msgstr ""
+
+#: code/bits/MovieData.cc:173
+msgid "The movie was released in 2000 or after"
+msgstr ""
+
+#: code/bits/MovieData.cc:175
+msgid "The movie was released in 2010 or after"
+msgstr ""
+
+#: code/bits/MovieData.cc:177
+msgid "The movie was released in 1990 or before"
+msgstr ""
+
+#: code/bits/MovieData.cc:179
+msgid "The movie was released in 2000 or before"
+msgstr ""
+
+#: code/bits/MovieData.cc:181
+msgid "The movie was released in 2010 or before"
+msgstr ""
+
+#: code/bits/MovieData.cc:183
+msgid "The movie was released in 2020 or before"
+msgstr ""
+
+#: code/bits/MovieData.cc:185
+msgid "The movie was released in a leap year"
+msgstr ""
+
+#: code/bits/MovieData.cc:187
+msgid "The movie was released in a non-leap year"
+msgstr ""
+
+#: code/bits/MovieData.cc:189
+msgid "The movie was released in a odd year"
+msgstr ""
+
+#: code/bits/MovieData.cc:191
+msgid "The movie was released in an even year"
+msgstr ""
+
+#: code/bits/MovieData.cc:194
+msgid "The movie lasts 90 minutes or more"
+msgstr ""
+
+#: code/bits/MovieData.cc:196
+msgid "The movie lasts 120 minutes or more"
+msgstr ""
+
+#: code/bits/MovieData.cc:198
+msgid "The movie lasts 150 minutes or more"
+msgstr ""
+
+#: code/bits/MovieData.cc:200
+msgid "The movie lasts 120 minutes or less"
+msgstr ""
+
+#: code/bits/MovieData.cc:202
+msgid "The movie lasts 150 minutes or less"
+msgstr ""
+
+#: code/bits/MovieData.cc:204
+msgid "The movie lasts 180 minutes or less"
+msgstr ""
+
+#: code/bits/MovieData.cc:207
+msgid "The movie has 2 stars or more"
+msgstr ""
+
+#: code/bits/MovieData.cc:209
+msgid "The movie has 3 stars or more"
+msgstr ""
+
+#: code/bits/MovieData.cc:211
+msgid "The movie has 4 stars or more"
+msgstr ""
+
+#: code/bits/MovieData.cc:213
+msgid "The movie has 2 stars or less"
+msgstr ""
+
+#: code/bits/MovieData.cc:215
+msgid "The movie has 3 stars or less"
+msgstr ""
+
+#: code/bits/MovieData.cc:217
+msgid "The movie has 4 stars or less"
+msgstr ""
+
+#: code/bits/MovieData.cc:220
+msgid "The movie comes from Canterlot"
+msgstr ""
+
+#: code/bits/MovieData.cc:222
+msgid "The movie comes from Gallifrey"
+msgstr ""
+
+#: code/bits/MovieData.cc:224
+msgid "The movie comes from Hyrule"
+msgstr ""
+
+#: code/bits/MovieData.cc:226
+msgid "The movie comes from Innistrad"
+msgstr ""
+
+#: code/bits/MovieData.cc:228
+msgid "The movie comes from Morrowind"
+msgstr ""
+
+#: code/bits/MovieData.cc:230
+msgid "The movie comes from Temeria"
+msgstr ""
+
+#: code/bits/MovieData.cc:232
+msgid "The movie comes from Valinor"
+msgstr ""
+
+#: code/bits/MovieData.cc:234
+msgid "The movie comes from Wonderland"
+msgstr ""
+
+#: code/bits/MovieData.cc:236
+msgid "The movie does not come from Canterlot"
+msgstr ""
+
+#: code/bits/MovieData.cc:238
+msgid "The movie does not come from Gallifrey"
+msgstr ""
+
+#: code/bits/MovieData.cc:240
+msgid "The movie does not come from Hyrule"
+msgstr ""
+
+#: code/bits/MovieData.cc:242
+msgid "The movie does not come from Innistrad"
+msgstr ""
+
+#: code/bits/MovieData.cc:244
+msgid "The movie does not come from Morrowind"
+msgstr ""
+
+#: code/bits/MovieData.cc:246
+msgid "The movie does not come from Temeria"
+msgstr ""
+
+#: code/bits/MovieData.cc:248
+msgid "The movie does not come from Valinor"
+msgstr ""
+
+#: code/bits/MovieData.cc:250
+msgid "The movie does not come from Wonderland"
+msgstr ""
+
+#: code/bits/MovieData.cc:253
+msgid "The movie is an action movie"
+msgstr ""
+
+#: code/bits/MovieData.cc:255
+msgid "The movie is a comedy"
+msgstr ""
+
+#: code/bits/MovieData.cc:257
+msgid "The movie is a drama"
+msgstr ""
+
+#: code/bits/MovieData.cc:259
+msgid "The movie is a fantasy movie"
+msgstr ""
+
+#: code/bits/MovieData.cc:261
+msgid "The movie is a horror movie"
+msgstr ""
+
+#: code/bits/MovieData.cc:263
+msgid "The movie is a musical movie"
+msgstr ""
+
+#: code/bits/MovieData.cc:265
+msgid "The movie is a romance"
+msgstr ""
+
+#: code/bits/MovieData.cc:267
+msgid "The movie is a sci-fi movie"
+msgstr ""
+
+#: code/bits/MovieData.cc:269
+msgid "The movie is a western"
+msgstr ""
+
+#: code/bits/MovieData.cc:271
+msgid "The movie is not an action movie"
+msgstr ""
+
+#: code/bits/MovieData.cc:273
+msgid "The movie is not a comedy"
+msgstr ""
+
+#: code/bits/MovieData.cc:275
+msgid "The movie is not a drama"
+msgstr ""
+
+#: code/bits/MovieData.cc:277
+msgid "The movie is not a fantasy movie"
+msgstr ""
+
+#: code/bits/MovieData.cc:279
+msgid "The movie is not a horror movie"
+msgstr ""
+
+#: code/bits/MovieData.cc:281
+msgid "The movie is not a musical movie"
+msgstr ""
+
+#: code/bits/MovieData.cc:283
+msgid "The movie is not a romance"
+msgstr ""
+
+#: code/bits/MovieData.cc:285
+msgid "The movie is not a sci-fi movie"
+msgstr ""
+
+#: code/bits/MovieData.cc:287
+msgid "The movie is not a western"
+msgstr ""
+
+#: code/bits/MovieData.cc:290
+msgid "The movie is in animation"
+msgstr ""
+
+#: code/bits/MovieData.cc:292
+msgid "The movie is in live action"
+msgstr ""
+
+#: code/bits/MovieData.cc:294
+msgid "The movie is in stop motion"
+msgstr ""
+
+#: code/bits/MovieData.cc:296
+msgid "The movie is not in animation"
+msgstr ""
+
+#: code/bits/MovieData.cc:298
+msgid "The movie is not in live action"
+msgstr ""
+
+#: code/bits/MovieData.cc:300
+msgid "The movie is not in stop motion"
+msgstr ""
+
+#: code/bits/MovieData.cc:303
+msgid "The movie can be viewed by a child of 10"
+msgstr ""
+
+#: code/bits/MovieData.cc:305
+msgid "The movie can be viewed by a teenager of 14"
+msgstr ""
+
+#: code/bits/MovieData.cc:307
+msgid "The movie can be viewed by a teenager of 17"
+msgstr ""
+
+#: code/bits/MovieData.cc:309
+msgid "The movie is authorized for 0+"
+msgstr ""
+
+#: code/bits/MovieData.cc:311
+msgid "The movie is authorized for 12+"
+msgstr ""
+
+#: code/bits/MovieData.cc:313
+msgid "The movie is authorized for 16+"
+msgstr ""
+
+#: code/bits/MovieData.cc:315
+msgid "The movie is authorized for 18+"
+msgstr ""
+
+#: code/bits/MovieManager.cc:150
+msgid " min"
+msgstr " min"
+
+#: code/bits/MovieManager.cc:150
+msgid "Duration: "
+msgstr "Durée : "
+
+#: code/bits/MovieManager.cc:151
+msgid "Genre: "
+msgstr "Genre : "
+
+#: code/bits/MovieManager.cc:152
+msgid "Technique: "
+msgstr "Technique : "
+
+#: code/bits/MovieManager.cc:153
+msgid "Country: "
+msgstr "Pays : "
+
+#: code/bits/MovieManager.cc:154
+msgid "Year: "
+msgstr "Année : "
+
+#: code/bits/RequirementsEntity.cc:56
+msgid "And of course, no AI!"
+msgstr "Et bien sûr, pas d'IA !"
+
 #: code/bits/TitleEntity.cc:47
 msgid "It wants to laugh, choose wisely"
 msgstr "Il veut rire, choisissez bien !"
+
+#: code/bits/TitleEntity.cc:55
+msgid "Click to start"
+msgstr "Cliquer pour commencer"

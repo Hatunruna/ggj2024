@@ -7,6 +7,7 @@
 #include <gf/Time.h>
 
 #include "GameHub.h"
+#include "i18n.h"
 
 namespace {
   constexpr gf::Vector2i RenderTextureSize = gf::vec(1152, 1392);
@@ -146,11 +147,11 @@ namespace mm {
     info.setCharacterSize(35);
     info.setColor(gf::Color::Black);
     std::string infoText;
-    infoText += "Duration: " + std::to_string(movie.duration) + " min\n";
-    infoText += "Genre: " + toString(movie.genre) + "\n";
-    infoText += "Technique: " + toString(movie.technique) + "\n";
-    infoText += "Country: " + toString(movie.country) + "\n";
-    infoText += "Year: " + std::to_string(movie.year) + "\n";
+    infoText += _("Duration: ") + std::to_string(movie.duration) + _(" min") + '\n';
+    infoText += _("Genre: ") + toString(movie.genre) + '\n';
+    infoText += _("Technique: ") + toString(movie.technique) + '\n';
+    infoText += _("Country: ") + toString(movie.country) + '\n';
+    infoText += _("Year: ") + std::to_string(movie.year) + '\n';
     info.setString(infoText);
     info.setParagraphWidth(363.0f);
     info.setPosition(gf::vec(400, 460));

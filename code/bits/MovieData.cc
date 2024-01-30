@@ -5,6 +5,8 @@
 
 #include <nlohmann/json.hpp>
 
+#include "i18n.h"
+
 namespace mm {
 
   std::string toString(MovieCountry country) {
@@ -34,23 +36,23 @@ namespace mm {
   std::string toString(MovieGenre genre) {
     switch (genre) {
       case MovieGenre::Action:
-        return "Action";
+        return _("Action");
       case MovieGenre::Comedy:
-        return "Comedy";
+        return _("Comedy");
       case MovieGenre::Drama:
-        return "Drama";
+        return _("Drama");
       case MovieGenre::Fantasy:
-        return "Fantasy";
+        return _("Fantasy");
       case MovieGenre::Horror:
-        return "Horror";
+        return _("Horror");
       case MovieGenre::Musical:
-        return "Musical";
+        return _("Musical");
       case MovieGenre::Romance:
-        return "Romance";
+        return _("Romance");
       case MovieGenre::ScienceFiction:
-        return "Science Fiction";
+        return _("Science Fiction");
       case MovieGenre::Western:
-        return "Western";
+        return _("Western");
     }
 
     assert(false);
@@ -60,11 +62,11 @@ namespace mm {
   std::string toString(MovieTechnique technique) {
     switch (technique) {
       case MovieTechnique::Animation:
-        return "Animated";
+        return _("Animation");
       case MovieTechnique::LiveAction:
-        return "Live Action";
+        return _("Live Action");
       case MovieTechnique::StopMotion:
-        return "Stop Motion";
+        return _("Stop Motion");
     }
 
     assert(false);
@@ -92,12 +94,6 @@ namespace mm {
     { MovieGenre::Romance, "Romance" },
     { MovieGenre::ScienceFiction, "ScienceFiction" },
     { MovieGenre::Western, "Western" },
-  })
-
-  NLOHMANN_JSON_SERIALIZE_ENUM(MovieTechnique, {
-    { MovieTechnique::Animation, "Animated" },
-    { MovieTechnique::LiveAction, "LiveAction" },
-    { MovieTechnique::StopMotion, "StopMotion" },
   })
 
   NLOHMANN_JSON_SERIALIZE_ENUM(MovieRating, {
@@ -161,162 +157,162 @@ namespace mm {
     switch (constraint) {
       // title
       case MovieConstraint::TitleWithOddWords:
-        return "The title has a odd number of words";
+        return _("The title has a odd number of words");
       case MovieConstraint::TitleWithEvenWords:
-        return "The title has an even number of words";
+        return _("The title has an even number of words");
       case MovieConstraint::TitleWithLessThan16Letters:
-        return "The title has 16 letters or less";
+        return _("The title has 16 letters or less");
       case MovieConstraint::TitleWithMoreThan16Letters:
-        return "The title has 16 letters or more";
+        return _("The title has 16 letters or more");
       // year
       case MovieConstraint::YearAfter1980:
-        return "The movie was released in 1980 or after";
+        return _("The movie was released in 1980 or after");
       case MovieConstraint::YearAfter1990:
-        return "The movie was released in 1990 or after";
+        return _("The movie was released in 1990 or after");
       case MovieConstraint::YearAfter2000:
-        return "The movie was released in 2000 or after";
+        return _("The movie was released in 2000 or after");
       case MovieConstraint::YearAfter2010:
-        return "The movie was released in 2010 or after";
+        return _("The movie was released in 2010 or after");
       case MovieConstraint::YearBefore1990:
-        return "The movie was released in 1990 or before";
+        return _("The movie was released in 1990 or before");
       case MovieConstraint::YearBefore2000:
-        return "The movie was released in 2000 or before";
+        return _("The movie was released in 2000 or before");
       case MovieConstraint::YearBefore2010:
-        return "The movie was released in 2010 or before";
+        return _("The movie was released in 2010 or before");
       case MovieConstraint::YearBefore2020:
-        return "The movie was released in 2020 or before";
+        return _("The movie was released in 2020 or before");
       case MovieConstraint::YearIsLeap:
-        return "The movie was released in a leap year";
+        return _("The movie was released in a leap year");
       case MovieConstraint::YearIsNotLeap:
-        return "The movie was released in a non-leap year";
+        return _("The movie was released in a non-leap year");
       case MovieConstraint::YearIsOdd:
-        return "The movie was released in a odd year";
+        return _("The movie was released in a odd year");
       case MovieConstraint::YearIsEven:
-        return "The movie was released in an even year";
+        return _("The movie was released in an even year");
       // duration
       case MovieConstraint::DurationMoreThan90:
-        return "The movie lasts 90 minutes or more";
+        return _("The movie lasts 90 minutes or more");
       case MovieConstraint::DurationMoreThan120:
-        return "The movie lasts 120 minutes or more";
+        return _("The movie lasts 120 minutes or more");
       case MovieConstraint::DurationMoreThan150:
-        return "The movie lasts 150 minutes or more";
+        return _("The movie lasts 150 minutes or more");
       case MovieConstraint::DurationLessThan120:
-        return "The movie lasts 120 minutes or less";
+        return _("The movie lasts 120 minutes or less");
       case MovieConstraint::DurationLessThan150:
-        return "The movie lasts 150 minutes or less";
+        return _("The movie lasts 150 minutes or less");
       case MovieConstraint::DurationLessThan180:
-        return "The movie lasts 180 minutes or less";
+        return _("The movie lasts 180 minutes or less");
       // note
       case MovieConstraint::NoteMoreThan2:
-        return "The movie has 2 stars or more";
+        return _("The movie has 2 stars or more");
       case MovieConstraint::NoteMoreThan3:
-        return "The movie has 3 stars or more";
+        return _("The movie has 3 stars or more");
       case MovieConstraint::NoteMoreThan4:
-        return "The movie has 4 stars or more";
+        return _("The movie has 4 stars or more");
       case MovieConstraint::NoteLessThan2:
-        return "The movie has 2 stars or less";
+        return _("The movie has 2 stars or less");
       case MovieConstraint::NoteLessThan3:
-        return "The movie has 3 stars or less";
+        return _("The movie has 3 stars or less");
       case MovieConstraint::NoteLessThan4:
-        return "The movie has 4 stars or less";
+        return _("The movie has 4 stars or less");
       // country
       case MovieConstraint::CountryIsCanterlot:
-        return "The movie comes from Canterlot";
+        return _("The movie comes from Canterlot");
       case MovieConstraint::CountryIsGallifrey:
-        return "The movie comes from Gallifrey";
+        return _("The movie comes from Gallifrey");
       case MovieConstraint::CountryIsHyrule:
-        return "The movie comes from Hyrule";
+        return _("The movie comes from Hyrule");
       case MovieConstraint::CountryIsInnistrad:
-        return "The movie comes from Innistrad";
+        return _("The movie comes from Innistrad");
       case MovieConstraint::CountryIsMorrowind:
-        return "The movie comes from Morrowind";
+        return _("The movie comes from Morrowind");
       case MovieConstraint::CountryIsTemeria:
-        return "The movie comes from Temeria";
+        return _("The movie comes from Temeria");
       case MovieConstraint::CountryIsValinor:
-        return "The movie comes from Valinor";
+        return _("The movie comes from Valinor");
       case MovieConstraint::CountryIsWonderland:
-        return "The movie comes from Wonderland";
+        return _("The movie comes from Wonderland");
       case MovieConstraint::CountryIsNotCanterlot:
-        return "The movie does not come from Canterlot";
+        return _("The movie does not come from Canterlot");
       case MovieConstraint::CountryIsNotGallifrey:
-        return "The movie does not come from Gallifrey";
+        return _("The movie does not come from Gallifrey");
       case MovieConstraint::CountryIsNotHyrule:
-        return "The movie does not come from Hyrule";
+        return _("The movie does not come from Hyrule");
       case MovieConstraint::CountryIsNotInnistrad:
-        return "The movie does not come from Innistrad";
+        return _("The movie does not come from Innistrad");
       case MovieConstraint::CountryIsNotMorrowind:
-        return "The movie does not come from Morrowind";
+        return _("The movie does not come from Morrowind");
       case MovieConstraint::CountryIsNotTemeria:
-        return "The movie does not come from Temeria";
+        return _("The movie does not come from Temeria");
       case MovieConstraint::CountryIsNotValinor:
-        return "The movie does not come from Valinor";
+        return _("The movie does not come from Valinor");
       case MovieConstraint::CountryIsNotWonderland:
-        return "The movie does not come from Wonderland";
+        return _("The movie does not come from Wonderland");
       // genre
       case MovieConstraint::GenreIsAction:
-        return "The movie is an action movie";
+        return _("The movie is an action movie");
       case MovieConstraint::GenreIsComedy:
-        return "The movie is a comedy";
+        return _("The movie is a comedy");
       case MovieConstraint::GenreIsDrama:
-        return "The movie is a drama";
+        return _("The movie is a drama");
       case MovieConstraint::GenreIsFantasy:
-        return "The movie is a fantasy movie";
+        return _("The movie is a fantasy movie");
       case MovieConstraint::GenreIsHorror:
-        return "The movie is a horror movie";
+        return _("The movie is a horror movie");
       case MovieConstraint::GenreIsMusical:
-        return "The movie is a musical movie";
+        return _("The movie is a musical movie");
       case MovieConstraint::GenreIsRomance:
-        return "The movie is a romance";
+        return _("The movie is a romance");
       case MovieConstraint::GenreIsScienceFiction:
-        return "The movie is a sci-fi movie";
+        return _("The movie is a sci-fi movie");
       case MovieConstraint::GenreIsWestern:
-        return "The movie is a western";
+        return _("The movie is a western");
       case MovieConstraint::GenreIsNotAction:
-        return "The movie is not an action movie";
+        return _("The movie is not an action movie");
       case MovieConstraint::GenreIsNotComedy:
-        return "The movie is not a comedy";
+        return _("The movie is not a comedy");
       case MovieConstraint::GenreIsNotDrama:
-        return "The movie is not a drama";
+        return _("The movie is not a drama");
       case MovieConstraint::GenreIsNotFantasy:
-        return "The movie is not a fantasy movie";
+        return _("The movie is not a fantasy movie");
       case MovieConstraint::GenreIsNotHorror:
-        return "The movie is not a horror movie";
+        return _("The movie is not a horror movie");
       case MovieConstraint::GenreIsNotMusical:
-        return "The movie is not a musical movie";
+        return _("The movie is not a musical movie");
       case MovieConstraint::GenreIsNotRomance:
-        return "The movie is not a romance";
+        return _("The movie is not a romance");
       case MovieConstraint::GenreIsNotScienceFiction:
-        return "The movie is not a sci-fi movie";
+        return _("The movie is not a sci-fi movie");
       case MovieConstraint::GenreIsNotWestern:
-        return "The movie is not a western";
+        return _("The movie is not a western");
       // technique
       case MovieConstraint::TechniqueIsAnimation:
-        return "The movie is in animation";
+        return _("The movie is in animation");
       case MovieConstraint::TechniqueIsLiveAction:
-        return "The movie is in live action";
+        return _("The movie is in live action");
       case MovieConstraint::TechniqueIsStopMotion:
-        return "The movie is in stop motion";
+        return _("The movie is in stop motion");
       case MovieConstraint::TechniqueIsNotAnimation:
-        return "The movie is not in animation";
+        return _("The movie is not in animation");
       case MovieConstraint::TechniqueIsNotLiveAction:
-        return "The movie is not in live action";
+        return _("The movie is not in live action");
       case MovieConstraint::TechniqueIsNotStopMotion:
-        return "The movie is not in stop motion";
+        return _("The movie is not in stop motion");
       // rating
       case MovieConstraint::RatingChildOf10:
-        return "The movie can be viewed by a child of 10";
+        return _("The movie can be viewed by a child of 10");
       case MovieConstraint::RatingTeenagerOf14:
-        return "The movie can be viewed by a teenager of 14";
+        return _("The movie can be viewed by a teenager of 14");
       case MovieConstraint::RatingTeenagerOf17:
-        return "The movie can be viewed by a teenager of 17";
+        return _("The movie can be viewed by a teenager of 17");
       case MovieConstraint::RatingMoreThan0:
-        return "The movie is authorized for 0+";
+        return _("The movie is authorized for 0+");
       case MovieConstraint::RatingMoreThan12:
-        return "The movie is authorized for 12+";
+        return _("The movie is authorized for 12+");
       case MovieConstraint::RatingMoreThan16:
-        return "The movie is authorized for 16+";
+        return _("The movie is authorized for 16+");
       case MovieConstraint::RatingMoreThan18:
-        return "The movie is authorized for 18+";
+        return _("The movie is authorized for 18+");
     }
 
     assert(false);

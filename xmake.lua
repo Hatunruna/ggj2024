@@ -3,7 +3,8 @@ set_version("0.1.0")
 
 add_repositories("gf-repo https://github.com/GamedevFramework/xmake-repo")
 
-add_requires("gamedevframework1", "nlohmann_json", "sfml")
+add_requires("gamedevframework1", "nlohmann_json", "sfml", "icu4c")
+add_requires("boost", { configs = { locale = true }})
 
 add_rules("mode.debug", "mode.releasedbg", "mode.release")
 
@@ -19,6 +20,7 @@ end
 
 set_configdir("$(buildir)/config")
 set_configvar("GAME_DATADIR", "$(projectdir)/data/MidnightMovies")
+set_configvar("GAME_LOCALEDIR", "$(projectdir)/data/raw/i18n")
 add_configfiles("code/config.h.in", {pattern = "@(.-)@"})
 
 target("MidnightMovies")
@@ -28,6 +30,7 @@ target("MidnightMovies")
     add_includedirs("$(buildir)/config")
     add_packages("gamedevframework1", "nlohmann_json")
     add_packages("sfml", {components = "audio"})
+    add_packages("boost", "icu4c")
 
 target("MidnightMoviesGenerator")
     set_kind("binary")
@@ -40,6 +43,7 @@ target("MidnightMoviesCheck")
     add_files("code/bits/MovieData.cc")
     add_includedirs("$(buildir)/config")
     add_packages("gamedevframework1", "nlohmann_json")
+    add_packages("boost", "icu4c")
 
 target("MidnightMoviesLevel")
     set_kind("binary")
@@ -47,3 +51,4 @@ target("MidnightMoviesLevel")
     add_files("code/bits/MovieData.cc")
     add_includedirs("$(buildir)/config")
     add_packages("gamedevframework1", "nlohmann_json")
+    add_packages("boost", "icu4c")

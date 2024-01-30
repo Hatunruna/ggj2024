@@ -52,7 +52,7 @@ namespace mm {
 
     unsigned instructionsCharacterSize = coords.getRelativeCharacterSize(0.03f);
 
-    gf::Text instructions("Click to start", m_font, instructionsCharacterSize);
+    gf::Text instructions(_("Click to start"), m_font, instructionsCharacterSize);
     instructions.setColor(gf::Color::White);
     instructions.setPosition(coords.getRelativePoint({ 0.5f, 0.9f }));
     instructions.setAnchor(gf::Anchor::Center);

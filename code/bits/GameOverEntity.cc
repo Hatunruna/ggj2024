@@ -10,6 +10,7 @@
 #include "GameData.h"
 #include "GameHub.h"
 #include "GameState.h"
+#include "i18n.h"
 
 namespace mm {
 
@@ -38,8 +39,7 @@ namespace mm {
     target.draw(background, states);
 
     if (m_game.state.monsterHappiness == MonsterHappiness::Happy || m_game.state.monsterHappiness == MonsterHappiness::VeryHappy) {
-      std::string string = "Congratulations! The monster has enjoyed this midnights movies and laughs openly.\n";
-      string += "You have saved the city (and our life).\nEnjoy your vacations!";
+      std::string string = _("Congratulations! The monster has enjoyed this midnights movies and laughs openly.\nYou have saved the city (and our life).\nEnjoy your vacations!");
 
       gf::Text text(string, m_font, coordinates.getRelativeCharacterSize(0.08));
       text.setColor(gf::Color::White);
@@ -49,9 +49,7 @@ namespace mm {
       text.setAnchor(gf::Anchor::Center);
       text.draw(target, states);
     } else {
-      std::string string = "Unfortunately, the monster was not satisfied by your performance.\n";
-      string += "After feeding the monster, he left the cinema and start to destroying the town.\n";
-      string += "Good luck in another life!";
+      std::string string = _("Unfortunately, the monster was not satisfied by your performance.\nAfter feeding the monster, he left the cinema and start to destroying the town.\nGood luck in another life!");
 
       gf::Text text(string, m_font, coordinates.getRelativeCharacterSize(0.08));
       text.setColor(gf::Color::White);

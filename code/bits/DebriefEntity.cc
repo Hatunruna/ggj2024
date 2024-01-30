@@ -10,6 +10,7 @@
 #include "GameData.h"
 #include "GameHub.h"
 #include "GameState.h"
+#include "i18n.h"
 
 namespace mm {
 
@@ -38,7 +39,7 @@ namespace mm {
     background.setScale(backgroundScale);
     target.draw(background, states);
 
-    gf::Text title("Shift End", m_font, coordinates.getRelativeCharacterSize(0.12));
+    gf::Text title(_("Shift End"), m_font, coordinates.getRelativeCharacterSize(0.12));
     title.setColor(gf::Color::White);
     title.setParagraphWidth(coordinates.getRelativeSize({ 0.7f, 0.0f }).width);
     title.setAlignment(gf::Alignment::Center);
@@ -47,10 +48,10 @@ namespace mm {
     title.draw(target, states);
 
     std::string debriefText;
-    debriefText += "Correct choices: " + std::to_string(m_gameState.correctChoices) + "\n";
-    debriefText += "Incorrect choices: " + std::to_string(m_gameState.incorrectChoices) + "\n";
+    debriefText += _("Correct choices: ") + std::to_string(m_gameState.correctChoices) + "\n";
+    debriefText += _("Incorrect choices: ") + std::to_string(m_gameState.incorrectChoices) + "\n";
     const int totalMovies = m_game.data.levelSettings[m_game.state.currentLevel].movieCount;
-    debriefText += "Unhandled movies: " + std::to_string(totalMovies - (m_gameState.correctChoices + m_gameState.incorrectChoices)) + "\n";
+    debriefText += _("Unhandled movies: ") + std::to_string(totalMovies - (m_gameState.correctChoices + m_gameState.incorrectChoices)) + "\n";
 
     gf::Text debrief(debriefText, m_font, coordinates.getRelativeCharacterSize(0.08));
     debrief.setColor(gf::Color::White);

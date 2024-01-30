@@ -8,6 +8,7 @@
 
 #include "GameHub.h"
 #include "GameState.h"
+#include "i18n.h"
 
 namespace mm {
 
@@ -52,7 +53,7 @@ namespace mm {
     target.draw(text, states);
 
 
-    gf::Text noAiText("And of course, no AI!", m_font, coordinates.getRelativeCharacterSize(0.05));
+    gf::Text noAiText(_("And of course, no AI!"), m_font, coordinates.getRelativeCharacterSize(0.05));
     noAiText.setColor(gf::Color::White);
     noAiText.setPosition(coordinates.getRelativePoint({ 0.9f, 0.95f }));
     noAiText.setAnchor(gf::Anchor::CenterRight);
