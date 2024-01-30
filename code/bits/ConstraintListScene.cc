@@ -22,6 +22,7 @@ namespace mm {
     m_okButton.setScale(0.5f);
     m_okButton.setCallback([this](){
       if (m_type == ConstraintListType::First) {
+        m_game.state.shitTimer = TotalShiftTime;
         m_game.replaceScene(m_game.theater);
         m_game.sounds.startTheaterAmbiance();
       } else {

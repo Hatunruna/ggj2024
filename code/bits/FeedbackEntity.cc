@@ -9,29 +9,22 @@
 
 namespace mm {
 
-  namespace {
-
-    constexpr gf::Time TotalTime = gf::seconds(120);
-
-  }
-
   FeedbackEntity::FeedbackEntity(GameHub& game)
   : m_gameHub(game)
   , m_font(game.resources.getFont("fonts/Renner.ttf"))
   , m_movieTexture(game.resources.getTexture("icons/film-solid.png"))
   , m_timerTexture(game.resources.getTexture("icons/clock-regular.png"))
-  , m_timer(TotalTime)
   {
   }
 
   void FeedbackEntity::update(gf::Time time)
   {
     if (m_gameHub.state.movieState == MovieState::WaitingMovie) {
-      m_timer -= time;
+      m_gameHub.state.shitTimer -= time;
 
-      if (m_timer < gf::Time::zero()) {
+      if (m_gameHub.state.shitTimer < gf::Time::zero()) {
         m_gameHub.endShift();
-        m_timer = TotalTime;
+        m_gameHub.state.shitTimer = TotalShiftTime;
       }
     }
   }
@@ -53,7 +46,7 @@ namespace mm {
     movieText.setColor(gf::Color::Gray(0.6f));
     target.draw(movieText, states);
 
-    const gf::Color4f timerColor = m_timer < gf::seconds(10) ? gf::Color::Red : gf::Color::Gray(0.6f);
+    const gf::Color4f timerColor = m_gameHub.state.shitTimer < gf::seconds(10) ? gf::Color::Red : gf::Color::Gray(0.6f);
 
     gf::Sprite timerSprite(m_timerTexture);
     timerSprite.setAnchor(gf::Anchor::CenterLeft);
@@ -62,7 +55,7 @@ namespace mm {
     timerSprite.setColor(timerColor);
     target.draw(timerSprite, states);
 
-    int remainingSeconds = m_timer.asMilliseconds() / 1000;
+    int remainingSeconds = m_gameHub.state.shitTimer.asMilliseconds() / 1000;
 
     gf::Text timerText(std::to_string(remainingSeconds), m_font, 170);
     timerText.setAnchor(gf::Anchor::CenterLeft);

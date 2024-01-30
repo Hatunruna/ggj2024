@@ -11,6 +11,9 @@ namespace mm {
   class FeedbackEntity : public gf::Entity {
   public:
     FeedbackEntity(GameHub& game);
+
+    void reset();
+
     void update(gf::Time time) override;
     void render(gf::RenderTarget &target, const gf::RenderStates &states) override;
   private:
@@ -18,7 +21,6 @@ namespace mm {
     gf::Font& m_font;
     gf::Texture& m_movieTexture;
     gf::Texture& m_timerTexture;
-    gf::Time m_timer;
   };
 
 }

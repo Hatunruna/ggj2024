@@ -32,6 +32,8 @@ namespace mm {
     VeryHappy,
   };
 
+  constexpr gf::Time TotalShiftTime = gf::seconds(120);
+
   struct GameState {
     static constexpr uint16_t Version = 1;
 
@@ -45,6 +47,8 @@ namespace mm {
     int incorrectChoices = 0;
 
     MonsterHappiness monsterHappiness = MonsterHappiness::Neutral;
+
+    gf::Time shitTimer = TotalShiftTime;
 
     void loadFromFile(const gf::Path& filename);
     void saveToFile(const gf::Path& filename);
