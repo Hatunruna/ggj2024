@@ -6,6 +6,8 @@
 #include <gf/Sprite.h>
 #include <gf/Text.h>
 
+#include "i18n.h"
+
 namespace mm {
 
   TitleEntity::TitleEntity(gf::ResourceManager& resources)
@@ -42,7 +44,7 @@ namespace mm {
 
     unsigned subtitleCharacterSize = coords.getRelativeCharacterSize(0.05f);
 
-    gf::Text subtitle("It wants to laugh, choose wisely", m_font, subtitleCharacterSize);
+    gf::Text subtitle(_("It wants to laugh, choose wisely"), m_font, subtitleCharacterSize);
     subtitle.setColor(gf::Color::White);
     subtitle.setPosition(coords.getRelativePoint({ 0.5f, 0.7f }));
     subtitle.setAnchor(gf::Anchor::Center);

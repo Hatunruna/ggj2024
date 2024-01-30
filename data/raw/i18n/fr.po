@@ -1,0 +1,21 @@
+# Midnight Movies.
+# Copyright (C) 2024 Hatunruna
+# This file is distributed under the same license as the Midnight Movies package.
+# Julien Bernard <julien.bernard@univ-fcomte.fr>, 2024
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Midnight Movies 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-30 19:01+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Julien Bernard <julien.bernard@univ-fcomte.fr>\n"
+"Language-Team: fr <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: code/bits/TitleEntity.cc:47
+msgid "It wants to laugh, choose wisely"
+msgstr "Il veut rire, choisissez bien !"
