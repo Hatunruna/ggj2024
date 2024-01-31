@@ -19,7 +19,7 @@ namespace mm {
 
   void FeedbackEntity::update(gf::Time time)
   {
-    if (m_gameHub.state.movieState == MovieState::WaitingMovie) {
+    if (m_gameHub.state.movieState != MovieState::NoMovie) {
       m_gameHub.state.shitTimer -= time;
 
       if (m_gameHub.state.shitTimer < gf::Time::zero()) {
