@@ -25,6 +25,7 @@ namespace mm {
         m_game.startNewShift();
         m_game.replaceScene(m_game.listFirst);
       } else {
+        m_game.state.currentGameOverAnimation = 0;
         m_game.replaceScene(m_game.gameOver);
       }
     });

@@ -13,7 +13,7 @@ namespace mm {
   {
     setClearColor(gf::Color::Black);
 
-    addHudEntity(m_entity);
+    addWorldEntity(m_entity);
 
     m_retryButton.setPosition(WorldSize * gf::vec(0.50f, 0.90f));
     m_retryButton.setAnchor(gf::Anchor::BottomCenter);
@@ -47,8 +47,10 @@ namespace mm {
   void GameOverScene::doRender(gf::RenderTarget& target, const gf::RenderStates &states) {
     renderWorldEntities(target, states);
     renderHudEntities(target, states);
-    m_game.getRenderer().setView(getWorldView()); // HACK
-    m_widgets.render(target, states);
+    if (m_entity.hasFinishedCutScene()) {
+      m_game.getRenderer().setView(getWorldView()); // HACK
+      m_widgets.render(target, states);
+    }
   }
 
 }

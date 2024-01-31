@@ -50,6 +50,8 @@ namespace mm {
 
     gf::Time shitTimer = TotalShiftTime;
 
+    std::uint8_t currentGameOverAnimation = 0;
+
     void loadFromFile(const gf::Path& filename);
     void saveToFile(const gf::Path& filename);
   };
