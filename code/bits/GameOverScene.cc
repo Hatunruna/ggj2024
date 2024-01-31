@@ -29,18 +29,20 @@ namespace mm {
   }
 
   void GameOverScene::doProcessEvent(gf::Event& event) {
-    switch (event.type) {
-    case gf::EventType::MouseMoved:
-      m_widgets.pointTo(m_game.getRenderer().mapPixelToCoords(event.mouseCursor.coords, getWorldView()));
-      break;
+    if (m_entity.hasFinishedCutScene()) {
+      switch (event.type) {
+      case gf::EventType::MouseMoved:
+        m_widgets.pointTo(m_game.getRenderer().mapPixelToCoords(event.mouseCursor.coords, getWorldView()));
+        break;
 
-    case gf::EventType::MouseButtonPressed:
-      m_widgets.pointTo(m_game.getRenderer().mapPixelToCoords(event.mouseButton.coords, getWorldView()));
-      m_widgets.triggerAction();
-      break;
+      case gf::EventType::MouseButtonPressed:
+        m_widgets.pointTo(m_game.getRenderer().mapPixelToCoords(event.mouseButton.coords, getWorldView()));
+        m_widgets.triggerAction();
+        break;
 
-    default:
-      break;
+      default:
+        break;
+      }
     }
   }
 

@@ -132,9 +132,6 @@ namespace mm {
       animation.addTileset(game.resources.getTexture("images/animation/bad-ending/bad-ending-scene2-end-17.png"), gf::vec(1, 2), FrameRate, 2);
       animation.addTileset(game.resources.getTexture("images/animation/bad-ending/bad-ending-scene2-end-18.png"), gf::vec(1, 2), FrameRate, 2);
       animation.addTileset(game.resources.getTexture("images/animation/bad-ending/bad-ending-scene2-end-19.png"), gf::vec(1, 2), FrameRate, 2);
-      animation.addTileset(game.resources.getTexture("images/animation/bad-ending/bad-ending-scene2-end-20.png"), gf::vec(1, 2), FrameRate, 2);
-      animation.addTileset(game.resources.getTexture("images/animation/bad-ending/bad-ending-scene2-end-21.png"), gf::vec(1, 2), FrameRate, 2);
-      animation.addTileset(game.resources.getTexture("images/animation/bad-ending/bad-ending-scene2-end-22.png"), gf::vec(1, 2), FrameRate, 2);
       animation.setLoop(false);
       m_badEndingAnimations.emplace_back(std::move(animation));
     }
@@ -176,6 +173,13 @@ namespace mm {
       if (m_game.state.currentGameOverAnimation < m_badEndingAnimations.size()) {
         gf::AnimatedSprite animation;
         animation.setAnimation(m_badEndingAnimations[m_game.state.currentGameOverAnimation]);
+
+        // Handle rumble
+        if (m_game.state.currentGameOverAnimation == 1 || m_game.state.currentGameOverAnimation == 3) {
+          const float rumble = m_game.random.computeUniformFloat(-0.01f, 0.01f);
+          animation.setPosition(WorldSize * rumble);
+        }
+
         animation.draw(target, states);
       } else {
         gf::Sprite background(m_backgroundTexture);
