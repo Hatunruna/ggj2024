@@ -160,13 +160,13 @@ namespace mm {
       background.setColor(gf::Color::Opaque(0.25));
       target.draw(background, states);
 
-      std::string string = _("Congratulations! The monster has enjoyed this midnights movies and laughs openly.\nYou have saved the city (and our life).\nEnjoy your vacations!");
+      std::string string = _("Congratulations! The monster has enjoyed this midnights movies and laughs openly. You have saved the city (and our life).\nEnjoy your vacations!");
 
-      gf::Text text(string, m_font, coordinates.getRelativeCharacterSize(0.08));
+      gf::Text text(string, m_font, WorldSize.height * 0.08);
       text.setColor(gf::Color::White);
-      text.setParagraphWidth(coordinates.getRelativeSize({ 0.9f, 0.0f }).width);
+      text.setParagraphWidth(WorldSize.width * 0.9f);
       text.setAlignment(gf::Alignment::Center);
-      text.setPosition(coordinates.getRelativePoint({ 0.5f, 0.5f }));
+      text.setPosition(WorldSize * gf::vec(0.5f, 0.5f));
       text.setAnchor(gf::Anchor::Center);
       text.draw(target, states);
     } else {
@@ -186,7 +186,7 @@ namespace mm {
         background.setColor(gf::Color::Opaque(0.25));
         target.draw(background, states);
 
-        std::string string = _("Unfortunately, the monster was not satisfied by your performance.\nAfter feeding the monster, he left the cinema and start to destroying the town.\nGood luck in another life!");
+        std::string string = _("Unfortunately, the monster was not satisfied by your performance.\nGood luck in another life!");
 
         gf::Text text(string, m_font, WorldSize.height * 0.08);
         text.setColor(gf::Color::White);
