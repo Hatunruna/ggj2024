@@ -119,6 +119,7 @@ jobs:
           cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\vorbis.dll ${{github.workspace}}/ggj2024/build/${{env.BUILD_TYPE}}
           cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\vorbisenc.dll ${{github.workspace}}/ggj2024/build/${{env.BUILD_TYPE}}
           cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\vorbisfile.dll ${{github.workspace}}/ggj2024/build/${{env.BUILD_TYPE}}
+          cp ${{github.workspace}}\vcpkg\installed\x64-windows\bin\boost_locale-vc143-mt-x64-1_83.dll ${{github.workspace}}/ggj2024/build/${{env.BUILD_TYPE}}
 
       - name: Create game
         working-directory: ${{github.workspace}}/ggj2024/build

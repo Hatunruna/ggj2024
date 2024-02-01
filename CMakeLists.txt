@@ -77,6 +77,7 @@ if (WIN32)
   install(
     FILES
       $<TARGET_FILE_DIR:${GAME}>/SDL2d.dll
+      $<TARGET_FILE_DIR:${GAME}>/boost_locale-vc143-mt-x64-1_83.dll
       $<TARGET_FILE_DIR:${GAME}>/brotlicommon.dll
       $<TARGET_FILE_DIR:${GAME}>/brotlidec.dll
       $<TARGET_FILE_DIR:${GAME}>/bz2d.dll
@@ -102,6 +103,7 @@ if (WIN32)
   install(
     FILES
       $<TARGET_FILE_DIR:${GAME}>/SDL2.dll
+      $<TARGET_FILE_DIR:${GAME}>/boost_locale-vc143-mt-x64-1_83.dll
       $<TARGET_FILE_DIR:${GAME}>/brotlicommon.dll
       $<TARGET_FILE_DIR:${GAME}>/brotlidec.dll
       $<TARGET_FILE_DIR:${GAME}>/bz2.dll
