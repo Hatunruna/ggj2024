@@ -25,6 +25,9 @@ namespace mm {
     gf::Texture& m_backgroundTexture;
 
     // Bad ending stuff
+    gf::Texture& m_theaterBackgroundTexture;
+    gf::Animation m_projectorAnimation;
+    gf::Texture& m_officeBackgroundTexture;
     std::vector<gf::Animation> m_badEndingAnimations;
   };
 
