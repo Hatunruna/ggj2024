@@ -18,7 +18,7 @@ msgstr ""
 
 #: code/bits/DebriefEntity.cc:42
 msgid "Shift End"
-msgstr ""
+msgstr "Fin de la Tournée"
 
 #: code/bits/DebriefEntity.cc:51
 msgid "Correct choices: "
@@ -98,303 +98,303 @@ msgstr "Stop motion"
 
 #: code/bits/MovieData.cc:160
 msgid "The title has a odd number of words"
-msgstr ""
+msgstr "Le titre a un nombre impair de mots"
 
 #: code/bits/MovieData.cc:162
 msgid "The title has an even number of words"
-msgstr ""
+msgstr "Le titre a un nombre pair de mots"
 
 #: code/bits/MovieData.cc:164
 msgid "The title has 16 letters or less"
-msgstr ""
+msgstr "Le titre a 16 lettres ou moins"
 
 #: code/bits/MovieData.cc:166
 msgid "The title has 16 letters or more"
-msgstr ""
+msgstr "Le titre a 16 lettres ou plus"
 
 #: code/bits/MovieData.cc:169
 msgid "The movie was released in 1980 or after"
-msgstr ""
+msgstr "Le film est sorti en 1980 ou après"
 
 #: code/bits/MovieData.cc:171
 msgid "The movie was released in 1990 or after"
-msgstr ""
+msgstr "Le film est sorti en 1990 ou après"
 
 #: code/bits/MovieData.cc:173
 msgid "The movie was released in 2000 or after"
-msgstr ""
+msgstr "Le film est sorti en 2000 ou après"
 
 #: code/bits/MovieData.cc:175
 msgid "The movie was released in 2010 or after"
-msgstr ""
+msgstr "Le film est sorti en en 2010 ou après"
 
 #: code/bits/MovieData.cc:177
 msgid "The movie was released in 1990 or before"
-msgstr ""
+msgstr "Le film est sorti en 1990 ou avant"
 
 #: code/bits/MovieData.cc:179
 msgid "The movie was released in 2000 or before"
-msgstr ""
+msgstr "Le film est sorti en 2000 ou avant"
 
 #: code/bits/MovieData.cc:181
 msgid "The movie was released in 2010 or before"
-msgstr ""
+msgstr "Le film est sorti en 2010 ou avant"
 
 #: code/bits/MovieData.cc:183
 msgid "The movie was released in 2020 or before"
-msgstr ""
+msgstr "Le film est sorti en 2020 ou avant"
 
 #: code/bits/MovieData.cc:185
 msgid "The movie was released in a leap year"
-msgstr ""
+msgstr "Le film est sorti une année bissextile"
 
 #: code/bits/MovieData.cc:187
 msgid "The movie was released in a non-leap year"
-msgstr ""
+msgstr "Le film est sorti une année non-bissextile"
 
 #: code/bits/MovieData.cc:189
 msgid "The movie was released in a odd year"
-msgstr ""
+msgstr "Le film est sorti une année impaire"
 
 #: code/bits/MovieData.cc:191
 msgid "The movie was released in an even year"
-msgstr ""
+msgstr "Le film est sorti une année paire"
 
 #: code/bits/MovieData.cc:194
 msgid "The movie lasts 90 minutes or more"
-msgstr ""
+msgstr "Le film dure 90 minutes ou plus"
 
 #: code/bits/MovieData.cc:196
 msgid "The movie lasts 120 minutes or more"
-msgstr ""
+msgstr "Le film dure 120 minutes ou plus"
 
 #: code/bits/MovieData.cc:198
 msgid "The movie lasts 150 minutes or more"
-msgstr ""
+msgstr "Le film dure 150 minutes ou plus"
 
 #: code/bits/MovieData.cc:200
 msgid "The movie lasts 120 minutes or less"
-msgstr ""
+msgstr "Le film dure 120 minutes ou moins"
 
 #: code/bits/MovieData.cc:202
 msgid "The movie lasts 150 minutes or less"
-msgstr ""
+msgstr "Le film dure 150 minutes ou moins"
 
 #: code/bits/MovieData.cc:204
 msgid "The movie lasts 180 minutes or less"
-msgstr ""
+msgstr "Le film dure 180 minutes ou moins"
 
 #: code/bits/MovieData.cc:207
 msgid "The movie has 2 stars or more"
-msgstr ""
+msgstr "Le film a 2 étoiles ou plus"
 
 #: code/bits/MovieData.cc:209
 msgid "The movie has 3 stars or more"
-msgstr ""
+msgstr "Le film a 3 étoiles ou plus"
 
 #: code/bits/MovieData.cc:211
 msgid "The movie has 4 stars or more"
-msgstr ""
+msgstr "Le film a 4 étoiles ou plus"
 
 #: code/bits/MovieData.cc:213
 msgid "The movie has 2 stars or less"
-msgstr ""
+msgstr "Le film a 2 étoiles ou moins"
 
 #: code/bits/MovieData.cc:215
 msgid "The movie has 3 stars or less"
-msgstr ""
+msgstr "Le film a 3 étoiles ou moins"
 
 #: code/bits/MovieData.cc:217
 msgid "The movie has 4 stars or less"
-msgstr ""
+msgstr "Le film a 4 étoiles ou moins"
 
 #: code/bits/MovieData.cc:220
 msgid "The movie comes from Canterlot"
-msgstr ""
+msgstr "Le film vient de Canterlot"
 
 #: code/bits/MovieData.cc:222
 msgid "The movie comes from Gallifrey"
-msgstr ""
+msgstr "Le film vient de Gallifrey"
 
 #: code/bits/MovieData.cc:224
 msgid "The movie comes from Hyrule"
-msgstr ""
+msgstr "Le film vient d'Hyrule"
 
 #: code/bits/MovieData.cc:226
 msgid "The movie comes from Innistrad"
-msgstr ""
+msgstr "Le film vient d'Innistrad"
 
 #: code/bits/MovieData.cc:228
 msgid "The movie comes from Morrowind"
-msgstr ""
+msgstr "Le film vient de Morrowind"
 
 #: code/bits/MovieData.cc:230
 msgid "The movie comes from Temeria"
-msgstr ""
+msgstr "Le film vient de Temeria"
 
 #: code/bits/MovieData.cc:232
 msgid "The movie comes from Valinor"
-msgstr ""
+msgstr "Le film vient de Valinor"
 
 #: code/bits/MovieData.cc:234
 msgid "The movie comes from Wonderland"
-msgstr ""
+msgstr "Le film vient de Wonderland"
 
 #: code/bits/MovieData.cc:236
 msgid "The movie does not come from Canterlot"
-msgstr ""
+msgstr "Le film ne vient pas de Canterlot"
 
 #: code/bits/MovieData.cc:238
 msgid "The movie does not come from Gallifrey"
-msgstr ""
+msgstr "Le film ne vient pas de Gallifrey"
 
 #: code/bits/MovieData.cc:240
 msgid "The movie does not come from Hyrule"
-msgstr ""
+msgstr "Le film ne vient pas d'Hyrule"
 
 #: code/bits/MovieData.cc:242
 msgid "The movie does not come from Innistrad"
-msgstr ""
+msgstr "Le film ne vient pas d'Innistrad"
 
 #: code/bits/MovieData.cc:244
 msgid "The movie does not come from Morrowind"
-msgstr ""
+msgstr "Le film ne vient pas de Morrowind"
 
 #: code/bits/MovieData.cc:246
 msgid "The movie does not come from Temeria"
-msgstr ""
+msgstr "Le film ne vient pas de Temeria"
 
 #: code/bits/MovieData.cc:248
 msgid "The movie does not come from Valinor"
-msgstr ""
+msgstr "Le film ne vient pas de Valinor"
 
 #: code/bits/MovieData.cc:250
 msgid "The movie does not come from Wonderland"
-msgstr ""
+msgstr "Le film ne vient pas de Wonderland"
 
 #: code/bits/MovieData.cc:253
 msgid "The movie is an action movie"
-msgstr ""
+msgstr "Le film est un film d'action"
 
 #: code/bits/MovieData.cc:255
 msgid "The movie is a comedy"
-msgstr ""
+msgstr "Le film est une comédie"
 
 #: code/bits/MovieData.cc:257
 msgid "The movie is a drama"
-msgstr ""
+msgstr "Le film est un drame"
 
 #: code/bits/MovieData.cc:259
 msgid "The movie is a fantasy movie"
-msgstr ""
+msgstr "Le film est un film fantasy"
 
 #: code/bits/MovieData.cc:261
 msgid "The movie is a horror movie"
-msgstr ""
+msgstr "Le film est un film d'horreur"
 
 #: code/bits/MovieData.cc:263
 msgid "The movie is a musical movie"
-msgstr ""
+msgstr "Le film est un film musical"
 
 #: code/bits/MovieData.cc:265
 msgid "The movie is a romance"
-msgstr ""
+msgstr "Le film est une romance"
 
 #: code/bits/MovieData.cc:267
 msgid "The movie is a sci-fi movie"
-msgstr ""
+msgstr "Le film est un film de science-fiction"
 
 #: code/bits/MovieData.cc:269
 msgid "The movie is a western"
-msgstr ""
+msgstr "Le film est un western"
 
 #: code/bits/MovieData.cc:271
 msgid "The movie is not an action movie"
-msgstr ""
+msgstr "Le film n'est pas un film d'action"
 
 #: code/bits/MovieData.cc:273
 msgid "The movie is not a comedy"
-msgstr ""
+msgstr "Le film n'est pas une comédie"
 
 #: code/bits/MovieData.cc:275
 msgid "The movie is not a drama"
-msgstr ""
+msgstr "Le film n'est pas un drame"
 
 #: code/bits/MovieData.cc:277
 msgid "The movie is not a fantasy movie"
-msgstr ""
+msgstr "Le film n'est pas un film de fantasy"
 
 #: code/bits/MovieData.cc:279
 msgid "The movie is not a horror movie"
-msgstr ""
+msgstr "Le film n'est pas un film d'horreur"
 
 #: code/bits/MovieData.cc:281
 msgid "The movie is not a musical movie"
-msgstr ""
+msgstr "Le film n'est pas un film musical"
 
 #: code/bits/MovieData.cc:283
 msgid "The movie is not a romance"
-msgstr ""
+msgstr "Le film n'est pas une romance"
 
 #: code/bits/MovieData.cc:285
 msgid "The movie is not a sci-fi movie"
-msgstr ""
+msgstr "Le film n'est pas un film de science-fiction"
 
 #: code/bits/MovieData.cc:287
 msgid "The movie is not a western"
-msgstr ""
+msgstr "Le film n'est pas un western"
 
 #: code/bits/MovieData.cc:290
 msgid "The movie is in animation"
-msgstr ""
+msgstr "Le film est en animation"
 
 #: code/bits/MovieData.cc:292
 msgid "The movie is in live action"
-msgstr ""
+msgstr "Le film est en live action"
 
 #: code/bits/MovieData.cc:294
 msgid "The movie is in stop motion"
-msgstr ""
+msgstr "Le film est en stop motion"
 
 #: code/bits/MovieData.cc:296
 msgid "The movie is not in animation"
-msgstr ""
+msgstr "Le film n'est pas en animation"
 
 #: code/bits/MovieData.cc:298
 msgid "The movie is not in live action"
-msgstr ""
+msgstr "Le film n'est pas en live action"
 
 #: code/bits/MovieData.cc:300
 msgid "The movie is not in stop motion"
-msgstr ""
+msgstr "Le film n'est pas en stop motion"
 
 #: code/bits/MovieData.cc:303
 msgid "The movie can be viewed by a child of 10"
-msgstr ""
+msgstr "Le film peut être vu par un enfant de 10 ans"
 
 #: code/bits/MovieData.cc:305
 msgid "The movie can be viewed by a teenager of 14"
-msgstr ""
+msgstr "Le film peut être vu par un adolescent de 14 ans"
 
 #: code/bits/MovieData.cc:307
 msgid "The movie can be viewed by a teenager of 17"
-msgstr ""
+msgstr "Le film peut être vu par un adolescent de 17 ans"
 
 #: code/bits/MovieData.cc:309
 msgid "The movie is authorized for 0+"
-msgstr ""
+msgstr "Le film est autorisé pour les 0+"
 
 #: code/bits/MovieData.cc:311
 msgid "The movie is authorized for 12+"
-msgstr ""
+msgstr "Le film est autorisé pour les 12+"
 
 #: code/bits/MovieData.cc:313
 msgid "The movie is authorized for 16+"
-msgstr ""
+msgstr "Le film est autorisé pour les 16+"
 
 #: code/bits/MovieData.cc:315
 msgid "The movie is authorized for 18+"
-msgstr ""
+msgstr "Le film est autorisé pour les 18+"
 
 #: code/bits/MovieManager.cc:150
 msgid " min"
