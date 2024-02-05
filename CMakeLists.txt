@@ -136,6 +136,10 @@ if (WIN32)
     DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/data/${GAME}/"
     DESTINATION "./data/"
   )
+  install(
+    DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/data/raw/i18n/"
+    DESTINATION "./locale/"
+  )
 else ()
   install(
     DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/data/${GAME}"
