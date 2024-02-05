@@ -42,6 +42,10 @@ namespace mm {
     if (m_startAction.isActive()) {
       m_game.data.movieDatabase = loadDatabase(m_game.resources, m_game.random);
       m_game.state.currentLevel = 0;
+      m_game.state.monsterHappiness = MonsterHappiness::Neutral;
+      m_game.state.monsterState = MonsterState::Neutral;
+      m_game.state.movieState = MovieState::NoMovie;
+      m_game.state.currentGameOverAnimation = 0;
       m_game.startNewShift();
 
       m_game.replaceScene(m_game.listFirst);
