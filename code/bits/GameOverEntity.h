@@ -24,11 +24,16 @@ namespace mm {
     gf::Font& m_font;
     gf::Texture& m_backgroundTexture;
 
-    // Bad ending stuff
+    // Common stuff
     gf::Texture& m_theaterBackgroundTexture;
     gf::Animation m_projectorAnimation;
     gf::Texture& m_officeBackgroundTexture;
+
+    // Bad ending stuff
     std::vector<gf::Animation> m_badEndingAnimations;
+
+    // Good ending stuff
+    std::vector<gf::Animation> m_goodEndingAnimations;
   };
 
 }

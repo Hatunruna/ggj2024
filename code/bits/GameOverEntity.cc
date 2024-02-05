@@ -107,10 +107,90 @@ namespace mm {
       animation.setLoop(false);
       m_badEndingAnimations.emplace_back(std::move(animation));
     }
+
+    {
+      gf::Animation animation;
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene1-seq1-0.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene1-seq1-1.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene1-seq1-2.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene1-seq1-3.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene1-seq1-4.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene1-seq1-5.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene1-seq1-6.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene1-seq1-7.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene1-seq1-8.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene1-seq1-9.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene1-seq1-10.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene1-seq1-11.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene1-seq1-12.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene1-seq1-13.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene1-seq1-14.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene1-seq1-15.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene1-seq1-16.png"), gf::vec(2, 2), FrameRate, 3);
+      animation.setLoop(false);
+      m_goodEndingAnimations.emplace_back(std::move(animation));
+    }
+
+    {
+      gf::Animation animation;
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq1-0.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq1-1.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq1-2.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq1-3.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq1-4.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq1-5.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq1-6.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq1-7.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.setLoop(false);
+      m_goodEndingAnimations.emplace_back(std::move(animation));
+    }
+
+    {
+      gf::Animation animation;
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq2-0.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq2-1.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq2-2.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq2-3.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq2-4.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq2-5.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq2-6.png"), gf::vec(2, 2), FrameRate, 3);
+      animation.setLoop(false);
+      m_goodEndingAnimations.emplace_back(std::move(animation));
+    }
+
+    {
+      gf::Animation animation;
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq3-0.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq3-1.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq3-2.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq3-3.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq3-4.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq3-5.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq3-6.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq3-7.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq3-8.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq3-9.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq3-10.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq3-11.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.addTileset(game.resources.getTexture("images/animation/good-ending/good-ending-scene2-seq3-12.png"), gf::vec(2, 2), FrameRate, 4);
+      animation.setLoop(false);
+      m_goodEndingAnimations.emplace_back(std::move(animation));
+    }
   }
 
   void GameOverEntity::update(gf::Time time) {
-    if (m_game.state.monsterHappiness != MonsterHappiness::Happy && m_game.state.monsterHappiness != MonsterHappiness::VeryHappy) {
+    if (m_game.state.monsterHappiness == MonsterHappiness::Happy || m_game.state.monsterHappiness == MonsterHappiness::VeryHappy) {
+      if (m_game.state.currentGameOverAnimation < m_goodEndingAnimations.size()) {
+        if (m_goodEndingAnimations[m_game.state.currentGameOverAnimation].isFinished()) {
+          m_goodEndingAnimations[m_game.state.currentGameOverAnimation].reset();
+          ++m_game.state.currentGameOverAnimation;
+        }
+      }
+
+      if (m_game.state.currentGameOverAnimation < m_goodEndingAnimations.size()) {
+        m_goodEndingAnimations[m_game.state.currentGameOverAnimation].update(time);
+      }
+    } else {
       if (m_game.state.currentGameOverAnimation < m_badEndingAnimations.size()) {
         if (m_badEndingAnimations[m_game.state.currentGameOverAnimation].isFinished()) {
           m_badEndingAnimations[m_game.state.currentGameOverAnimation].reset();
@@ -121,28 +201,66 @@ namespace mm {
       if (m_game.state.currentGameOverAnimation < m_badEndingAnimations.size()) {
         m_badEndingAnimations[m_game.state.currentGameOverAnimation].update(time);
       }
-
-      m_projectorAnimation.update(time);
     }
+
+    m_projectorAnimation.update(time);
   }
 
   void GameOverEntity::render(gf::RenderTarget& target, const gf::RenderStates& states) {
     gf::Coordinates coordinates(target);
 
     if (m_game.state.monsterHappiness == MonsterHappiness::Happy || m_game.state.monsterHappiness == MonsterHappiness::VeryHappy) {
-      gf::Sprite background(m_backgroundTexture);
-      background.setColor(gf::Color::Opaque(0.25));
-      target.draw(background, states);
+      if (m_game.state.currentGameOverAnimation < m_goodEndingAnimations.size()) {
+        if (m_game.state.currentGameOverAnimation < 1) {
+          gf::Sprite theaterBackground;
+          theaterBackground.setTexture(m_theaterBackgroundTexture);
+          theaterBackground.draw(target, states);
 
-      std::string string = _("Congratulations! The monster has enjoyed this midnights movies and laughs openly. You have saved the city (and our life).\nEnjoy your vacations!");
+          gf::AnimatedSprite projector;
+          projector.setAnimation(m_projectorAnimation);
+          projector.setPosition(WorldSize);
+          projector.setAnchor(gf::Anchor::BottomRight);
+          projector.draw(target, states);
 
-      gf::Text text(string, m_font, WorldSize.height * 0.08);
-      text.setColor(gf::Color::White);
-      text.setParagraphWidth(WorldSize.width * 0.9f);
-      text.setAlignment(gf::Alignment::Center);
-      text.setPosition(WorldSize * gf::vec(0.5f, 0.5f));
-      text.setAnchor(gf::Anchor::Center);
-      text.draw(target, states);
+          gf::AnimatedSprite animation;
+          animation.setAnimation(m_goodEndingAnimations[m_game.state.currentGameOverAnimation]);
+          animation.setPosition(WorldSize);
+          animation.setAnchor(gf::Anchor::BottomRight);
+          animation.draw(target, states);
+
+          gf::Sprite officeBackground;
+          officeBackground.setTexture(m_officeBackgroundTexture);
+          officeBackground.draw(target, states);
+        } else {
+          gf::AnimatedSprite animation;
+          animation.setAnimation(m_goodEndingAnimations[m_game.state.currentGameOverAnimation]);
+
+          // Handle rumble
+          if (m_game.state.currentGameOverAnimation == 2) {
+            const float rumble = m_game.random.computeUniformFloat(-0.01f, 0.01f);
+            animation.setPosition(WorldSize * (gf::vec(0.5f, 0.5f) + rumble));
+          } else {
+            animation.setPosition(WorldSize * gf::vec(0.5f, 0.5f));
+          }
+          animation.setAnchor(gf::Anchor::Center);
+
+          animation.draw(target, states);
+        }
+      } else {
+        gf::Sprite background(m_backgroundTexture);
+        background.setColor(gf::Color::Opaque(0.25));
+        target.draw(background, states);
+
+        std::string string = _("Congratulations! The monster has enjoyed this midnights movies and laughs openly. You have saved the city (and our life).\nEnjoy your vacations!");
+
+        gf::Text text(string, m_font, WorldSize.height * 0.08);
+        text.setColor(gf::Color::White);
+        text.setParagraphWidth(WorldSize.width * 0.9f);
+        text.setAlignment(gf::Alignment::Center);
+        text.setPosition(WorldSize * gf::vec(0.5f, 0.5f));
+        text.setAnchor(gf::Anchor::Center);
+        text.draw(target, states);
+      }
     } else {
       if (m_game.state.currentGameOverAnimation < m_badEndingAnimations.size()) {
         if (m_game.state.currentGameOverAnimation < 2) {
@@ -221,7 +339,7 @@ namespace mm {
 
   bool GameOverEntity::hasFinishedCutScene() const {
     if (m_game.state.monsterHappiness == MonsterHappiness::Happy || m_game.state.monsterHappiness == MonsterHappiness::VeryHappy) {
-      return true;
+      return m_game.state.currentGameOverAnimation >= m_goodEndingAnimations.size();
     }
 
     return m_game.state.currentGameOverAnimation >= m_badEndingAnimations.size();
