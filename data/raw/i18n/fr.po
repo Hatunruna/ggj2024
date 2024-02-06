@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Midnight Movies 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 21:36+0100\n"
+"POT-Creation-Date: 2024-02-06 07:58+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Julien Bernard <julien.bernard@univ-fcomte.fr>\n"
 "Language-Team: fr <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: code/bits/DebriefEntity.cc:42
 msgid "Shift End"
-msgstr "Fin de la Tournée"
+msgstr "Fin de Service"
 
 #: code/bits/DebriefEntity.cc:51
 msgid "Correct choices: "
@@ -32,21 +32,21 @@ msgstr "Choix incorrects : "
 msgid "Unhandled movies: "
 msgstr "Films non-traités : "
 
-#: code/bits/GameOverEntity.cc:42
+#: code/bits/GameOverEntity.cc:254
 msgid ""
 "Congratulations! The monster has enjoyed this midnights movies and laughs "
-"openly.\n"
-"You have saved the city (and our life).\n"
+"openly. You have saved the city (and our life).\n"
 "Enjoy your vacations!"
-msgstr ""
+msgstr "Félicitation ! Le monstre a apprécié ses midnights movies et il rit "
+"ouvertement. Vous avez sauvez la ville (et votre vie).\n"
+"Profitez de vos vacances !"
 
-#: code/bits/GameOverEntity.cc:52
+#: code/bits/GameOverEntity.cc:326
 msgid ""
 "Unfortunately, the monster was not satisfied by your performance.\n"
-"After feeding the monster, he left the cinema and start to destroying the "
-"town.\n"
 "Good luck in another life!"
-msgstr ""
+msgstr "Malheureusement, le monstre n'a pas apprécié votre performance.\n"
+"Bonne chance dans une autre vie !"
 
 #: code/bits/MovieData.cc:39
 msgid "Action"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 21:36+0100\n"
+"POT-Creation-Date: 2024-02-06 07:58+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,19 +33,16 @@ msgstr ""
 msgid "Unhandled movies: "
 msgstr ""
 
-#: code/bits/GameOverEntity.cc:42
+#: code/bits/GameOverEntity.cc:254
 msgid ""
 "Congratulations! The monster has enjoyed this midnights movies and laughs "
-"openly.\n"
-"You have saved the city (and our life).\n"
+"openly. You have saved the city (and our life).\n"
 "Enjoy your vacations!"
 msgstr ""
 
-#: code/bits/GameOverEntity.cc:52
+#: code/bits/GameOverEntity.cc:326
 msgid ""
 "Unfortunately, the monster was not satisfied by your performance.\n"
-"After feeding the monster, he left the cinema and start to destroying the "
-"town.\n"
 "Good luck in another life!"
 msgstr ""
 
