@@ -251,7 +251,7 @@ namespace mm {
         background.setColor(gf::Color::Opaque(0.25));
         target.draw(background, states);
 
-        std::string string = _("Congratulations! The monster has enjoyed this midnights movies and laughs openly. You have saved the city (and our life).\nEnjoy your vacations!");
+        std::string string = _("Congratulations! The monster has enjoyed this midnights movies and laughs openly. You have saved the city and your life.\nEnjoy your vacations!");
 
         gf::Text text(string, m_font, WorldSize.height * 0.08);
         text.setColor(gf::Color::White);
