@@ -38,7 +38,7 @@ msgid ""
 "openly. You have saved the city (and our life).\n"
 "Enjoy your vacations!"
 msgstr "Félicitation ! Le monstre a apprécié ses midnights movies et il rit "
-"ouvertement. Vous avez sauvez la ville (et votre vie).\n"
+"ouvertement. Vous avez sauvé la ville (et votre vie).\n"
 "Profitez de vos vacances !"
 
 #: code/bits/GameOverEntity.cc:326
