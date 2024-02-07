@@ -1,5 +1,5 @@
 set_project("MidnightMovies")
-set_version("0.1.0")
+set_version("0.2.0")
 
 add_repositories("gf-repo https://github.com/GamedevFramework/xmake-repo")
 
